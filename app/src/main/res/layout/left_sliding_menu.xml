@@ -72,6 +72,7 @@
 							android:gravity="center_horizontal"
 							android:text="@string/main_house_mgr"
 							android:textSize="@dimen/global_normal_font_size_vxsm"
+							android:layout_marginLeft="5dp"
 							/>
 					</com.zhy.autolayout.AutoLinearLayout>
 
@@ -90,6 +91,7 @@
 					android:layout_width="match_parent"
 					android:layout_height="match_parent">
 
+					<!-- 竖直菜单 -->
 					<com.zhy.autolayout.AutoLinearLayout
 						android:layout_width="match_parent"
 						android:layout_height="match_parent"
@@ -98,37 +100,30 @@
 						<com.lqr.optionitemview.OptionItemView
 							style="@style/OptionItemLeftMenu"
 							android:layout_width="match_parent"
-							app:left_src="@drawable/ic_n_man_orange"
-							app:left_text="出行"
+							app:left_src="@drawable/ic_n_list"
+							app:left_text="@string/main_left_list_1"
 							/>
 
 						<com.lqr.optionitemview.OptionItemView
 							style="@style/OptionItemLeftMenu"
 							android:layout_width="match_parent"
-							app:left_src="@drawable/ic_n_man_orange"
-							app:left_text="出行"
+							app:left_src="@drawable/ic_n_pocket"
+							app:left_text="@string/main_left_list_2"
 							/>
-
 						<com.lqr.optionitemview.OptionItemView
 							style="@style/OptionItemLeftMenu"
 							android:layout_width="match_parent"
-							app:left_src="@drawable/ic_n_man_orange"
-							app:left_text="出行"
+							app:left_src="@drawable/ic_n_earphone"
+							app:left_text="@string/main_left_list_3"
 							/>
-
 						<com.lqr.optionitemview.OptionItemView
 							style="@style/OptionItemLeftMenu"
 							android:layout_width="match_parent"
-							app:left_src="@drawable/ic_n_man_orange"
-							app:left_text="出行"
+							app:left_src="@drawable/ic_n_set"
+							app:left_text="@string/main_left_list_4"
 							/>
 
-						<com.lqr.optionitemview.OptionItemView
-							style="@style/OptionItemLeftMenu"
-							android:layout_width="match_parent"
-							app:left_src="@drawable/ic_n_man_orange"
-							app:left_text="出行"
-							/>
+
 					</com.zhy.autolayout.AutoLinearLayout>
 				</ScrollView>
 
@@ -178,46 +173,16 @@
 
 
 	<!-- 纯占位 避免地图和侧边栏产生手势冲突 -->
-
-
-		<ScrollView
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		>
+		<LinearLayout
 			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:background="@color/black"
-			>
-			<com.zhy.autolayout.AutoLinearLayout
-				android:layout_width="match_parent"
-				android:layout_height="match_parent"
-				android:orientation="vertical"
-				>
-				<ImageView
-					android:layout_width="match_parent"
-					android:layout_height="match_parent"
-					android:src="@drawable/ic_n_man_orange"
-					/>
-				<ImageView
-					android:layout_width="match_parent"
-					android:layout_height="match_parent"
-					android:src="@drawable/ic_n_man_orange"
-					/>
-				<ImageView
-					android:layout_width="match_parent"
-					android:layout_height="match_parent"
-					android:src="@drawable/ic_n_man_orange"
-					/>
-				<ImageView
-					android:layout_width="match_parent"
-					android:layout_height="match_parent"
-					android:src="@drawable/ic_n_man_orange"
-					/>
-				<ImageView
-					android:layout_width="match_parent"
-					android:layout_height="match_parent"
-					android:src="@drawable/ic_n_man_orange"
-					/>
-			</com.zhy.autolayout.AutoLinearLayout>
-		</ScrollView>
+			android:layout_height="match_parent">
 
+		</LinearLayout>
+	</ScrollView>
 
 
 </com.zhy.autolayout.AutoLinearLayout>
