@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray5"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/llSearchUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45px"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="16px"
+        android:paddingLeft="30px"
+        android:paddingRight="30px"
+        android:paddingTop="20px">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50px"
+            android:layout_marginTop="10px"
+            android:background="@null"
+            android:drawableLeft="@mipmap/ic_friend_search_green"
+            android:drawablePadding="20px"
+            android:gravity="center_vertical"
+            android:text="@string/wechat_qq_phone"
+            android:textColor="@color/gray3"
+            android:textSize="14sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3px"
+            android:layout_marginTop="5px"
+            android:background="@drawable/shape_bottom_green"/>
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="60px"
+        android:layout_marginTop="20px"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my_wechat_account"
+            android:textColor="@color/gray1"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/tvAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="James"
+            android:textColor="@color/gray1"
+            android:textSize="15sp"/>
+
+        <ImageView
+            android:id="@+id/ivQRCordCard"
+            android:layout_width="40px"
+            android:layout_height="40px"
+            android:layout_marginLeft="10px"
+            android:src="@mipmap/ic_qr_code"/>
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <!--功能-->
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_common_item"
+            android:gravity="center_vertical"
+            android:padding="29px">
+
+            <ImageView
+                android:layout_width="80px"
+                android:layout_height="80px"
+                android:src="@mipmap/ic_radar"/>
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80px"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20px"
+                    android:singleLine="true"
+                    android:text="@string/radar_add_friend"
+                    android:textColor="@color/gray0"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:singleLine="true"
+                    android:text="@string/add_near_friend"
+                    android:textColor="@color/gray2"
+                    android:textSize="12sp"/>
+            </com.zhy.autolayout.AutoLinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <View
+            style="@style/Line"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_common_item"
+            android:gravity="center_vertical"
+            android:padding="29px">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="80px"
+                android:layout_height="80px"
+                android:src="@mipmap/ic_group_cheat"/>
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80px"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20px"
+                    android:singleLine="true"
+                    android:text="@string/create_group_face_to_face"
+                    android:textColor="@color/gray0"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:singleLine="true"
+                    android:text="@string/create_group_with_near_friend"
+                    android:textColor="@color/gray2"
+                    android:textSize="12sp"/>
+            </com.zhy.autolayout.AutoLinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <View
+            style="@style/Line"
+            android:layout_marginLeft="20px"
+            android:layout_marginRight="20px"
+            />
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_common_item"
+            android:gravity="center_vertical"
+            android:padding="29px">
+
+            <ImageView
+                android:layout_width="80px"
+                android:layout_height="80px"
+                android:src="@mipmap/ic_scan"/>
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80px"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20px"
+                    android:singleLine="true"
+                    android:text="@string/scan_one_scan"
+                    android:textColor="@color/gray0"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20px"
+                    android:layout_marginTop="10px"
+                    android:singleLine="true"
+                    android:text="@string/scan_qr_code_business_card"
+                    android:textColor="@color/gray2"
+                    android:textSize="12sp"/>
+            </com.zhy.autolayout.AutoLinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <View
+            style="@style/Line"
+            android:layout_marginLeft="20px"
+            android:layout_marginRight="20px"
+            />
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_common_item"
+            android:gravity="center_vertical"
+            android:padding="29px">
+
+            <ImageView
+                android:layout_width="80px"
+                android:layout_height="80px"
+                android:src="@mipmap/ic_new_friend"/>
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80px"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20px"
+                    android:singleLine="true"
+                    android:text="@string/phone_contacts"
+                    android:textColor="@color/gray0"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20px"
+                    android:layout_marginTop="10px"
+                    android:singleLine="true"
+                    android:text="@string/add_friend_from_contact"
+                    android:textColor="@color/gray2"
+                    android:textSize="12sp"/>
+            </com.zhy.autolayout.AutoLinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <View
+            style="@style/Line"
+            android:layout_marginLeft="20px"
+            android:layout_marginRight="20px"
+            />
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_common_item"
+            android:gravity="center_vertical"
+            android:padding="29px">
+
+            <ImageView
+                android:layout_width="80px"
+                android:layout_height="80px"
+                android:src="@mipmap/ic_offical"/>
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80px"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20px"
+                    android:singleLine="true"
+                    android:text="@string/public_number"
+                    android:textColor="@color/gray0"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20px"
+                    android:layout_marginTop="10px"
+                    android:singleLine="true"
+                    android:text="@string/get_more_info_and_service"
+                    android:textColor="@color/gray2"
+                    android:textSize="12sp"/>
+            </com.zhy.autolayout.AutoLinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>

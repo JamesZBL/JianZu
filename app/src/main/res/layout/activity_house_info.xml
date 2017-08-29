@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:fitsSystemWindows="true"
+	android:orientation="vertical"
+	>
+
+	<include layout="@layout/include_toolbar_white"/>
+
+
+	<com.zhy.autolayout.AutoRelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+
+		>
+
+		<!--滚动视图-->
+		<ScrollView
+			android:id="@+id/scv_houseinfo"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_above="@+id/rr_houseinfo_btm"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true">
+
+			<!-- 滚动视图内 根布局-->
+			<com.zhy.autolayout.AutoLinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+
+				<!-- 轮播图 -->
+				<com.youth.banner.Banner
+					xmlns:app="http://schemas.android.com/apk/res-auto"
+					android:id="@+id/houseinfo_banner"
+					android:layout_width="match_parent"
+					android:layout_height="200dp" />
+
+
+				<!--描述标题-->
+				<TextView
+					style="@style/info_black_title_text_style"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="精装修拎包入住有空调能做饭石家庄站附近xx小区交通方便"
+					/>
+
+				<View
+					style="@style/Line"
+					/>
+
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:padding="@dimen/info_title_padding"
+					>
+
+					<com.zhy.autolayout.AutoLinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1">
+
+						<com.zhy.autolayout.AutoRelativeLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+
+							<TextView
+								android:id="@+id/textView"
+								style="@style/info_default_text_style"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_alignParentLeft="true"
+								android:layout_alignParentStart="true"
+								android:text="@string/houseinfo_rent_price"/>
+
+							<TextView
+								android:id="@+id/textView4"
+								style="@style/info_red_title_text_style"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_toEndOf="@+id/textView"
+								android:layout_toRightOf="@+id/textView"
+								android:text="750"
+								/>
+
+							<TextView
+								style="@style/info_red_title_text_style"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_toEndOf="@+id/textView4"
+								android:layout_toRightOf="@+id/textView4"
+								android:text="@string/houseinfo_yuan_per_month"
+								/>
+						</com.zhy.autolayout.AutoRelativeLayout>
+
+					</com.zhy.autolayout.AutoLinearLayout>
+
+					<com.zhy.autolayout.AutoLinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1">
+
+						<com.zhy.autolayout.AutoRelativeLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content">
+
+
+						</com.zhy.autolayout.AutoRelativeLayout>
+
+					</com.zhy.autolayout.AutoLinearLayout>
+
+				</com.zhy.autolayout.AutoLinearLayout>
+
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="@dimen/info_title_padding"
+					android:layout_marginRight="@dimen/info_title_padding"
+					android:orientation="horizontal"
+					android:paddingBottom="@dimen/info_detail_padding_vertical"
+					android:paddingTop="@dimen/info_detail_padding_vertical"
+					>
+
+					<com.zhy.autolayout.AutoLinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1">
+
+						<TextView
+							style="@style/info_default_text_style"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="@string/houseinfo_house_type"/>
+
+						<TextView
+							style="@style/info_black_text_style"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="1室1厅1卫"
+							/>
+
+					</com.zhy.autolayout.AutoLinearLayout>
+
+					<com.zhy.autolayout.AutoLinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1">
+
+						<TextView
+							style="@style/info_default_text_style"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="@string/houseinfo_house_paint"/>
+
+						<TextView
+							style="@style/info_black_text_style"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="精装修"
+							/>
+
+					</com.zhy.autolayout.AutoLinearLayout>
+				</com.zhy.autolayout.AutoLinearLayout>
+
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="@dimen/info_title_padding"
+					android:layout_marginRight="@dimen/info_title_padding"
+					android:orientation="horizontal"
+					android:paddingBottom="@dimen/info_detail_padding_vertical"
+					android:paddingTop="@dimen/info_detail_padding_vertical"
+					>
+
+					<com.zhy.autolayout.AutoLinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1">
+
+						<TextView
+							style="@style/info_default_text_style"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="@string/houseinfo_house_area"/>
+
+						<TextView
+							style="@style/info_black_text_style"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="80"
+							/>
+
+						<TextView
+							style="@style/info_black_text_style"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="@string/houseinfo_house_area_square_meter_pingmi"
+							/>
+
+					</com.zhy.autolayout.AutoLinearLayout>
+
+					<com.zhy.autolayout.AutoLinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1">
+
+						<TextView
+							style="@style/info_default_text_style"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="@string/houseinfo_house_orientation"/>
+
+						<TextView
+							style="@style/info_black_text_style"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="南北"
+							/>
+
+					</com.zhy.autolayout.AutoLinearLayout>
+
+				</com.zhy.autolayout.AutoLinearLayout>
+
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="@dimen/info_title_padding"
+					android:layout_marginRight="@dimen/info_title_padding"
+					android:orientation="horizontal"
+					android:paddingBottom="@dimen/info_detail_padding_vertical"
+					android:paddingTop="@dimen/info_detail_padding_vertical"
+					>
+
+					<com.zhy.autolayout.AutoLinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1">
+
+						<TextView
+							style="@style/info_default_text_style"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="@string/houseinfo_floor_level"/>
+
+						<TextView
+							style="@style/info_black_text_style"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="高层"
+							/>
+
+						<TextView
+							style="@style/info_black_text_style"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="("
+							/>
+
+						<TextView
+							style="@style/info_black_text_style"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="共"
+							/>
+
+						<TextView
+							style="@style/info_black_text_style"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="28"
+							/>
+
+						<TextView
+							style="@style/info_black_text_style"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="层)"
+							/>
+					</com.zhy.autolayout.AutoLinearLayout>
+
+					<com.zhy.autolayout.AutoLinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1">
+
+						<TextView
+							style="@style/info_default_text_style"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="@string/houseinfo_house_property_type"/>
+
+						<TextView
+							style="@style/info_black_text_style"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="普通住宅"
+							/>
+
+					</com.zhy.autolayout.AutoLinearLayout>
+
+				</com.zhy.autolayout.AutoLinearLayout>
+
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="@dimen/info_title_padding"
+					android:layout_marginRight="@dimen/info_title_padding"
+					android:orientation="horizontal"
+					android:paddingBottom="@dimen/info_detail_padding_vertical"
+					android:paddingTop="@dimen/info_detail_padding_vertical"
+					>
+
+					<com.zhy.autolayout.AutoLinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1">
+
+						<TextView
+							style="@style/info_default_text_style"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="@string/houseinfo_release"/>
+
+						<TextView
+							style="@style/info_black_text_style"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="2017-08-27"
+							/>
+
+
+					</com.zhy.autolayout.AutoLinearLayout>
+
+
+				</com.zhy.autolayout.AutoLinearLayout>
+
+				<View
+					style="@style/LineGrayDivider"/>
+
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:paddingBottom="@dimen/info_detail_padding_vertical"
+					android:paddingTop="@dimen/info_detail_padding_vertical"
+					>
+
+					<View
+						style="@style/SquareColorPrimary"
+						/>
+
+					<TextView
+						style="@style/info_bold_text_style"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/houseinfo_gaikuang"
+
+						/>
+				</com.zhy.autolayout.AutoLinearLayout>
+
+				<View
+					style="@style/Line"/>
+
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:padding="@dimen/info_title_padding"
+					>
+
+					<com.zhy.autolayout.AutoLinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+
+						>
+
+						<TextView
+							style="@style/info_black_text_style"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:text="精装修拎包入住有空调能做饭长租价格可议炫彩大学城博士园未来石"
+							/>
+
+					</com.zhy.autolayout.AutoLinearLayout>
+
+
+				</com.zhy.autolayout.AutoLinearLayout>
+
+				<View
+					style="@style/LineGrayDivider"/>
+
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:paddingBottom="@dimen/info_detail_padding_vertical"
+					android:paddingTop="@dimen/info_detail_padding_vertical"
+					>
+
+					<View
+						style="@style/SquareColorPrimary"
+						/>
+
+					<TextView
+						style="@style/info_bold_text_style"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/houseinfo_peizhi"
+
+						/>
+				</com.zhy.autolayout.AutoLinearLayout>
+
+				<View
+					style="@style/Line"/>
+
+				<ImageView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:adjustViewBounds="true"
+					android:src="@drawable/ic_house_functions_full"
+					/>
+
+				<View
+					style="@style/LineGrayDivider"
+					android:layout_marginTop="0dp"
+					/>
+
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:paddingBottom="@dimen/info_detail_padding_vertical"
+					android:paddingTop="@dimen/info_detail_padding_vertical"
+					>
+
+					<View
+						style="@style/SquareColorPrimary"
+						/>
+
+					<TextView
+						style="@style/info_bold_text_style"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/houseinfo_video"
+
+						/>
+				</com.zhy.autolayout.AutoLinearLayout>
+
+				<View
+					style="@style/Line"/>
+
+				<!--视频播放-->
+				<com.zbl.anju.widget.CustomJcVideoPlayerStandard
+					android:id="@+id/houseinfo_video_player"
+					android:layout_width="match_parent"
+					android:layout_height="200dp"/>
+
+
+			</com.zhy.autolayout.AutoLinearLayout>
+
+
+		</ScrollView>
+
+
+		<!--底部工具栏-->
+		<com.zhy.autolayout.AutoRelativeLayout
+			android:id="@+id/rr_houseinfo_btm"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/appbar_layout_height"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentEnd="true"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"
+			android:background="@color/white"
+			android:visibility="visible">
+
+			<View
+				style="@style/Line"
+				/>
+
+			<com.zhy.autolayout.AutoLinearLayout
+				android:id="@+id/all_houseinfo_btm"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				>
+
+
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+
+					>
+
+					<com.zhy.autolayout.AutoLinearLayout
+						android:id="@+id/ll_sig_btm_save"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:background="@drawable/selector_option_item_trans"
+						android:orientation="vertical"
+						android:padding="3dp"
+						>
+
+						<ImageView
+							android:id="@+id/imageView2"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_margin="2dp"
+							android:layout_weight="1"
+							android:src="@drawable/ic_down_fill"/>
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:text="@string/save"
+							android:textAlignment="center"
+							android:textSize="@dimen/global_normal_font_size_vxsm"
+							/>
+					</com.zhy.autolayout.AutoLinearLayout>
+
+					<View
+						style="@style/Line_Vertical"/>
+
+					<com.zhy.autolayout.AutoLinearLayout
+						android:id="@+id/ll_sig_btm_clear"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:background="@drawable/selector_option_item_trans"
+						android:orientation="vertical"
+						android:padding="3dp"
+						>
+
+						<ImageView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_margin="2dp"
+							android:layout_weight="1"
+							android:src="@drawable/ic_eraser_fill"/>
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:text="@string/clear"
+							android:textAlignment="center"
+							android:textSize="@dimen/global_normal_font_size_vxsm"
+							/>
+					</com.zhy.autolayout.AutoLinearLayout>
+
+					<View
+						style="@style/Line_Vertical"/>
+
+					<com.zhy.autolayout.AutoLinearLayout
+						android:id="@+id/ll_sig_btm_color"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:background="@drawable/selector_option_item_trans"
+						android:orientation="vertical"
+						android:padding="3dp"
+						>
+
+						<ImageView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_margin="2dp"
+							android:layout_weight="1"
+							android:src="@drawable/ic_color_picker"/>
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:text="@string/signature_color"
+							android:textAlignment="center"
+							android:textSize="@dimen/global_normal_font_size_vxsm"
+							/>
+					</com.zhy.autolayout.AutoLinearLayout>
+
+					<View
+						style="@style/Line_Vertical"/>
+
+					<Button
+						android:id="@+id/btn_upload_signature"
+						style="@style/btn3"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:enabled="true"
+						android:text="@string/signature_upload_sig"
+						android:textSize="@dimen/global_normal_font_size_sm"/>
+				</com.zhy.autolayout.AutoLinearLayout>
+
+
+			</com.zhy.autolayout.AutoLinearLayout>
+
+		</com.zhy.autolayout.AutoRelativeLayout>
+
+
+	</com.zhy.autolayout.AutoRelativeLayout>
+
+</com.zhy.autolayout.AutoLinearLayout>

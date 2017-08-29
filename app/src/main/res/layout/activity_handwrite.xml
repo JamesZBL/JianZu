@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	>
+
+	<include layout="@layout/include_toolbar"/>
+
+
+	<com.zhy.autolayout.AutoRelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		>
+
+		<com.zbl.anju.widget.LinePathView
+			android:id="@+id/sig_line_view"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_above="@+id/rr_sig_btm"
+			android:layout_gravity="center_horizontal"
+			android:background="#FFFFFF">
+
+		</com.zbl.anju.widget.LinePathView>
+
+		<com.zhy.autolayout.AutoRelativeLayout
+			android:id="@+id/rr_sig_btm"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/appbar_layout_height"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true">
+
+			<View
+				style="@style/Line"
+				/>
+
+			<com.zhy.autolayout.AutoLinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				>
+
+
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					>
+
+					<com.zhy.autolayout.AutoLinearLayout
+						android:id="@+id/ll_sig_btm_save"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:background="@drawable/selector_option_item_trans"
+						android:orientation="vertical"
+						android:padding="3dp"
+						>
+
+						<ImageView
+							android:id="@+id/imageView2"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_margin="2dp"
+							android:layout_weight="1"
+							android:src="@drawable/ic_down_fill"/>
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:text="@string/save"
+							android:textAlignment="center"
+							android:textSize="@dimen/global_normal_font_size_vxsm"
+							/>
+					</com.zhy.autolayout.AutoLinearLayout>
+
+					<View
+						style="@style/Line_Vertical"/>
+
+					<com.zhy.autolayout.AutoLinearLayout
+						android:id="@+id/ll_sig_btm_clear"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:background="@drawable/selector_option_item_trans"
+						android:orientation="vertical"
+						android:padding="3dp"
+						>
+
+						<ImageView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_margin="2dp"
+							android:layout_weight="1"
+							android:src="@drawable/ic_eraser_fill"/>
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:text="@string/clear"
+							android:textAlignment="center"
+							android:textSize="@dimen/global_normal_font_size_vxsm"
+							/>
+					</com.zhy.autolayout.AutoLinearLayout>
+
+					<View
+						style="@style/Line_Vertical"/>
+
+					<com.zhy.autolayout.AutoLinearLayout
+						android:id="@+id/ll_sig_btm_color"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:background="@drawable/selector_option_item_trans"
+						android:orientation="vertical"
+						android:padding="3dp"
+						>
+
+						<ImageView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_margin="2dp"
+							android:layout_weight="1"
+							android:src="@drawable/ic_color_picker"/>
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:text="@string/signature_color"
+							android:textAlignment="center"
+							android:textSize="@dimen/global_normal_font_size_vxsm"
+							/>
+					</com.zhy.autolayout.AutoLinearLayout>
+
+					<View
+						style="@style/Line_Vertical"/>
+
+					<Button
+						android:id="@+id/btn_upload_signature"
+						style="@style/btn3"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:enabled="true"
+						android:text="@string/signature_upload_sig"
+						android:textSize="@dimen/global_normal_font_size_sm"/>
+				</com.zhy.autolayout.AutoLinearLayout>
+
+
+			</com.zhy.autolayout.AutoLinearLayout>
+
+		</com.zhy.autolayout.AutoRelativeLayout>
+
+
+	</com.zhy.autolayout.AutoRelativeLayout>
+
+</com.zhy.autolayout.AutoLinearLayout>

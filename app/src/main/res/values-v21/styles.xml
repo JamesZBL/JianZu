@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<!--<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+		&lt;!&ndash; Customize your theme here. &ndash;&gt;
+		<item name="colorPrimary">@color/colorPrimary</item>
+		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+		<item name="colorAccent">@color/colorAccent</item>
+		&lt;!&ndash;适应屏幕&ndash;&gt;
+		&lt;!&ndash;<item name="android:fitsSystemWindows">true</item>&ndash;&gt;
+		&lt;!&ndash; 设置activity切换动画 &ndash;&gt;
+		<item name="android:windowAnimationStyle">@style/activityAnimation</item>
+		&lt;!&ndash;设置键盘弹出时重新设置窗口大小&ndash;&gt;
+		<item name="android:windowSoftInputMode">adjustResize</item>
+		&lt;!&ndash;<item name="android:navigationMode"></item>&ndash;&gt;
+		<item name="android:windowDrawsSystemBarBackgrounds">false</item>
+	</style>-->
+
+	<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+		<!-- Customize your theme here. -->
+		<!--<item name="colorPrimary">@color/colorPrimary</item>-->
+		<!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+		<!--<item name="colorAccent">@color/colorAccent</item>-->
+		<!--适应屏幕-->
+		<!--<item name="android:fitsSystemWindows">true</item>-->
+		<!-- 设置activity切换动画 -->
+		<item name="android:windowAnimationStyle">@style/activityAnimation</item>
+		<!--设置键盘弹出时重新设置窗口大小-->
+		<item name="android:windowSoftInputMode">adjustResize</item>
+		<!--<item name="android:navigationMode"></item>-->
+		<item name="android:windowDrawsSystemBarBackgrounds">false</item>
+	</style>
+
+
+</resources>

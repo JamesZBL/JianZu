@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray5"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/option_item_margin_top"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.lqr.optionitemview.OptionItemView
+            android:id="@+id/oivNewMsgNotifySet"
+            style="@style/OptionItem"
+            android:background="@drawable/selector_option_item"
+            app:left_text="@string/new_message_remind"
+            app:left_text_color="@color/black0"
+            app:left_text_margin_left="@dimen/option_item_margin_left"
+            app:left_text_size="16sp"/>
+
+        <View
+            style="@style/Line"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px"
+            />
+
+        <com.lqr.optionitemview.OptionItemView
+            android:id="@+id/oivDontDistorbSet"
+            style="@style/OptionItem"
+            android:background="@drawable/selector_option_item"
+            app:left_text="@string/do_not_disturb_mode"
+            app:left_text_color="@color/black0"
+            app:left_text_margin_left="@dimen/option_item_margin_left"
+            app:left_text_size="16sp"/>
+
+        <View
+            style="@style/Line"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px"
+            />
+
+        <com.lqr.optionitemview.OptionItemView
+            android:id="@+id/oivCheatSet"
+            style="@style/OptionItem"
+            android:background="@drawable/selector_option_item"
+            app:left_text="@string/chat"
+            app:left_text_color="@color/black0"
+            app:left_text_margin_left="@dimen/option_item_margin_left"
+            app:left_text_size="16sp"/>
+
+        <View
+            style="@style/Line"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px"
+            />
+
+        <com.lqr.optionitemview.OptionItemView
+            android:id="@+id/oivPrivacySet"
+            style="@style/OptionItem"
+            android:background="@drawable/selector_option_item"
+            app:left_text="@string/privacy"
+            app:left_text_color="@color/black0"
+            app:left_text_margin_left="@dimen/option_item_margin_left"
+            app:left_text_size="16sp"/>
+
+        <View
+            style="@style/Line"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px"
+            />
+
+        <com.lqr.optionitemview.OptionItemView
+            android:id="@+id/oivCommon"
+            style="@style/OptionItem"
+            android:background="@drawable/selector_option_item"
+            app:left_text="@string/currency"
+            app:left_text_color="@color/black0"
+            app:left_text_margin_left="@dimen/option_item_margin_left"
+            app:left_text_size="16sp"/>
+
+        <View
+            style="@style/Line"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px"
+            />
+
+        <com.lqr.optionitemview.OptionItemView
+            android:id="@+id/oivAccountAndSafeSet"
+            style="@style/OptionItem"
+            android:background="@drawable/selector_option_item"
+            app:left_text="@string/account_and_safe"
+            app:left_text_color="@color/black0"
+            app:left_text_margin_left="@dimen/option_item_margin_left"
+            app:left_text_size="16sp"/>
+
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/option_item_margin_top"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.lqr.optionitemview.OptionItemView
+            android:id="@+id/oivAbout"
+            style="@style/OptionItem"
+            android:background="@drawable/selector_option_item"
+            app:left_text="@string/about"
+            app:left_text_color="@color/black0"
+            app:left_text_margin_left="@dimen/option_item_margin_left"
+            app:left_text_size="16sp"/>
+
+        <View
+            style="@style/Line"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px"
+            />
+
+        <com.lqr.optionitemview.OptionItemView
+            android:id="@+id/oivHelpFeedback"
+            style="@style/OptionItem"
+            android:background="@drawable/selector_option_item"
+            app:left_text="@string/help_feedback"
+            app:left_text_color="@color/black0"
+            app:left_text_margin_left="@dimen/option_item_margin_left"
+            app:left_text_size="16sp"/>
+
+        <View
+            style="@style/Line"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px"
+            />
+
+        <com.lqr.optionitemview.OptionItemView
+            android:id="@+id/oivExit"
+            style="@style/OptionItem"
+            android:background="@drawable/selector_option_item"
+            app:left_text="@string/exit"
+            app:left_text_color="@color/black0"
+            app:left_text_margin_left="@dimen/option_item_margin_left"
+            app:left_text_size="16sp"/>
+    </com.zhy.autolayout.AutoLinearLayout>
+
+</com.zhy.autolayout.AutoLinearLayout>

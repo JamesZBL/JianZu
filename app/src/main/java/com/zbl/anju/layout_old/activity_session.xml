@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <!--内容-->
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/llContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <com.lqr.recyclerview.LQRRecyclerView
+                android:id="@+id/rvMsg"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+        </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+
+        <View
+            style="@style/Line"
+            />
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="97px"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivAudio"
+                android:layout_width="70px"
+                android:layout_height="70px"
+                android:layout_margin="10px"
+                android:src="@mipmap/ic_cheat_voice"/>
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <EditText
+                    android:id="@+id/etContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="80px"
+                    android:background="@null"
+                    android:drawableBottom="@drawable/selector_edit_focus"
+                    android:visibility="visible"/>
+
+                <Button
+                    android:id="@+id/btnAudio"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="80px"
+                    android:background="@drawable/shape_session_btn_voice_normal"
+                    android:text="@string/please_to_talk"
+                    android:textColor="@color/gray1"
+                    android:visibility="gone"/>
+
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <ImageView
+                android:id="@+id/ivEmo"
+                android:layout_width="70px"
+                android:layout_height="70px"
+                android:layout_margin="10px"
+                android:src="@mipmap/ic_cheat_emo"/>
+
+            <ImageView
+                android:id="@+id/ivMore"
+                android:layout_width="70px"
+                android:layout_height="70px"
+                android:layout_marginLeft="10px"
+                android:layout_marginRight="14px"
+                android:src="@mipmap/ic_cheat_add"/>
+
+            <Button
+                android:id="@+id/btnSend"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="86px"
+                android:layout_height="70px"
+                android:layout_marginRight="8px"
+                android:background="@drawable/shape_session_btn_send"
+                android:text="@string/send"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:visibility="gone"/>
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <View
+            style="@style/Line"/>
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoFrameLayout
+        android:id="@+id/flEmotionView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="350px"
+        android:visibility="gone">
+        <!--表情-->
+        <com.lqr.emoji.EmotionLayout
+            android:id="@+id/elEmotion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            />
+        <!--其他功能-->
+        <include
+            android:id="@+id/llMore"
+            layout="@layout/include_func_layout"
+            android:visibility="gone"/>
+    </com.zhy.autolayout.AutoFrameLayout>
+</com.zhy.autolayout.AutoLinearLayout>

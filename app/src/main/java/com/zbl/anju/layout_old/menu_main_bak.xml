@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zbl.anju.widget.AutoCardView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_margin="15dp"
+	app:cardBackgroundColor="@color/transparent"
+	app:cardCornerRadius="5dp"
+	app:cardElevation="0dp"
+	>
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:src="@drawable/ic_triangle_white"
+		android:adjustViewBounds="true"
+		android:layout_gravity="right"
+		android:rotation="270"
+		android:layout_marginRight="48px"
+		/>
+	<com.zhy.autolayout.AutoLinearLayout
+		android:layout_width="350px"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:padding="0dp">
+
+
+
+		<TextView
+			android:id="@+id/tvCreateGroup"
+			android:layout_width="match_parent"
+			android:layout_height="100px"
+			android:layout_margin="0px"
+			android:background="@drawable/selector_option_item"
+			android:drawableLeft="@drawable/ic_add_group"
+			android:drawablePadding="40px"
+			android:gravity="center_vertical"
+			android:paddingLeft="20px"
+			android:text="@string/create_group"
+			android:textColor="@color/black_de"
+			android:textSize="15sp"/>
+
+		<!--<View-->
+		<!--style="@style/Line"-->
+		<!--/>-->
+
+		<TextView
+			android:id="@+id/tvAddFriend"
+			android:layout_width="match_parent"
+			android:layout_height="100px"
+			android:layout_margin="0px"
+			android:background="@drawable/selector_option_item"
+			android:drawableLeft="@drawable/ic_add_friend"
+			android:drawablePadding="40px"
+			android:gravity="center_vertical"
+			android:paddingLeft="20px"
+			android:text="@string/add_friend"
+			android:textColor="@color/black_de"
+			android:textSize="15sp"/>
+
+		<!--<View-->
+		<!--style="@style/Line"-->
+		<!--/>-->
+
+		<TextView
+			android:id="@+id/tvScan"
+			android:layout_width="match_parent"
+			android:layout_height="100px"
+			android:layout_margin="0px"
+			android:background="@drawable/selector_option_item"
+			android:drawableLeft="@drawable/ic_scan_qrcode"
+			android:drawablePadding="40px"
+			android:gravity="center_vertical"
+			android:paddingLeft="20px"
+			android:text="@string/scan_one_scan"
+			android:textColor="@color/black_de"
+			android:textSize="15sp"/>
+
+		<!--<View-->
+		<!--style="@style/Line"-->
+		<!--/>-->
+
+		<TextView
+			android:id="@+id/tvPaymentReceived"
+			android:layout_width="match_parent"
+			android:layout_height="100px"
+			android:layout_margin="0px"
+			android:background="@drawable/selector_option_item"
+			android:drawableLeft="@mipmap/ic_payment_received"
+			android:drawablePadding="40px"
+			android:gravity="center_vertical"
+			android:paddingLeft="20px"
+			android:text="@string/payment_received"
+			android:textColor="@color/black_de"
+			android:textSize="15sp"
+			android:visibility="gone"/>
+
+		<!--<View
+			style="@style/Line"
+			/>-->
+
+		<TextView
+			android:id="@+id/tvHelpFeedback"
+			android:layout_width="match_parent"
+			android:layout_height="100px"
+			android:layout_margin="0.5px"
+			android:background="@drawable/selector_option_item"
+			android:drawableLeft="@drawable/ic_open_conversation"
+			android:drawablePadding="40px"
+			android:gravity="center_vertical"
+			android:paddingLeft="20px"
+			android:text="@string/help_feedback"
+			android:textColor="@color/black_de"
+			android:textSize="15sp"/>
+	</com.zhy.autolayout.AutoLinearLayout>
+</com.zbl.anju.widget.AutoCardView>

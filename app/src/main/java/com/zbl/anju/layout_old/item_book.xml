@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoFrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/flBook"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+
+	<com.zhy.autolayout.AutoLinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/selector_option_item"
+		android:gravity="center"
+		android:orientation="horizontal"
+		android:paddingLeft="5px"
+		android:paddingRight="25px"
+		>
+
+		<com.zhy.autolayout.AutoRelativeLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+
+			<com.zhy.autolayout.AutoRelativeLayout
+				android:id="@+id/rl_BookImg"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="@dimen/item_margin_top_and_bottom"
+				android:layout_marginLeft="20px"
+				android:layout_marginTop="@dimen/item_margin_top_and_bottom">
+				<!--头像-->
+				<ImageView
+					android:id="@+id/ivBookImg"
+					android:layout_width="100px"
+					android:layout_height="100px"
+					android:layout_centerInParent="true"
+					android:src="@drawable/ic_book"/>
+			</com.zhy.autolayout.AutoRelativeLayout>
+
+		</com.zhy.autolayout.AutoRelativeLayout>
+
+		<com.zhy.autolayout.AutoLinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="100px"
+			android:layout_marginLeft="20px"
+			android:gravity="center_vertical"
+			android:orientation="vertical">
+
+			<com.zhy.autolayout.AutoLinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center_vertical">
+				<!--昵称或群名-->
+				<TextView
+					android:id="@+id/tvBookName"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:ellipsize="end"
+					android:maxLines="1"
+					android:text=""
+					android:textColor="@color/gray0"
+					android:textSize="35px"/>
+
+				<!--<TextView-->
+				<!--android:id="@+id/tvTime"-->
+				<!--android:layout_width="wrap_content"-->
+				<!--android:layout_height="wrap_content"-->
+				<!--android:ellipsize="end"-->
+				<!--android:maxLines="1"-->
+				<!--android:text=""-->
+				<!--android:textColor="@color/gray3"-->
+				<!--android:textSize="25px"/>-->
+			</com.zhy.autolayout.AutoLinearLayout>
+			<!--消息-->
+			<com.zhy.autolayout.AutoLinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:gravity="right"
+				>
+				<!---->
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/book_number"
+					android:layout_marginRight="10dp"
+					android:layout_marginTop="10px"
+					/>
+
+				<TextView
+					android:id="@+id/tvBookNumber"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="10px"
+					android:ellipsize="end"
+					android:maxLines="1"
+					android:text=""
+					android:textColor="@color/green1"
+					android:textSize="28px"/>
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/book_ce"
+					android:layout_marginLeft="5dp"
+					android:layout_marginTop="10px"
+					/>
+			</com.zhy.autolayout.AutoLinearLayout>
+		</com.zhy.autolayout.AutoLinearLayout>
+
+	</com.zhy.autolayout.AutoLinearLayout>
+
+</com.zhy.autolayout.AutoFrameLayout>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  侧边栏  -->
+<com.zhy.autolayout.AutoLinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/all_main_left"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:layout_gravity="start"
+	android:orientation="horizontal">
+
+	<!-- 侧边竖直方向头像和菜单 -->
+	<LinearLayout
+		android:layout_width="@dimen/main_drawer_linear_width"
+		android:layout_height="match_parent"
+		android:background="@color/gray0.5"
+		>
+
+		<com.zhy.autolayout.AutoLinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical">
+
+			<!-- 用户头像电话信息 -->
+			<ScrollView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+
+				<com.zhy.autolayout.AutoRelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:padding="40dp">
+
+					<ImageView
+						android:id="@+id/iv_header_left_menu"
+						android:layout_width="60dp"
+						android:layout_height="wrap_content"
+						android:layout_alignParentTop="true"
+						android:layout_centerHorizontal="true"
+						android:layout_marginBottom="@dimen/item_margin_top_and_bottom"
+						android:adjustViewBounds="true"
+						android:src="@drawable/ic_n_man_orange"/>
+
+					<TextView
+						android:id="@+id/tv_phone_left_menu"
+						style="@style/info_bold_text_style"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/iv_header_left_menu"
+						android:text="132****8893"
+						/>
+
+					<com.zhy.autolayout.AutoLinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/tv_phone_left_menu"
+						android:gravity="center_horizontal"
+						android:orientation="horizontal">
+
+						<ImageView
+							android:id="@+id/iv_vip_level"
+							android:layout_width="13dp"
+							android:layout_height="10dp"
+							android:layout_gravity="center_vertical"
+							android:src="@drawable/ic_n_man_pr"/>
+
+						<TextView
+							android:id="@+id/tv_vip_level"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_below="@id/tv_phone_left_menu"
+							android:gravity="center_horizontal"
+							android:text="@string/main_house_mgr"
+							android:textSize="@dimen/global_normal_font_size_vxsm"
+							/>
+					</com.zhy.autolayout.AutoLinearLayout>
+
+				</com.zhy.autolayout.AutoRelativeLayout>
+			</ScrollView>
+			<!-- 用户头像电话信息 结束 -->
+
+			<!-- 列表菜单和宫格菜单 -->
+			<android.support.design.widget.CoordinatorLayout
+				android:id="@+id/bottom_sheet_demo_coordinatorLayout"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+
+				<!-- 所有列表菜单 -->
+				<ScrollView
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
+
+					<com.zhy.autolayout.AutoLinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:orientation="vertical">
+
+						<com.lqr.optionitemview.OptionItemView
+							style="@style/OptionItemLeftMenu"
+							android:layout_width="match_parent"
+							app:left_src="@drawable/ic_n_man_orange"
+							app:left_text="出行"
+							/>
+
+						<com.lqr.optionitemview.OptionItemView
+							style="@style/OptionItemLeftMenu"
+							android:layout_width="match_parent"
+							app:left_src="@drawable/ic_n_man_orange"
+							app:left_text="出行"
+							/>
+
+						<com.lqr.optionitemview.OptionItemView
+							style="@style/OptionItemLeftMenu"
+							android:layout_width="match_parent"
+							app:left_src="@drawable/ic_n_man_orange"
+							app:left_text="出行"
+							/>
+
+						<com.lqr.optionitemview.OptionItemView
+							style="@style/OptionItemLeftMenu"
+							android:layout_width="match_parent"
+							app:left_src="@drawable/ic_n_man_orange"
+							app:left_text="出行"
+							/>
+
+						<com.lqr.optionitemview.OptionItemView
+							style="@style/OptionItemLeftMenu"
+							android:layout_width="match_parent"
+							app:left_src="@drawable/ic_n_man_orange"
+							app:left_text="出行"
+							/>
+					</com.zhy.autolayout.AutoLinearLayout>
+				</ScrollView>
+
+				<!-- 这是一个 bottom_sheet -->
+				<com.zhy.autolayout.AutoLinearLayout
+					android:id="@+id/rll_design_bottom_sheet"
+					android:layout_width="@dimen/main_drawer_linear_width"
+					android:layout_height="match_parent"
+					android:background="@color/gray0.5"
+					android:minHeight="100dp"
+					android:orientation="vertical"
+					app:behavior_hideable="false"
+					app:behavior_peekHeight="150dp"
+					app:layout_behavior="@string/bottom_sheet_behavior"
+					>
+
+					<!-- 三角按钮（打开、关闭 BottomSheet -->
+					<com.zhy.autolayout.AutoRelativeLayout
+						android:id="@+id/arl_bottom_sheet_bar"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical">
+
+						<ImageView
+							android:id="@+id/iv_bottom_sheet_pointer"
+							android:layout_width="30dp"
+							android:layout_height="40dp"
+							android:layout_centerHorizontal="true"
+							android:gravity="center"
+							android:padding="10dp"
+							android:src="@drawable/ic_up_tri"
+							/>
+					</com.zhy.autolayout.AutoRelativeLayout>
+
+					<!-- 宫格菜单 -->
+					<include layout="@layout/include_lef_grid_menu"/>
+
+
+				</com.zhy.autolayout.AutoLinearLayout>
+
+			</android.support.design.widget.CoordinatorLayout>
+
+
+		</com.zhy.autolayout.AutoLinearLayout>
+
+	</LinearLayout>
+
+
+	<!-- 纯占位 避免地图和侧边栏产生手势冲突 -->
+
+
+		<ScrollView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@color/black"
+			>
+			<com.zhy.autolayout.AutoLinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:orientation="vertical"
+				>
+				<ImageView
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:src="@drawable/ic_n_man_orange"
+					/>
+				<ImageView
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:src="@drawable/ic_n_man_orange"
+					/>
+				<ImageView
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:src="@drawable/ic_n_man_orange"
+					/>
+				<ImageView
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:src="@drawable/ic_n_man_orange"
+					/>
+				<ImageView
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:src="@drawable/ic_n_man_orange"
+					/>
+			</com.zhy.autolayout.AutoLinearLayout>
+		</ScrollView>
+
+
+
+</com.zhy.autolayout.AutoLinearLayout>

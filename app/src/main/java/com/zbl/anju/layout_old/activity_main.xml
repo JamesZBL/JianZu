@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/gray5"
+	android:orientation="vertical">
+
+	<include layout="@layout/include_toolbar"/>
+
+	<!--<android.support.v4.view.ViewPager-->
+	<!--android:id="@+id/vpContent"-->
+	<!--android:layout_width="match_parent"-->
+	<!--android:layout_height="0dp"-->
+	<!--android:layout_weight="1"/>-->
+
+	<com.zbl.anju.widget.UnscrollableViewPager
+		android:id="@+id/vpContent"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"/>
+
+	<!--底部-->
+	<View
+		style="@style/Line"
+		/>
+
+	<com.zhy.autolayout.AutoLinearLayout
+		android:id="@+id/llButtom"
+		android:layout_width="match_parent"
+		android:layout_height="110px"
+		android:layout_alignParentBottom="true"
+		android:background="@color/white">
+
+		<com.zhy.autolayout.AutoLinearLayout
+			android:id="@+id/llMessage"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_gravity="center"
+			android:layout_weight="1"
+			android:gravity="center"
+			android:orientation="vertical">
+
+			<com.zhy.autolayout.AutoRelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="3dp"
+				android:layout_weight="5"
+				android:gravity="bottom">
+
+				<com.zhy.autolayout.AutoRelativeLayout
+					android:id="@+id/rlMessage"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerHorizontal="true"
+					android:layout_marginBottom="10px">
+
+					<TextView
+						android:id="@+id/tvMessageNormal"
+						android:layout_width="@dimen/main_bottom_iv_horizontal_size"
+						android:layout_height="@dimen/main_bottom_iv_vertical_size"
+						android:layout_centerInParent="true"
+						android:background="@mipmap/message_normal"
+						android:button="@null"
+						android:gravity="center"
+						android:textColor="@color/gray0"
+						android:textSize="12sp"/>
+
+					<TextView
+						android:id="@+id/tvMessagePress"
+						android:layout_width="@dimen/main_bottom_iv_horizontal_size"
+						android:layout_height="@dimen/main_bottom_iv_vertical_size"
+						android:layout_centerInParent="true"
+						android:background="@mipmap/message_press"
+						android:button="@null"
+						android:gravity="center"
+						android:textColor="@color/green0"
+						android:textSize="12sp"/>
+				</com.zhy.autolayout.AutoRelativeLayout>
+
+				<TextView
+					android:id="@+id/tvMessageCount"
+					android:layout_width="38px"
+					android:layout_height="40px"
+					android:layout_alignRight="@id/rlMessage"
+					android:layout_marginRight="-25px"
+					android:background="@drawable/shape_red_dot"
+					android:gravity="center|bottom"
+					android:paddingBottom="3px"
+					android:text="1"
+					android:textColor="@color/white"
+					android:textSize="24px"
+					android:visibility="gone"/>
+			</com.zhy.autolayout.AutoRelativeLayout>
+
+			<com.zhy.autolayout.AutoRelativeLayout
+				android:layout_width="wrap_content"
+				android:layout_height="0dp"
+				android:layout_weight="3">
+
+				<TextView
+					android:id="@+id/tvMessageTextNormal"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/message"
+					android:textColor="@color/gray0"
+					android:textSize="24px"/>
+
+				<TextView
+					android:id="@+id/tvMessageTextPress"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentLeft="true"
+					android:layout_alignParentStart="true"
+					android:layout_alignParentTop="true"
+					android:text="@string/message"
+					android:textColor="@color/colorPrimary"
+					android:textSize="24px"/>
+			</com.zhy.autolayout.AutoRelativeLayout>
+		</com.zhy.autolayout.AutoLinearLayout>
+
+		<com.zhy.autolayout.AutoLinearLayout
+			android:id="@+id/llContacts"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_gravity="center"
+			android:layout_weight="1"
+			android:gravity="center"
+			android:orientation="vertical">
+
+			<com.zhy.autolayout.AutoRelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="3dp"
+				android:layout_weight="5"
+				android:gravity="bottom">
+
+				<com.zhy.autolayout.AutoRelativeLayout
+					android:id="@+id/rlContacts"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerHorizontal="true"
+					android:layout_marginBottom="10px">
+
+					<TextView
+						android:id="@+id/tvContactsNormal"
+						android:layout_width="@dimen/main_bottom_iv_horizontal_size"
+						android:layout_height="@dimen/main_bottom_iv_vertical_size"
+						android:background="@mipmap/contacts_normal"
+						android:button="@null"
+						android:gravity="center"
+						android:textColor="@color/gray0"
+						android:textSize="24px"/>
+
+					<TextView
+						android:id="@+id/tvContactsPress"
+						android:layout_width="@dimen/main_bottom_iv_horizontal_size"
+						android:layout_height="@dimen/main_bottom_iv_vertical_size"
+						android:background="@mipmap/contacts_press"
+						android:button="@null"
+						android:gravity="center"
+						android:textColor="@color/green0"
+						android:textSize="24px"/>
+
+
+				</com.zhy.autolayout.AutoRelativeLayout>
+
+				<TextView
+					android:id="@+id/tvContactCount"
+					android:layout_width="38px"
+					android:layout_height="40px"
+					android:layout_alignRight="@id/rlContacts"
+					android:layout_marginRight="-25px"
+					android:background="@drawable/shape_red_dot"
+					android:gravity="center|bottom"
+					android:paddingBottom="3px"
+					android:text="1"
+					android:textColor="@color/white"
+					android:textSize="24px"
+					android:visibility="gone"/>
+
+				<TextView
+					android:id="@+id/tvContactRedDot"
+					android:layout_width="20px"
+					android:layout_height="20px"
+					android:layout_alignRight="@id/rlContacts"
+					android:layout_marginRight="-10px"
+					android:layout_marginTop="-0px"
+					android:background="@drawable/shape_red_dot"
+					android:gravity="center"
+					android:textColor="@color/white"
+					android:textSize="24px"
+					android:visibility="gone"/>
+
+			</com.zhy.autolayout.AutoRelativeLayout>
+
+			<com.zhy.autolayout.AutoRelativeLayout
+				android:layout_width="wrap_content"
+				android:layout_height="0dp"
+				android:layout_weight="3">
+
+				<TextView
+					android:id="@+id/tvContactsTextNormal"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/contacts_n"
+					android:textColor="@color/gray0"
+					android:textSize="24px"/>
+
+				<TextView
+					android:id="@+id/tvContactsTextPress"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/contacts_n"
+					android:textColor="@color/colorPrimary"
+					android:textSize="24px"/>
+			</com.zhy.autolayout.AutoRelativeLayout>
+		</com.zhy.autolayout.AutoLinearLayout>
+
+		<com.zhy.autolayout.AutoLinearLayout
+			android:id="@+id/llDiscovery"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_gravity="center"
+			android:layout_weight="1"
+			android:gravity="center"
+			android:orientation="vertical">
+
+			<com.zhy.autolayout.AutoRelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="3dp"
+				android:layout_weight="5"
+				android:gravity="bottom">
+
+				<com.zhy.autolayout.AutoRelativeLayout
+					android:id="@+id/rlDiscovery"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerHorizontal="true"
+					android:layout_marginBottom="10px">
+
+					<TextView
+						android:id="@+id/tvDiscoveryNormal"
+						android:layout_width="@dimen/main_bottom_iv_horizontal_size"
+						android:layout_height="@dimen/main_bottom_iv_vertical_size"
+						android:background="@mipmap/discovery_normal"
+						android:button="@null"
+						android:gravity="center"
+						android:textColor="@color/gray0"
+						android:textSize="24px"/>
+
+					<TextView
+						android:id="@+id/tvDiscoveryPress"
+						android:layout_width="@dimen/main_bottom_iv_horizontal_size"
+						android:layout_height="@dimen/main_bottom_iv_vertical_size"
+						android:background="@mipmap/discovery_press"
+						android:button="@null"
+						android:gravity="center"
+						android:textColor="@color/green0"
+						android:textSize="24px"/>
+				</com.zhy.autolayout.AutoRelativeLayout>
+
+				<TextView
+					android:id="@+id/tvDiscoveryCount"
+					android:layout_width="38px"
+					android:layout_height="40px"
+					android:layout_alignRight="@id/rlDiscovery"
+					android:layout_marginRight="-25px"
+					android:background="@drawable/shape_red_dot"
+					android:gravity="center|bottom"
+					android:paddingBottom="3px"
+					android:text="1"
+					android:textColor="@color/white"
+					android:textSize="24px"
+					android:visibility="gone"/>
+
+			</com.zhy.autolayout.AutoRelativeLayout>
+
+			<com.zhy.autolayout.AutoRelativeLayout
+				android:layout_width="wrap_content"
+				android:layout_height="0dp"
+				android:layout_weight="3">
+
+				<TextView
+					android:id="@+id/tvDiscoveryTextNormal"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/discovery_n"
+					android:textColor="@color/gray0"
+					android:textSize="24px"/>
+
+				<TextView
+					android:id="@+id/tvDiscoveryTextPress"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/discovery_n"
+					android:textColor="@color/colorPrimary"
+					android:textSize="24px"/>
+			</com.zhy.autolayout.AutoRelativeLayout>
+		</com.zhy.autolayout.AutoLinearLayout>
+
+		<com.zhy.autolayout.AutoLinearLayout
+			android:id="@+id/llMe"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_gravity="center"
+			android:layout_weight="1"
+			android:gravity="center"
+			android:orientation="vertical">
+
+			<com.zhy.autolayout.AutoRelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="3dp"
+				android:layout_weight="5"
+				android:gravity="center_vertical">
+
+				<com.zhy.autolayout.AutoRelativeLayout
+					android:id="@+id/rlMe"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerHorizontal="true">
+
+					<TextView
+						android:id="@+id/tvMeNormal"
+						android:layout_width="@dimen/main_bottom_iv_horizontal_size"
+						android:layout_height="@dimen/main_bottom_iv_vertical_size"
+						android:background="@mipmap/me_normal"
+						android:button="@null"
+						android:gravity="center"
+						android:textColor="@color/gray0"
+						android:textSize="24px"/>
+
+					<TextView
+						android:id="@+id/tvMePress"
+						android:layout_width="@dimen/main_bottom_iv_horizontal_size"
+						android:layout_height="@dimen/main_bottom_iv_vertical_size"
+						android:layout_alignParentLeft="true"
+						android:layout_alignParentStart="true"
+						android:layout_alignParentTop="true"
+						android:background="@mipmap/me_press"
+						android:button="@null"
+						android:gravity="center"
+						android:textColor="@color/green0"
+						android:textSize="24px"/>
+				</com.zhy.autolayout.AutoRelativeLayout>
+
+				<TextView
+					android:id="@+id/tvMeCount"
+					android:layout_width="20px"
+					android:layout_height="20px"
+					android:layout_alignRight="@id/rlMe"
+					android:layout_marginRight="-10px"
+					android:layout_marginTop="-0px"
+					android:background="@drawable/shape_red_dot"
+					android:gravity="center"
+					android:textColor="@color/white"
+					android:textSize="24px"
+					android:visibility="gone"/>
+			</com.zhy.autolayout.AutoRelativeLayout>
+
+			<com.zhy.autolayout.AutoRelativeLayout
+				android:layout_width="wrap_content"
+				android:layout_height="0dp"
+				android:layout_weight="3">
+
+				<TextView
+					android:id="@+id/tvMeTextNormal"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/me_n"
+					android:textColor="@color/gray0"
+					android:textSize="24px"/>
+
+				<TextView
+					android:id="@+id/tvMeTextPress"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/me_n"
+					android:textColor="@color/colorPrimary"
+					android:textSize="24px"
+					/>
+			</com.zhy.autolayout.AutoRelativeLayout>
+		</com.zhy.autolayout.AutoLinearLayout>
+	</com.zhy.autolayout.AutoLinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>

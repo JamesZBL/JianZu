@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.lqr.recyclerview.LQRRecyclerView
+        android:id="@+id/rvContacts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:rv_divider_color="@color/line"
+        app:rv_divider_size="1px"/>
+
+    <com.zbl.anju.widget.QuickIndexBar
+        android:id="@+id/qib"
+        android:layout_width="40px"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"/>
+
+    <!--字母对话框-->
+    <TextView
+        android:id="@+id/tvLetter"
+        android:layout_width="150px"
+        android:layout_height="150px"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_contact_letter_bg"
+        android:gravity="center"
+        android:text="A"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        android:visibility="gone"/>
+
+</com.zhy.autolayout.AutoRelativeLayout>

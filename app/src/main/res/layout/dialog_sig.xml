@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="match_parent"
+	android:background="@color/gray4"
+	android:orientation="vertical">
+
+	<com.zhy.autolayout.AutoLinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		>
+
+
+		<EditText
+			android:id="@+id/edt_sig_name"
+			style="@style/radius_edittext"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="9dp"
+			android:gravity="start"
+			android:hint="@string/signature_upload_sig_please_input_name"
+			android:lines="1"
+			android:maxLength="15"
+			>
+
+			<requestFocus/>
+		</EditText>
+
+		<EditText
+			android:id="@+id/edt_sig_description"
+			style="@style/radius_edittext"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="9dp"
+			android:layout_marginRight="9dp"
+			android:layout_marginBottom="9dp"
+			android:gravity="start"
+			android:hint="@string/signature_upload_sig_please_input_description"
+			android:lines="3"
+			android:maxLines="15"
+			/>
+
+		<View
+			style="@style/Line"
+			/>
+
+		<Button
+			android:id="@+id/btn_sig_dialog_submit"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			style="@style/btn5"
+			android:text="@string/signature_upload_sig_sure"
+			android:shadowColor="@color/transparent"
+			/>
+	</com.zhy.autolayout.AutoLinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>

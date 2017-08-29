@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_margin="9px"
+	android:orientation="vertical">
+	<ImageView
+		android:layout_width="30px"
+		android:layout_height="wrap_content"
+		android:src="@drawable/ic_triangle_white"
+		android:adjustViewBounds="true"
+		android:layout_gravity="right"
+		android:layout_marginRight="60px"
+		/>
+	<com.zbl.anju.widget.AutoCardView
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:cardBackgroundColor="@color/transparent"
+		app:cardCornerRadius="5dp"
+		app:cardElevation="0dp"
+		app:contentPaddingTop="0px"
+		>
+
+		<com.zhy.autolayout.AutoLinearLayout
+			android:layout_width="350px"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:padding="0dp">
+
+			<TextView
+				android:id="@+id/tvAddBook"
+				android:layout_width="match_parent"
+				android:layout_height="100px"
+				android:layout_margin="0px"
+				android:background="@drawable/selector_option_item"
+				android:drawableLeft="@drawable/ic_book_little"
+				android:drawablePadding="40px"
+				android:gravity="center_vertical"
+				android:paddingLeft="20px"
+				android:text="@string/book_add"
+				android:textColor="@color/black_de"
+				android:textSize="15sp"/>
+
+			<!--<View-->
+			<!--style="@style/Line"-->
+			<!--/>-->
+
+
+			<!--<View-->
+			<!--style="@style/Line"-->
+			<!--/>-->
+
+		</com.zhy.autolayout.AutoLinearLayout>
+	</com.zbl.anju.widget.AutoCardView>
+</com.zhy.autolayout.AutoLinearLayout>

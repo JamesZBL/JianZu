@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="main_top_nav_item_list">
+		<item>一室</item>
+		<item>两室</item>
+		<item>三室</item>
+		<item>一室</item>
+		<item>两室</item>
+		<item>三室</item>
+		<item>三室</item>
+		<item>三室</item>
+
+	</string-array>
+</resources>

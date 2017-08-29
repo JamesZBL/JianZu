@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+		  package="com.zbl.anju">
+
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+	<uses-permission android:name="android.permission.GET_TASKS"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+	<uses-permission android:name="android.permission.VIBRATE"/>
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+	<uses-permission android:name="android.permission.CAMERA"/>
+	<uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+
+	<!-- 友盟 权限(下方已包含) -->
+	<uses-permission android:name="com.zbl.lewechat.permission.MIPUSH_RECEIVE"/>
+
+	<uses-feature android:name="android.hardware.camera"/>
+	<uses-feature android:name="android.hardware.camera.autofocus"/>
+
+	<!-- 通过GPS得到精确位置 -->
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+	<!-- 通过网络得到粗略位置 -->
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+	<!-- 访问网络. 某些位置信息需要从网络服务器获取 -->
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<!-- 访问WiFi状态. 需要WiFi信息用于网络定位 -->
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+	<!-- 修改WiFi状态. 发起WiFi扫描, 需要WiFi信息用于网络定位 -->
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+	<!-- 访问网络状态, 检测网络的可用性. 需要网络运营商相关信息用于网络定位 -->
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<!-- 访问网络的变化, 需要某些信息用于网络定位 -->
+	<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+	<!-- 访问手机当前状态, 需要某些信息用于网络定位 -->
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+	<uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+	<!-- 蓝牙分享所需的权限 -->
+	<uses-permission android:name="android.permission.BLUETOOTH"/>
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
+	<!-- Required -->
+	<uses-permission android:name="com.zbl.wechat.permission.JPUSH_MESSAGE"/>
+	<uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.VIBRATE"/>
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+	<!-- Optional. Required for location feature -->
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/> <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+	<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.GET_TASKS"/>
+
+	<application
+		android:name="com.zbl.anju.app.MyApp"
+		android:allowBackup="true"
+		android:icon="@mipmap/ic_launcher"
+		android:label="@string/app_name"
+		android:supportsRtl="true"
+		android:theme="@style/AppTheme">
+
+		<!-- 友盟统计 -->
+		<meta-data
+			android:name="UMENG_APPKEY"
+			android:value="5961e65af43e4863c60014fe"/>
+		<meta-data
+			android:name="UMENG_CHANNEL"
+			android:value="QQ"/>
+		<meta-data
+			android:name="design_width"
+			android:value="720">
+		</meta-data>
+		<meta-data
+			android:name="design_height"
+			android:value="1280">
+		</meta-data>
+
+		<!-- 地图 old -->
+		<!--<meta-data
+			android:name="TencentMapSDK"
+			android:value="TYQBZ-MRBKU-K7FVL-4JBW5-DOG5O-SZB4A"/>-->
+		<!-- 地图 新 -->
+		<meta-data
+			android:name="TencentMapSDK"
+			android:value="JX2BZ-PMSWU-QJVVQ-267NU-MFGJZ-TSBJN"/>
+
+
+
+
+		<!-- end -->
+		<activity
+			android:name="com.zbl.anju.ui.activity.SplashActivity"
+			android:screenOrientation="portrait"
+			android:theme="@style/FullWindowTransStatusTheme">
+		</activity>
+		<!--<activity-->
+			<!--android:name=".ui.activity.SessionActivity"-->
+			<!--android:screenOrientation="portrait">-->
+		<!--</activity>-->
+		<activity
+			android:name="com.zbl.anju.ui.activity.WebViewActivity"
+			android:screenOrientation="portrait">
+		</activity>
+
+
+		<activity
+			android:name="com.zbl.anju.ui.activity.MainActivity"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="adjustNothing"
+			>
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+
+		<!--图形解锁-->
+		<!--<activity
+			android:name="com.zbl.anju.ui.activity.PatterUnlockActivity"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="adjustNothing"
+			>
+		</activity>-->
+
+		<!--房屋信息-->
+		<activity
+			android:name="com.zbl.anju.ui.activity.HouseInfoActivity"
+			android:screenOrientation="portrait"
+			android:configChanges="orientation|screenSize|keyboardHidden"
+			android:windowSoftInputMode="adjustNothing"
+			>
+		</activity>
+	</application>
+
+</manifest>

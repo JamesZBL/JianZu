@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:padding="@dimen/info_title_padding"
+	>
+
+	<!-- 第 1 行 -->
+	<com.zhy.autolayout.AutoLinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:layout_marginBottom="15dp"
+		>
+		<!-- 1 -->
+		<com.zhy.autolayout.AutoRelativeLayout
+			android:id="@+id/arl_left_menu_1"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:background="@drawable/selector_option_item_trans"
+			>
+
+			<de.hdodenhof.circleimageview.CircleImageView
+				android:layout_margin="5dp"
+				android:id="@+id/iv_l_grid_1"
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:layout_alignParentTop="true"
+				android:layout_centerHorizontal="true"
+				android:src="@mipmap/ic_launcher"
+				app:civ_border_color="@color/gray"
+				app:civ_border_width="0.2dp"/>
+
+			<TextView
+				style="@style/main_left_gird_txt_style"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/iv_l_grid_1"
+				android:text="@string/main_left_menu_txt_1"
+				/>
+
+		</com.zhy.autolayout.AutoRelativeLayout>
+
+		<!-- 2 -->
+		<com.zhy.autolayout.AutoRelativeLayout
+			android:id="@+id/arl_left_menu_2"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:background="@drawable/selector_option_item_trans"
+			>
+
+			<de.hdodenhof.circleimageview.CircleImageView
+				android:layout_margin="5dp"
+				android:id="@+id/iv_l_grid_2"
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:layout_alignParentTop="true"
+				android:layout_centerHorizontal="true"
+				android:src="@mipmap/ic_launcher"
+				app:civ_border_color="@color/gray"
+				app:civ_border_width="0.2dp"/>
+
+			<TextView
+				style="@style/main_left_gird_txt_style"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/iv_l_grid_2"
+				android:text="@string/main_left_menu_txt_2"
+				/>
+
+		</com.zhy.autolayout.AutoRelativeLayout>
+
+		<!-- 3 -->
+		<com.zhy.autolayout.AutoRelativeLayout
+			android:id="@+id/arl_left_menu_3"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:background="@drawable/selector_option_item_trans"
+			>
+
+			<de.hdodenhof.circleimageview.CircleImageView
+				android:layout_margin="5dp"
+				android:id="@+id/iv_l_grid_3"
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:layout_alignParentTop="true"
+				android:layout_centerHorizontal="true"
+				android:src="@mipmap/ic_launcher"
+				app:civ_border_color="@color/gray"
+				app:civ_border_width="0.2dp"/>
+
+			<TextView
+				style="@style/main_left_gird_txt_style"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/iv_l_grid_3"
+				android:text="@string/main_left_menu_txt_3"
+				/>
+
+		</com.zhy.autolayout.AutoRelativeLayout>
+
+	</com.zhy.autolayout.AutoLinearLayout>
+
+	<!-- 第 2 行 -->
+	<com.zhy.autolayout.AutoLinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:layout_marginBottom="15dp"
+		>
+		<!-- 4 -->
+		<com.zhy.autolayout.AutoRelativeLayout
+			android:id="@+id/arl_left_menu_4"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:background="@drawable/selector_option_item_trans"
+			>
+
+			<de.hdodenhof.circleimageview.CircleImageView
+				android:id="@+id/iv_l_grid_4"
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:layout_alignParentTop="true"
+				android:layout_centerHorizontal="true"
+				android:src="@mipmap/ic_launcher"
+				app:civ_border_color="@color/gray"
+				app:civ_border_width="0.2dp"/>
+
+			<TextView
+				style="@style/main_left_gird_txt_style"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/iv_l_grid_4"
+				android:text="@string/main_left_menu_txt_4"
+				/>
+
+		</com.zhy.autolayout.AutoRelativeLayout>
+
+		<!-- 5 -->
+		<com.zhy.autolayout.AutoRelativeLayout
+			android:id="@+id/arl_left_menu_5"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:background="@drawable/selector_option_item_trans"
+			>
+
+			<de.hdodenhof.circleimageview.CircleImageView
+				android:id="@+id/iv_l_grid_5"
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:layout_alignParentTop="true"
+				android:layout_centerHorizontal="true"
+				android:src="@mipmap/ic_launcher"
+				app:civ_border_color="@color/gray"
+				app:civ_border_width="0.2dp"/>
+
+			<TextView
+				style="@style/main_left_gird_txt_style"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/iv_l_grid_5"
+				android:text="@string/main_left_menu_txt_5"
+				/>
+
+		</com.zhy.autolayout.AutoRelativeLayout>
+
+		<!-- 6 -->
+		<com.zhy.autolayout.AutoRelativeLayout
+			android:id="@+id/arl_left_menu_6"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:background="@drawable/selector_option_item_trans"
+			>
+
+			<de.hdodenhof.circleimageview.CircleImageView
+				android:id="@+id/iv_l_grid_6"
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:layout_alignParentTop="true"
+				android:layout_centerHorizontal="true"
+				android:src="@mipmap/ic_launcher"
+				app:civ_border_color="@color/gray"
+				app:civ_border_width="0.2dp"/>
+
+			<TextView
+				style="@style/main_left_gird_txt_style"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/iv_l_grid_6"
+				android:text="@string/main_left_menu_txt_6"
+				/>
+
+		</com.zhy.autolayout.AutoRelativeLayout>
+
+	</com.zhy.autolayout.AutoLinearLayout>
+
+	<!-- 第 3 行 -->
+
+
+</com.zhy.autolayout.AutoLinearLayout>

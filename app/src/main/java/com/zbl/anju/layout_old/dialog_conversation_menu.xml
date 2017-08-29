@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="@dimen/dialog_width"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_corner_rect_solid_white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvSetConversationToTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_option_item"
+            android:drawablePadding="@dimen/dialog_drawable_padding"
+            android:gravity="left|center_vertical"
+            android:padding="@dimen/dialog_menu_item_padding"
+            android:text="@string/set_conversation_to_top"
+            android:textColor="@color/gray0"
+            android:textSize="16sp"/>
+
+        <View
+            style="@style/Line"/>
+
+        <TextView
+            android:id="@+id/tvDeleteConversation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_option_item"
+            android:drawablePadding="@dimen/dialog_drawable_padding"
+            android:gravity="left|center_vertical"
+            android:padding="@dimen/dialog_menu_item_padding"
+            android:text="@string/delete_conversation"
+            android:textColor="@color/gray0"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+</FrameLayout>

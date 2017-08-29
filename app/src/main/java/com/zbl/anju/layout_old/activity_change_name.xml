@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="50px"
+        android:background="@null"
+        android:drawableBottom="@drawable/shape_bottom_green"
+        android:drawablePadding="10px"
+        android:gravity="bottom"
+        android:maxLength="255"
+        android:padding="10px"
+        android:singleLine="true"
+        android:textSize="16sp"
+        android:visibility="visible"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="@string/change_my_name_tip"
+        android:textColor="@color/gray1"
+        android:textSize="14sp"/>
+
+</com.zhy.autolayout.AutoLinearLayout>

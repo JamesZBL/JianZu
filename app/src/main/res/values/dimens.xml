@@ -1,0 +1,83 @@
+<resources>
+
+	<dimen name="info_title_padding">14dp</dimen>
+	<dimen name="info_detail_padding_vertical">8dp</dimen>
+
+
+
+	<dimen name="main_drawer_linear_width">250dp</dimen>
+	<dimen name="main_option_item_height_left_menu">200dp</dimen>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- Default screen margins, per the Android Design guidelines. -->
+	<dimen name="activity_horizontal_margin">32px</dimen>
+	<dimen name="activity_vertical_margin">32px</dimen>
+
+	<dimen name="appbar_layout_height">96px</dimen>
+
+	<!--font_size-->
+	<dimen name="global_normal_font_size">18sp</dimen>
+	<dimen name="global_normal_font_size_sm">16sp</dimen>
+	<dimen name="global_normal_font_size_xsm">14sp</dimen>
+	<dimen name="global_normal_font_size_xxsm">12sp</dimen>
+	<dimen name="global_normal_font_size_vxsm">10sp</dimen>
+
+	<!-- AppBar 图片按钮-->
+	<dimen name="image_button_appbar_padding_normal">12dp</dimen>
+	<dimen name="image_button_appbar_height_normal">96px</dimen>
+	<dimen name="image_button_appbar_height_wider">126px</dimen>
+	<dimen name="image_button_appbar_width_normal">96px</dimen>
+
+	<!--主界面底部图标大小-->
+	<dimen name="main_bottom_iv_horizontal_size">58px</dimen>
+	<dimen name="main_bottom_iv_vertical_size">54px</dimen>
+
+	<!--列表item间距-->
+	<dimen name="item_margin_left_and_right">25px</dimen>
+	<dimen name="item_margin_top_and_bottom">15px</dimen>
+
+	<!--选项间距-->
+	<dimen name="option_item_margin_top">42px</dimen>
+	<dimen name="option_item_margin_left">20dp</dimen>
+	<dimen name="option_item_margin_right">20dp</dimen>
+	<dimen name="option_line_margin_left">17dp</dimen>
+	<dimen name="option_line_margin_right">17dp</dimen>
+
+	<!--我的超级课程表-->
+	<dimen name="biao_discover_root_padding_top">50dp</dimen>
+	<dimen name="biao_discover_root_padding_side">20dp</dimen>
+	<dimen name="biao_discover_root_padding_bottom">70dp</dimen>
+	<dimen name="biao_discover_item_iv_height">50dp</dimen>
+	<dimen name="biao_discover_item_iv_margin_top">0dp</dimen>
+	<dimen name="biao_discover_item_tv_margin_top">12dp</dimen>
+	<dimen name="biao_discover_item_tv_text_size">12sp</dimen>
+
+	<!-- Dialog -->
+	<dimen name="dialog_width">300dp</dimen>
+	<dimen name="dialog_drawable_padding">15dp</dimen>
+	<dimen name="dialog_menu_item_padding">20dp</dimen>
+
+	<!--button-->
+	<dimen name="button_margin">16dp</dimen>
+</resources>
