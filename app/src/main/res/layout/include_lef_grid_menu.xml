@@ -4,6 +4,7 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:orientation="vertical"
 	android:padding="@dimen/info_title_padding"
 	>
@@ -31,7 +32,7 @@
 				android:layout_height="40dp"
 				android:layout_alignParentTop="true"
 				android:layout_centerHorizontal="true"
-				android:src="@mipmap/ic_launcher"
+				android:src="@drawable/ic_n_house"
 				app:civ_border_color="@color/gray"
 				app:civ_border_width="0.2dp"/>
 
@@ -61,7 +62,7 @@
 				android:layout_height="40dp"
 				android:layout_alignParentTop="true"
 				android:layout_centerHorizontal="true"
-				android:src="@mipmap/ic_launcher"
+				android:src="@drawable/ic_n_house"
 				app:civ_border_color="@color/gray"
 				app:civ_border_width="0.2dp"/>
 
@@ -91,7 +92,7 @@
 				android:layout_height="40dp"
 				android:layout_alignParentTop="true"
 				android:layout_centerHorizontal="true"
-				android:src="@mipmap/ic_launcher"
+				android:src="@drawable/ic_n_house"
 				app:civ_border_color="@color/gray"
 				app:civ_border_width="0.2dp"/>
 
@@ -129,7 +130,7 @@
 				android:layout_height="40dp"
 				android:layout_alignParentTop="true"
 				android:layout_centerHorizontal="true"
-				android:src="@mipmap/ic_launcher"
+				android:src="@drawable/ic_n_house"
 				app:civ_border_color="@color/gray"
 				app:civ_border_width="0.2dp"/>
 
@@ -158,7 +159,7 @@
 				android:layout_height="40dp"
 				android:layout_alignParentTop="true"
 				android:layout_centerHorizontal="true"
-				android:src="@mipmap/ic_launcher"
+				android:src="@drawable/ic_n_house"
 				app:civ_border_color="@color/gray"
 				app:civ_border_width="0.2dp"/>
 
@@ -187,7 +188,7 @@
 				android:layout_height="40dp"
 				android:layout_alignParentTop="true"
 				android:layout_centerHorizontal="true"
-				android:src="@mipmap/ic_launcher"
+				android:src="@drawable/ic_n_house"
 				app:civ_border_color="@color/gray"
 				app:civ_border_width="0.2dp"/>
 
@@ -204,6 +205,99 @@
 	</com.zhy.autolayout.AutoLinearLayout>
 
 	<!-- 第 3 行 -->
+	<com.zhy.autolayout.AutoLinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:layout_marginBottom="15dp"
+		>
+		<!-- 7 -->
+		<com.zhy.autolayout.AutoRelativeLayout
+			android:id="@+id/arl_left_menu_7"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:background="@drawable/selector_option_item_trans"
+			>
 
+			<de.hdodenhof.circleimageview.CircleImageView
+				android:id="@+id/iv_l_grid_7"
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:layout_alignParentTop="true"
+				android:layout_centerHorizontal="true"
+				android:src="@drawable/ic_n_house"
+				app:civ_border_color="@color/gray"
+				app:civ_border_width="0.2dp"/>
+
+			<TextView
+				style="@style/main_left_gird_txt_style"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/iv_l_grid_7"
+				android:text="@string/main_left_menu_txt_7"
+				/>
+
+		</com.zhy.autolayout.AutoRelativeLayout>
+
+		<!-- 8 -->
+		<com.zhy.autolayout.AutoRelativeLayout
+			android:id="@+id/arl_left_menu_8"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:background="@drawable/selector_option_item_trans"
+			>
+
+			<de.hdodenhof.circleimageview.CircleImageView
+				android:id="@+id/iv_l_grid_8"
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:layout_alignParentTop="true"
+				android:layout_centerHorizontal="true"
+				android:src="@drawable/ic_n_house"
+				app:civ_border_color="@color/gray"
+				app:civ_border_width="0.2dp"/>
+
+			<TextView
+				style="@style/main_left_gird_txt_style"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/iv_l_grid_8"
+				android:text="@string/main_left_menu_txt_8"
+				/>
+
+		</com.zhy.autolayout.AutoRelativeLayout>
+
+		<!-- 9 -->
+		<com.zhy.autolayout.AutoRelativeLayout
+			android:id="@+id/arl_left_menu_9"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:background="@drawable/selector_option_item_trans"
+			>
+
+			<de.hdodenhof.circleimageview.CircleImageView
+				android:id="@+id/iv_l_grid_9"
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:layout_alignParentTop="true"
+				android:layout_centerHorizontal="true"
+				android:src="@drawable/ic_n_house"
+				app:civ_border_color="@color/gray"
+				app:civ_border_width="0.2dp"/>
+
+			<TextView
+				style="@style/main_left_gird_txt_style"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/iv_l_grid_9"
+				android:text="@string/main_left_menu_txt_9"
+				/>
+
+		</com.zhy.autolayout.AutoRelativeLayout>
+
+	</com.zhy.autolayout.AutoLinearLayout>
 
 </com.zhy.autolayout.AutoLinearLayout>

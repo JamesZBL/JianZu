@@ -208,8 +208,6 @@
 	<!--加粗字体样式-->
 	<style name="info_bold_text_style"
 		>
-		<item name="android:layout_centerVertical">true</item>
-		<item name="android:gravity">center_horizontal</item>
 		<item name="android:textSize">@dimen/global_normal_font_size_sm</item>
 		<item name="android:textStyle">bold</item>
 		<item name="android:textColor">@color/black</item>
@@ -275,6 +273,7 @@
 		<item name="android:layout_width">match_parent</item>
 		<item name="android:layout_height">50dp</item>
 		<item name="left_image_margin_left">35dp</item>
+		<item name="android:background">@drawable/selector_option_item_trans</item>
 	</style>
 
 	<!-- 圆形ImageView -->

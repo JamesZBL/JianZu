@@ -31,17 +31,18 @@
 					android:layout_height="wrap_content"
 					android:padding="40dp">
 
-					<ImageView
+					<!-- 头像 -->
+					<de.hdodenhof.circleimageview.CircleImageView
 						android:id="@+id/iv_header_left_menu"
-						android:layout_width="60dp"
-						android:layout_height="wrap_content"
-						android:layout_alignParentTop="true"
-						android:layout_centerHorizontal="true"
+						android:layout_width="match_parent"
+						android:layout_height="60dp"
 						android:layout_marginBottom="@dimen/item_margin_top_and_bottom"
-						android:adjustViewBounds="true"
-						android:src="@drawable/ic_n_man_orange"/>
+						android:src="@drawable/ic_n_man_orange"
+						style="@style/circle_image_view"
+						/>
 
 					<TextView
+						android:gravity="center_horizontal"
 						android:id="@+id/tv_phone_left_menu"
 						style="@style/info_bold_text_style"
 						android:layout_width="match_parent"
@@ -69,10 +70,10 @@
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:layout_below="@id/tv_phone_left_menu"
+							android:layout_marginLeft="5dp"
 							android:gravity="center_horizontal"
 							android:text="@string/main_house_mgr"
 							android:textSize="@dimen/global_normal_font_size_vxsm"
-							android:layout_marginLeft="5dp"
 							/>
 					</com.zhy.autolayout.AutoLinearLayout>
 
@@ -97,6 +98,7 @@
 						android:layout_height="match_parent"
 						android:orientation="vertical">
 
+						<!-- 1 -->
 						<com.lqr.optionitemview.OptionItemView
 							style="@style/OptionItemLeftMenu"
 							android:layout_width="match_parent"
@@ -104,18 +106,23 @@
 							app:left_text="@string/main_left_list_1"
 							/>
 
+						<!-- 2 -->
 						<com.lqr.optionitemview.OptionItemView
 							style="@style/OptionItemLeftMenu"
 							android:layout_width="match_parent"
 							app:left_src="@drawable/ic_n_pocket"
 							app:left_text="@string/main_left_list_2"
 							/>
+
+						<!-- 3 -->
 						<com.lqr.optionitemview.OptionItemView
 							style="@style/OptionItemLeftMenu"
 							android:layout_width="match_parent"
 							app:left_src="@drawable/ic_n_earphone"
 							app:left_text="@string/main_left_list_3"
 							/>
+
+						<!-- 4 -->
 						<com.lqr.optionitemview.OptionItemView
 							style="@style/OptionItemLeftMenu"
 							android:layout_width="match_parent"
@@ -123,8 +130,8 @@
 							app:left_text="@string/main_left_list_4"
 							/>
 
-
 					</com.zhy.autolayout.AutoLinearLayout>
+
 				</ScrollView>
 
 				<!-- 这是一个 bottom_sheet -->
@@ -177,6 +184,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		>
+
 		<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="match_parent">

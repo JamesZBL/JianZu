@@ -64,6 +64,8 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	AutoLinearLayout mIbToolbarLeftMenu;
 	@Bind(R.id.ibToolbarMore)
 	AutoLinearLayout mIbToolbarMore;     //三点菜单按钮
+	@Bind(R.id.ibToolbarMsg)
+	AutoLinearLayout mIbToolbarMsg;      //消息按钮
 	@Bind(R.id.line_include_toolbar_white)
 	View mToolbarLine;
 	@Bind(R.id.navi_main_top)
@@ -150,7 +152,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		//设置toolbar 细线不可见
 		mToolbarLine.setVisibility(View.GONE);
 		//设置toolbar按钮可见
-		mIbToolbarMore.setVisibility(View.VISIBLE);
+		mIbToolbarMsg.setVisibility(View.VISIBLE);
 		mIbToolbarLeftMenu.setVisibility(View.VISIBLE);
 		initNavTop();   //初始化顶部导航栏
 		initTenMap();   //初始化地图
@@ -203,7 +205,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		});
 
 
-		mIbToolbarMore.setOnClickListener(v -> {
+		mIbToolbarMsg.setOnClickListener(v -> {
 			View menuView = View.inflate(this, R.layout.menu_sig, null);
 			PopupWindow popupWindow = PopupWindowUtils.getPopupWindowAtLocation(menuView, getWindow().getDecorView(), Gravity.TOP | Gravity.RIGHT, UIUtils.dip2Px(5), mAppBar.getHeight() + UIUtils.getStatusbarheight(this), R.style.popwindow_top_right_anim_style, this);
 

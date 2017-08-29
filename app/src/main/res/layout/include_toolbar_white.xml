@@ -202,7 +202,21 @@
 						android:layout_height="match_parent"
 						android:background="@drawable/selector_appbar_more"
 						>
+					</com.zhy.autolayout.AutoLinearLayout>
+				</com.zhy.autolayout.AutoLinearLayout>
 
+				<!-- 消息 -->
+				<com.zhy.autolayout.AutoLinearLayout
+					android:id="@+id/ibToolbarMsg"
+					style="@style/imb_app_bar"
+					android:layout_alignParentRight="true"
+					android:visibility="gone"
+					>
+					<com.zhy.autolayout.AutoLinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:background="@drawable/selector_appbar_right_menu"
+						>
 					</com.zhy.autolayout.AutoLinearLayout>
 				</com.zhy.autolayout.AutoLinearLayout>
 
