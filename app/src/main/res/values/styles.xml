@@ -225,11 +225,17 @@
 	</style>
 
 
-	<!--默认字体样式-->
+	<!-- 默认字体样式 -->
 	<style name="info_black_text_style"
 		>
 		<item name="android:layout_centerVertical">true</item>
 		<item name="android:textColor">@color/black</item>
+	</style>
+
+	<!-- 灰色字体样式 -->
+	<style name="info_gray_text_style"
+		>
+		<item name="android:layout_centerVertical">true</item>
 	</style>
 
 

@@ -138,7 +138,7 @@
 							android:text="@string/houseinfo_house_type"/>
 
 						<TextView
-							style="@style/info_black_text_style"
+							style="@style/info_gray_text_style"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:text="1室1厅1卫"
@@ -158,7 +158,7 @@
 							android:text="@string/houseinfo_house_paint"/>
 
 						<TextView
-							style="@style/info_black_text_style"
+							style="@style/info_gray_text_style"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:text="精装修"
@@ -189,14 +189,14 @@
 							android:text="@string/houseinfo_house_area"/>
 
 						<TextView
-							style="@style/info_black_text_style"
+							style="@style/info_gray_text_style"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:text="80"
 							/>
 
 						<TextView
-							style="@style/info_black_text_style"
+							style="@style/info_gray_text_style"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:text="@string/houseinfo_house_area_square_meter_pingmi"
@@ -216,7 +216,7 @@
 							android:text="@string/houseinfo_house_orientation"/>
 
 						<TextView
-							style="@style/info_black_text_style"
+							style="@style/info_gray_text_style"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:text="南北"
@@ -248,35 +248,35 @@
 							android:text="@string/houseinfo_floor_level"/>
 
 						<TextView
-							style="@style/info_black_text_style"
+							style="@style/info_gray_text_style"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:text="高层"
 							/>
 
 						<TextView
-							style="@style/info_black_text_style"
+							style="@style/info_gray_text_style"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:text="("
 							/>
 
 						<TextView
-							style="@style/info_black_text_style"
+							style="@style/info_gray_text_style"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:text="共"
 							/>
 
 						<TextView
-							style="@style/info_black_text_style"
+							style="@style/info_gray_text_style"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:text="28"
 							/>
 
 						<TextView
-							style="@style/info_black_text_style"
+							style="@style/info_gray_text_style"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:text="层)"
@@ -295,7 +295,7 @@
 							android:text="@string/houseinfo_house_property_type"/>
 
 						<TextView
-							style="@style/info_black_text_style"
+							style="@style/info_gray_text_style"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:text="普通住宅"
@@ -327,7 +327,7 @@
 							android:text="@string/houseinfo_release"/>
 
 						<TextView
-							style="@style/info_black_text_style"
+							style="@style/info_gray_text_style"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:text="2017-08-27"
@@ -380,7 +380,7 @@
 						>
 
 						<TextView
-							style="@style/info_black_text_style"
+							style="@style/info_gray_text_style"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
 							android:text="精装修拎包入住有空调能做饭长租价格可议炫彩大学城博士园未来石"
