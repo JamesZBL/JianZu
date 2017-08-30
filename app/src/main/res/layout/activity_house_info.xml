@@ -458,7 +458,7 @@
 				<com.zbl.anju.widget.CustomJcVideoPlayerStandard
 					android:id="@+id/houseinfo_video_player"
 					android:layout_width="match_parent"
-					android:layout_height="200dp"/>
+					android:layout_height="300dp"/>
 
 
 			</com.zhy.autolayout.AutoLinearLayout>

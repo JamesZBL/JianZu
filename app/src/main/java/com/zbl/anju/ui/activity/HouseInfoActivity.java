@@ -12,6 +12,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.ScrollView;
 import android.widget.Toast;
@@ -79,6 +80,7 @@ public class HouseInfoActivity extends BaseActivity<IHouseInfoAtView, HouseInfoA
 		super.initView();
 		mIbToolbarMore.setVisibility(View.VISIBLE);
 		initBanner();
+		initJcVideoPlayer();
 	}
 
 
@@ -93,6 +95,7 @@ public class HouseInfoActivity extends BaseActivity<IHouseInfoAtView, HouseInfoA
 		super.initData();
 		//加载数据
 		mPresenter.initData();
+		mPresenter.initBundle(getIntent().getExtras());
 	}
 
 	@Override
@@ -178,6 +181,14 @@ public class HouseInfoActivity extends BaseActivity<IHouseInfoAtView, HouseInfoA
 	}
 
 	/**
+	 * 初始化视频播放器
+	 */
+	private void initJcVideoPlayer() {
+		mHouseInfoVideoPlayer.thumbImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+	}
+
+
+	/**
 	 * 设置轮播各个属性
 	 */
 	private void initBanner() {
@@ -225,7 +236,6 @@ public class HouseInfoActivity extends BaseActivity<IHouseInfoAtView, HouseInfoA
 	/**
 	 * 申请运行时权限
 	 */
-
 	private void initPermission() {
 		PermissionGen.with(this)
 				.addRequestCode(AppConst.INIT_PERMISSION_REQ_CODE)

@@ -2,6 +2,7 @@ package com.zbl.anju.ui.view;
 
 import android.widget.EditText;
 
+import com.gigamole.navigationtabstrip.NavigationTabStrip;
 import com.tencent.tencentmap.mapsdk.map.MapView;
 import com.tencent.tencentmap.mapsdk.map.TencentMap;
 import com.zbl.anju.widget.LinePathView;
@@ -18,4 +19,6 @@ public interface IMainAtView {
 
 	MapView getTenMapView();
 	TencentMap getTenMap();
+
+	NavigationTabStrip getNavigationTabStrip();
 }

@@ -28,11 +28,37 @@ public class AppConst {
 
 	/* ----------------------地图-----------------------------*/
 	public static final int MAP_DEFAULT_ZOOM_LEVEL = 12;    //默认缩放级别
-	public static final int MAP_LOC_SUCCESS_ZOOM_LEVEL = 16;    //定位成功后的缩放级别
-	public static final double MAP_DEFAULT_LATITUDE = 38.042864;    //默认缩放级别
-	public static final double MAP_DEFAULT_LONGITUDE = 114.512215;    //默认缩放级别
-	public static final long LOCATION_DEFAULT_INTERVAL = 1000;   //定位周期
+	public static final int MAP_LOC_SUCCESS_ZOOM_LEVEL = 18;    //定位成功后的缩放级别
+	public static final int MAP_3_KM_ZOOM_LEVEL = 13;    //可以显示周围3公里的缩放级别
+	public static final double MAP_DEFAULT_LATITUDE = 38.042864;    //默认中心点纬度
+	public static final double MAP_DEFAULT_LONGITUDE = 114.512215;    //默认中心点经度
+	public static final long LOCATION_DEFAULT_INTERVAL = 1000;   //定位周期/毫秒
 
+	/* ----------------------房屋-----------------------------*/
+	public static final int HOUSE_DEFAULT_HOUSE_NUM = 15;    //默认推荐房源数量
+
+
+
+
+
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
 
 	/*================== 广播Action begin ==================*/
 	//声明周期

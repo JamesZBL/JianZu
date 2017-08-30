@@ -140,4 +140,5 @@ dependencies {
     compile 'com.ikimuhendis:ldrawer:0.1'
     compile 'com.github.devlight.navigationtabstrip:navigationtabstrip:1.0.4'
     compile files('libs/tencent_map_sdk_4.0.2.36d5ace.jar')
+    compile 'com.luffykou:android-common-utils:1.1.3'
 }

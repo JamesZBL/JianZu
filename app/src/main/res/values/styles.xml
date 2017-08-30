@@ -262,7 +262,7 @@
 		<item name="android:layout_height">8dp</item>
 		<item name="android:layout_marginTop">8dp</item>
 		<item name="android:layout_marginBottom">8dp</item>
-		<item name="android:background">@color/gray3</item>
+		<item name="android:background">@color/gray4</item>
 	</style>
 
 	<!--主色方块样式-->

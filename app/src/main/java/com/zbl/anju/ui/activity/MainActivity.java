@@ -26,6 +26,7 @@ import com.tencent.tencentmap.mapsdk.map.MapView;
 import com.tencent.tencentmap.mapsdk.map.TencentMap;
 import com.zbl.anju.R;
 import com.zbl.anju.app.AppConst;
+import com.zbl.anju.db.model.TagHolder;
 import com.zbl.anju.manager.BroadcastManager;
 import com.zbl.anju.ui.base.BaseActivity;
 import com.zbl.anju.ui.presenter.MainAtPresenter;
@@ -36,6 +37,8 @@ import com.zbl.anju.util.UIUtils;
 import com.zbl.anju.widget.LinePathView;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
+
+import java.io.Serializable;
 
 import butterknife.Bind;
 import kr.co.namee.permissiongen.PermissionGen;
@@ -69,7 +72,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	@Bind(R.id.line_include_toolbar_white)
 	View mToolbarLine;
 	@Bind(R.id.navi_main_top)
-	NavigationTabStrip mNavigationTop;
+	NavigationTabStrip mNavigationTop;   //顶部导航栏
 
 	@Bind(R.id.house_map_view)
 	MapView mTenMapView;                //地图（仅视图）
@@ -185,7 +188,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 
 			@Override
 			public void onEndTabSelected(String s, int i) {
-				mPresenter.loadHouses(i);
+				mPresenter.loadHouses();
 			}
 		});
 
@@ -267,7 +270,6 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	}
 
 
-
 	@Override
 	protected boolean isToolbarCanBack() {
 		return false;
@@ -296,6 +298,11 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	@Override
 	public TencentMap getTenMap() {
 		return mTenMap;
+	}
+
+	@Override
+	public NavigationTabStrip getNavigationTabStrip() {
+		return mNavigationTop;
 	}
 
 	/**
@@ -356,6 +363,16 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 			mTenMap.setCenter(new LatLng(AppConst.MAP_DEFAULT_LATITUDE, AppConst.MAP_DEFAULT_LONGITUDE));
 			//设置缩放级别
 			mTenMap.setZoom(AppConst.MAP_DEFAULT_ZOOM_LEVEL);
+			//设置点击监听
+			mTenMap.setOnMarkerClickListener(marker -> {
+				Object tag = marker.getTag();
+				if (tag != null) {
+					Bundle bundle = new Bundle();
+					bundle.putSerializable("tagHolder", new TagHolder(tag));
+					jumpToActivity(new Intent(this, HouseInfoActivity.class).putExtras(bundle));
+				}
+				return false;
+			});
 		}
 	}
 

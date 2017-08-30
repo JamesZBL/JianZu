@@ -11,14 +11,17 @@ import com.tencent.mapsdk.raster.model.MarkerOptions;
 import com.tencent.tencentmap.mapsdk.map.TencentMap;
 import com.zbl.anju.R;
 import com.zbl.anju.app.AppConst;
+import com.zbl.anju.db.DBManager;
 import com.zbl.anju.ui.base.BaseActivity;
 import com.zbl.anju.ui.base.BasePresenter;
 import com.zbl.anju.ui.view.IMainAtView;
 import com.zbl.anju.util.LogUtils;
 
+import java.util.List;
+
 public class MainAtPresenter extends BasePresenter<IMainAtView> {
 
-	public boolean isFirstLocation = true;  //首次定位成功
+	protected boolean isFirstLocation = true;  //首次定位成功
 	private LatLng lalng = null;
 
 	public MainAtPresenter(BaseActivity context) {
@@ -60,12 +63,44 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 		}
 	}
 
-	/**
-	 * 加载房屋数据
-	 * @param i  户型索引
-	 */
-	public void loadHouses(int i) {
 
+	/**
+	 * 根据坐标推荐房源
+	 *
+	 *
+	 */
+	public void loadHouses() {
+		if (lalng == null) {
+			return;
+		}
+
+		List<LatLng> getHousesLatLng = DBManager.getInstance().getHousesLocsByLatLng(lalng, 3, getView().getNavigationTabStrip().getTabIndex());
+
+		getView().getTenMap().clearAllOverlays();       //清除所有标记
+		addCurrentLocMarker();                          //添加位置标记
+
+		//添加房屋标记
+		for (LatLng latLng : getHousesLatLng
+				) {
+
+
+			Marker marker = getView().getTenMap().addMarker(new MarkerOptions()
+					.position(latLng)
+					.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_house_here))
+					.draggable(true)
+					.tag("Hi")
+			);
+		}
+	}
+
+	public void addCurrentLocMarker() {
+		if (lalng == null) {
+			return;
+		}
+		Marker marker = getView().getTenMap().addMarker(new MarkerOptions()
+				.position(lalng)
+				.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_im_here))
+				.draggable(true));
 	}
 
 
@@ -85,17 +120,17 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 					TencentMap tenMap = getView().getTenMap();
 					tenMap.setCenter(lalng);                                //设置中心点
 					tenMap.setZoom(AppConst.MAP_LOC_SUCCESS_ZOOM_LEVEL);    //设置放大级别
-					/*添加标记*/
-					Marker marker = tenMap.addMarker(new MarkerOptions()
-							.position(lalng)
-							.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_im_here))
-							.draggable(true));
+					/*添加设备所在位置标记*/
+					addCurrentLocMarker();
+					/*缩放到3公里级别并推荐房源*/
+					tenMap.setZoom(AppConst.MAP_3_KM_ZOOM_LEVEL);
+					loadHouses();
 				}
 
 				String address = tencentLocation.getAddress();
 
 				isFirstLocation = false;
-				LogUtils.d("--------------定位成功--------------\n经度：" + latitude + "，纬度：" + longitude + "\n"+"地址："+address);
+				LogUtils.d("--------------定位成功--------------\n经度：" + latitude + "，纬度：" + longitude + "\n" + "地址：" + address);
 
 			} else {
 				// 定位失败
