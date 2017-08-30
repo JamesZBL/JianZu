@@ -39,7 +39,7 @@ public class DBManager {
 	 * @param areaKiloMeter 范围/公里
 	 * @return 房源列表
 	 */
-	public List<LatLng> getHousesLocsByLatLng(LatLng centerLatLng, int areaKiloMeter, int house_num) {
+	public List<LatLng> getHousesLocsByLatLng(LatLng centerLatLng, int areaKiloMeter, int house_num,int type) {
 		List<LatLng> latLngList = new ArrayList<>();
 		Random random = new Random();
 		for (int i = 0; i < house_num; i++) {

@@ -141,4 +141,6 @@ dependencies {
     compile 'com.github.devlight.navigationtabstrip:navigationtabstrip:1.0.4'
     compile files('libs/tencent_map_sdk_4.0.2.36d5ace.jar')
     compile 'com.luffykou:android-common-utils:1.1.3'
+    compile files('libs/TencentMapSDK_Raster_v_1.2.8_e45bcd0.jar')
+    compile files('libs/TencentmapRasterUtils_v1.0.2968883.jar')
 }
