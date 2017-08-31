@@ -177,9 +177,9 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AppCom
 
 	//首次启动
 	public void onFirstLaunchThisVersion() {
-		if (MyApp.isFirstLaunchThisVersion(this)) {
+		if (MyApp.isFirstLaunchThisVersion(this, this.getClass())) {
 			onFirstLaunchThisVersionDo();
-			hasFirstLaunch();
+			hasFirstLaunch(this.getClass());
 		}
 	}
 
@@ -355,7 +355,7 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AppCom
 		return true;
 	}
 
-	public void hasFirstLaunch() {
-		SPUtils.getInstance(this).putBoolean(AppConst.FIRST_LAUNCH + MyApp.getVersionCode(this), false);
+	public void hasFirstLaunch(Class clazz) {
+		SPUtils.getInstance(this).putBoolean(AppConst.FIRST_LAUNCH + MyApp.getVersionCode(this) + clazz.getName(), false);
 	}
 }

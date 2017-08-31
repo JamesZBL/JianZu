@@ -40,7 +40,7 @@ import kr.co.namee.permissiongen.PermissionGen;
 import me.shaohui.bottomdialog.BottomDialog;
 
 /**
- * 手写签名界面
+ * 房屋信息界面
  *
  * @author James
  */
@@ -61,8 +61,6 @@ public class HouseInfoActivity extends BaseActivity<IHouseInfoAtView, HouseInfoA
 	EditText mEdtSigBtmDlgDescription;
 
 	BottomDialog mBottomDialog;
-
-	private int tempColor = Color.BLACK;
 
 	@Override
 	protected HouseInfoAtPresenter createPresenter() {
@@ -261,7 +259,6 @@ public class HouseInfoActivity extends BaseActivity<IHouseInfoAtView, HouseInfoA
 	@Override
 	public void onFirstLaunchThisVersionDo() {
 		super.onFirstLaunchThisVersionDo();
-		initPermission();
 	}
 
 	@Override

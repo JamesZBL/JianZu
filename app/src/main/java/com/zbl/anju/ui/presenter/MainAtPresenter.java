@@ -1,7 +1,5 @@
 package com.zbl.anju.ui.presenter;
 
-import android.view.animation.TranslateAnimation;
-
 import com.tencent.map.geolocation.TencentLocation;
 import com.tencent.map.geolocation.TencentLocationListener;
 import com.tencent.map.geolocation.TencentLocationManager;
@@ -12,7 +10,6 @@ import com.tencent.mapsdk.raster.model.Marker;
 import com.tencent.mapsdk.raster.model.MarkerOptions;
 import com.tencent.tencentmap.mapsdk.map.TencentMap;
 import com.tencent.tencentmap.mapsdk.raster.utils.animation.MarkerRotateAnimator;
-import com.tencent.tencentmap.mapsdk.raster.utils.animation.MarkerTranslateAnimator;
 import com.zbl.anju.R;
 import com.zbl.anju.app.AppConst;
 import com.zbl.anju.db.DBManager;
@@ -30,6 +27,7 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 
 	public MainAtPresenter(BaseActivity context) {
 		super(context);
+		initLocation();
 	}
 
 
@@ -60,7 +58,19 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 		}
 	}
 
-	public void setMapCenter() {
+	/**
+	 * 首次定位成功回调
+	 *
+	 * @throws Exception activity销毁后产生空指针异常
+	 */
+	protected void onFirstLocSuccess() throws Exception {
+
+	}
+
+	/**
+	 * 设置地图中心点为设备当前位置
+	 */
+	public synchronized void setMapCenter() {
 		if (lalng != null) {
 			getView().getTenMap().setCenter(lalng);
 			getView().getTenMap().setZoom(AppConst.MAP_LOC_SUCCESS_ZOOM_LEVEL);
@@ -71,13 +81,18 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 	/**
 	 * 根据坐标推荐房源
 	 */
-	public void loadHouses() {
+	public void loadHouses(LatLng centerLatLng) {
 		if (lalng == null) {
 			return;
 		}
 
 		List<LatLng> getHousesLatLng = DBManager.getInstance().getHousesLocsByLatLng(lalng, 3, AppConst.HOUSE_DEFAULT_HOUSE_NUM, 1);
 
+		if (centerLatLng != null) {
+			getView().getTenMap().setCenter(centerLatLng);      //指定中心点了
+		} else {
+			getView().getTenMap().setCenter(lalng);             //未指定中心点（当前位置）
+		}
 		getView().getTenMap().setZoom(AppConst.MAP_3_KM_ZOOM_LEVEL);        //缩放到3公里级别
 		getView().getTenMap().clearAllOverlays();       //清除所有标记
 		addCurrentLocMarker();                          //添加位置标记
@@ -90,6 +105,9 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 		}
 	}
 
+	/**
+	 * 添加当前位置标记
+	 */
 	public void addCurrentLocMarker() {
 		if (lalng == null) {
 			return;
@@ -108,7 +126,7 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 		Marker marker = getView().getTenMap().addMarker(new MarkerOptions()
 				.position(latLng)
 				.icon(BitmapDescriptorFactory.fromResource(resId))
-				.draggable(true)
+				.draggable(false)
 				.tag(tag)
 		);
 		if (isAnimation) {
@@ -118,6 +136,9 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 	}
 
 
+	/**
+	 * 定位监听器
+	 */
 	class MyTencentLocationListener implements TencentLocationListener {
 
 		/**************************************** 定位回调 *****************************************/
@@ -130,15 +151,19 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 				lalng = new LatLng(latitude, longitude);
 
 				if (isFirstLocation) {
-					/* 首次定位 */
-					TencentMap tenMap = getView().getTenMap();
-					tenMap.setCenter(lalng);                                //设置中心点
-					tenMap.setZoom(AppConst.MAP_LOC_SUCCESS_ZOOM_LEVEL);    //设置放大级别
-					/*添加设备所在位置标记*/
-					addCurrentLocMarker();
-					/*缩放到3公里级别并推荐房源*/
-					tenMap.setZoom(AppConst.MAP_3_KM_ZOOM_LEVEL);
-					loadHouses();
+					try {
+						/* 首次定位 */
+						TencentMap tenMap = getView().getTenMap();
+						tenMap.setCenter(lalng);                                //设置中心点
+						tenMap.setZoom(AppConst.MAP_LOC_SUCCESS_ZOOM_LEVEL);    //设置放大级别
+						/*添加设备所在位置标记*/
+						addCurrentLocMarker();
+						/*缩放到3公里级别并推荐房源*/
+						tenMap.setZoom(AppConst.MAP_3_KM_ZOOM_LEVEL);
+						loadHouses(lalng);          //当前位置房源
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
 
 				String address = tencentLocation.getAddress();
@@ -158,4 +183,5 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 		}
 		/**************************************** 定位回调 结束  ***********************************/
 	}
+
 }

@@ -53,6 +53,7 @@ import com.zbl.anju.model.response.GetUserInfoByPhoneResponse;
 import com.zbl.anju.model.response.GetUserInfosResponse;
 import com.zbl.anju.model.response.JoinGroupResponse;
 import com.zbl.anju.model.response.LoginResponse;
+import com.zbl.anju.model.response.LoginSimpleResponse;
 import com.zbl.anju.model.response.QiNiuTokenResponse;
 import com.zbl.anju.model.response.QuitGroupResponse;
 import com.zbl.anju.model.response.RegisterResponse;
@@ -91,6 +92,7 @@ public class ApiRetrofit extends BaseApiRetrofit {
 	public MyApi mApi;
 	public BookApi bookApi;
 	public SignatureApi signatureApi;
+	public AnjuApi anjuApi;
 	public static ApiRetrofit mInstance;
 
 	private ApiRetrofit() {
@@ -98,6 +100,15 @@ public class ApiRetrofit extends BaseApiRetrofit {
 		Gson gson = new GsonBuilder()
 				.setLenient()
 				.create();
+
+		/* anju */
+		anjuApi = new Retrofit.Builder()
+				.baseUrl(AnjuApi.BASE_URL)
+				.client(getClient())
+				.addConverterFactory(GsonConverterFactory.create(gson))
+				.addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+				.build()
+				.create(AnjuApi.class);
 
 		//在构造方法中完成对Retrofit接口的初始化
 		mApi = new Retrofit.Builder()
@@ -138,7 +149,6 @@ public class ApiRetrofit extends BaseApiRetrofit {
 	private RequestBody getRequestBody(Object obj) {
 		String route = new Gson().toJson(obj);
 		RequestBody body = RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"), route);
-//        RequestBody body = RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"), route);
 		return body;
 	}
 
@@ -147,6 +157,44 @@ public class ApiRetrofit extends BaseApiRetrofit {
 		return body;
 	}
 
+	//简易登录
+	public Observable<LoginSimpleResponse> loginSimple(String region, String phone, String password) {
+		return anjuApi.loginSimple(getRequestBody(new LoginRequest(region, phone, password)));
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
+	/**/
 	//登录
 	public Observable<LoginResponse> login(String region, String phone, String password) {
 		return mApi.login(getRequestBody(new LoginRequest(region, phone, password)));

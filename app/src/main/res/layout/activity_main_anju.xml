@@ -23,7 +23,7 @@
 		<com.gigamole.navigationtabstrip.NavigationTabStrip
 			android:id="@+id/navi_main_top"
 			android:layout_width="match_parent"
-			android:layout_height="50dp"
+			android:layout_height="40dp"
 			android:background="@color/gray0.5"
 			app:nts_active_color="@color/colorPrimary"
 			app:nts_animation_duration="300"
@@ -35,7 +35,6 @@
 			app:nts_size="15sp"
 			app:nts_titles="@array/main_top_nav_item_list"
 			app:nts_type="point"
-			app:nts_typeface="fonts/typeface.otf"
 			app:nts_weight="3dp"/>
 
 		<View

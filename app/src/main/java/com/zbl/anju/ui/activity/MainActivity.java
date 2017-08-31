@@ -63,10 +63,9 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	AutoRelativeLayout mArlBottomSheetBar;
 
 
+	/* 顶部 */
 	@Bind(R.id.ivToolbarLeftMenu)
 	AutoLinearLayout mIbToolbarLeftMenu;
-	@Bind(R.id.ibToolbarMore)
-	AutoLinearLayout mIbToolbarMore;     //三点菜单按钮
 	@Bind(R.id.ibToolbarMsg)
 	AutoLinearLayout mIbToolbarMsg;      //消息按钮
 	@Bind(R.id.line_include_toolbar_white)
@@ -74,19 +73,17 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	@Bind(R.id.navi_main_top)
 	NavigationTabStrip mNavigationTop;   //顶部导航栏
 
+
+	/* 地图相关 */
 	@Bind(R.id.house_map_view)
 	MapView mTenMapView;                //地图（仅视图）
 	@Bind(R.id.btn_main_loc)
 	Button mBtnMainLoc;
 
-	@Bind(R.id.btn_upload_signature)
-	Button mBtnUploadSignature;
-	@Bind(R.id.ll_sig_btm_save)
-	AutoLinearLayout mLlBtmSave;
-	@Bind(R.id.ll_sig_btm_clear)
-	AutoLinearLayout mLlBtmClear;
-	@Bind(R.id.ll_sig_btm_color)
-	AutoLinearLayout mLlBtmColor;
+	/* 左侧宫格菜单 */
+	@Bind(R.id.arl_left_menu_1)
+	AutoRelativeLayout mArlLeftMenu1;
+
 
 	BottomSheetBehavior mBottomSheetBehavior;
 
@@ -173,13 +170,13 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	@Override
 	public void initData() {
 		super.initData();
-		mPresenter.initLocation();  //定位
 	}
 
 	@Override
 	public void initListener() {
 		super.initListener();
-		//顶部导航
+
+		/* 顶部导航条 */
 		mNavigationTop.setOnTabStripSelectedIndexListener(new NavigationTabStrip.OnTabStripSelectedIndexListener() {
 			@Override
 			public void onStartTabSelected(String s, int i) {
@@ -188,63 +185,31 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 
 			@Override
 			public void onEndTabSelected(String s, int i) {
-				mPresenter.loadHouses();
+				mPresenter.loadHouses(null);
 			}
 		});
 
-
-		//上传（底部按钮）
-		mBtnUploadSignature.setOnClickListener(v1 -> {
-			showNameDialog();
-		});
-		mLlBtmClear.setOnClickListener(v1 -> {
-//			mLpvSignature.clear();
-		});
-		mLlBtmColor.setOnClickListener(v1 -> {
-//			showColorDialog();
-		});
-		mLlBtmSave.setOnClickListener(v1 -> {
-
-		});
-
-
-		mIbToolbarMsg.setOnClickListener(v -> {
-			View menuView = View.inflate(this, R.layout.menu_sig, null);
-			PopupWindow popupWindow = PopupWindowUtils.getPopupWindowAtLocation(menuView, getWindow().getDecorView(), Gravity.TOP | Gravity.RIGHT, UIUtils.dip2Px(5), mAppBar.getHeight() + UIUtils.getStatusbarheight(this), R.style.popwindow_top_right_anim_style, this);
-
-			//菜单操作
-			//保存到本地
-			menuView.findViewById(R.id.tvSaveSig).setOnClickListener(v1 -> {
-				popupWindow.dismiss();
-
-			});
-			//清除
-			menuView.findViewById(R.id.tvClearSig).setOnClickListener(v1 -> {
-				popupWindow.dismiss();
-//				mLpvSignature.clear();
-
-			});
-			//上传
-			menuView.findViewById(R.id.tvUploadSig).setOnClickListener(v1 -> {
-				popupWindow.dismiss();
-//				mPresenter.uploadSig();
-				jumpToActivity(HouseInfoActivity.class);
-			});
-			//
-		});
-
-		/*定位*/
-		mBtnMainLoc.setOnClickListener(v -> {
-			mPresenter.setMapCenter();
-		});
-
-		/*左侧菜单*/
+		/* toolbar左侧菜单按钮 */
 		mIbToolbarLeftMenu.setOnClickListener(v -> {
 			openDrawer();
 		});
 
+		/* toolbar右侧消息按钮 */
+		mIbToolbarMsg.setOnClickListener(v -> {
+		});
 
+		/* 定位按钮 */
+		mBtnMainLoc.setOnClickListener(v -> {
+			mPresenter.setMapCenter();
+		});
+
+		/* 左侧宫格菜单 内容 */
+		mArlLeftMenu1.setOnClickListener(v -> {
+			//测试登录界面
+			jumpToActivity(LoginActivity.class);
+		});
 	}
+
 
 	private void registerBR() {
 		BroadcastManager.getInstance(this).register(AppConst.SIGNATURE_UPLOAD_STARTED, new BroadcastReceiver() {
@@ -305,25 +270,6 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		return mNavigationTop;
 	}
 
-	/**
-	 * 弹出姓名输入dialog
-	 */
-	private void showNameDialog() {
-		mBottomDialog = UIUtils.showBottomDialog(getSupportFragmentManager(), R.layout.dialog_sig, v1 -> {
-			mEdtSigBtmDlgName = (EditText) v1.findViewById(R.id.edt_sig_name);
-			mEdtSigBtmDlgDescription = (EditText) v1.findViewById(R.id.edt_sig_description);
-
-			v1.findViewById(R.id.btn_sig_dialog_submit).setOnClickListener(v2 -> {
-				String name = mEdtSigBtmDlgName.getText().toString();
-				if (!StringUtils.isEmpty(name) && !StringUtils.isBlank(name)) {
-					mBottomDialog.dismiss();
-				} else {
-					UIUtils.showToast("请填写正确的姓名", Toast.LENGTH_SHORT, Gravity.CENTER_VERTICAL);
-				}
-			});
-			UIUtils.focusEdt(mEdtSigBtmDlgName);
-		});
-	}
 
 	/**
 	 * 申请运行时权限
@@ -341,9 +287,9 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 						Manifest.permission.ACCESS_COARSE_LOCATION,
 						Manifest.permission.ACCESS_FINE_LOCATION,
 						//相机、麦克风
-						Manifest.permission.RECORD_AUDIO,
+//						Manifest.permission.RECORD_AUDIO,
 						Manifest.permission.WAKE_LOCK,
-						Manifest.permission.CAMERA,
+//						Manifest.permission.CAMERA,
 						//存储空间
 						Manifest.permission.WRITE_EXTERNAL_STORAGE,
 						Manifest.permission.WRITE_SETTINGS
@@ -469,5 +415,4 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		super.onFirstLaunchThisVersionDo();
 		initPermission();
 	}
-
 }

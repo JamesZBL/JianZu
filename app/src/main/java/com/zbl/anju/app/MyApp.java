@@ -105,8 +105,8 @@ public class MyApp extends BaseApp {
 		return null;
 	}
 
-	public static boolean isFirstLaunchThisVersion(Context context) {
-		return SPUtils.getInstance(context).getBoolean(AppConst.FIRST_LAUNCH + getVersionCode(context), true);
+	public static boolean isFirstLaunchThisVersion(Context context, Class clazz) {
+		return SPUtils.getInstance(context).getBoolean(AppConst.FIRST_LAUNCH + getVersionCode(context) + clazz.getName(), true);
 	}
 
 

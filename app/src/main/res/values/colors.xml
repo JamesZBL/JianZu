@@ -8,8 +8,8 @@
 
 
 	<!--自定义-->
-	<color name="colorPrimary">#508CFE</color>
-	<color name="colorPrimaryDark">#1e7ecc</color>
+	<color name="colorPrimary">#F58D51</color>
+	<color name="colorPrimaryDark">#ce7643</color>
 	<color name="colorAccent">#009dff</color>
 
 	<color name="white">#ffffff</color>

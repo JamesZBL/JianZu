@@ -19,7 +19,7 @@ public class AppConst {
 
 	/*-----------------------  UI  -------------------------*/
 	//启动画面延迟时间（完成初始化后的延迟时间，防止出现启动主Activity时黑屏一段时间）
-	public static final long SPLASH_DELAY = 100;
+	public static final long SPLASH_DELAY = 500;
 	public static final int BANNER_DELAY = 5000;  //轮播图延迟
 	public static final int SCROLL_LISTEN = 100;  //滑动监听
 	public static final float SCRN_DIM_AMOUNT = 0.7f;
@@ -92,6 +92,7 @@ public class AppConst {
 		public static final String PHONE = "phone";
 		//        public static final String ACCOUNT = "account";
 		public static final String TOKEN = "token";
+		public static final String PWD = "password";
 	}
 
 

@@ -1,17 +1,19 @@
 package com.zbl.anju.ui.activity;
 
-import android.content.Intent;
 import android.os.Handler;
-import android.view.View;
-import android.view.animation.AlphaAnimation;
-import android.widget.Button;
-import android.widget.RelativeLayout;
 
 import com.zbl.anju.R;
+import com.zbl.anju.api.ApiRetrofit;
 import com.zbl.anju.app.AppConst;
+import com.zbl.anju.model.cache.UserCache;
+import com.zbl.anju.ui.base.BasePresenter;
 import com.zbl.anju.ui.base.BaseSplashActivity;
+import com.zbl.anju.util.LogUtils;
+import com.zbl.anju.util.StringUtils;
+import com.zbl.anju.util.UIUtils;
 
-import butterknife.Bind;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * @author James
@@ -19,44 +21,67 @@ import butterknife.Bind;
  */
 public class SplashActivity extends BaseSplashActivity {
 
-	@Bind(R.id.rlButton)
-	RelativeLayout mRlButton;
-	@Bind(R.id.btnLogin)
-	Button mBtnLogin;
-	@Bind(R.id.btnRegister)
-	Button mBtnRegister;
 
-	private boolean istokenValid = false;
-
+	private boolean isPwdValid = false;
 
 	@Override
-	public synchronized void init() {
-
+	public void initData() {
+		login();
 	}
 
-	private void startMainAct(){
+	/**
+	 * 验证用户身份
+	 */
+	public void login() {
+		String password = UserCache.getPwd();
+		if (StringUtils.isEmpty(password)) {
+			startLoginAct();
+			return;
+		}
+		ApiRetrofit.getInstance().loginSimple("", "", password)
+				.subscribeOn(Schedulers.io())
+				.observeOn(AndroidSchedulers.mainThread())
+				.subscribe(loginResponse -> {
+					int code = loginResponse.getCode();
+					if (code == 200) {
+						//验证通过
+						/**/
+						/**/
+						/**/
+						startMainAct();
+					} else {
+						//验证失败
+						UIUtils.showToast(UIUtils.getString(R.string.id_invalidate_please_login_again));
+						startLoginAct();
+					}
+				}, this::loginError);
+	}
+
+	/**
+	 * 启动主页
+	 */
+	protected void startMainAct() {
 		new Handler().postDelayed(() -> {
-			startActivity(new Intent(this, MainActivity.class));
+			jumpToActivityAndClearTask(MainActivity.class);
 			finish();
 		}, AppConst.SPLASH_DELAY);
+
 	}
 
+	/**
+	 * 启动登录
+	 */
+	protected void startLoginAct() {
+		jumpToActivityAndClearTask(LoginActivity.class);
+		finish();
+	}
 
 
 	@Override
 	public void initView() {
 		super.initView();
-//		StatusBarUtil.setColor(this, UIUtils.getColor(R.color.black));
-		AlphaAnimation alphaAnimation = new AlphaAnimation(0, 1);
-		alphaAnimation.setDuration(1000);
-		mRlButton.setVisibility(View.VISIBLE);
-		mRlButton.startAnimation(alphaAnimation);
 	}
 
-	@Override
-	public void initData() {
-
-	}
 
 	@Override
 	protected int provideContentViewId() {
@@ -66,9 +91,22 @@ public class SplashActivity extends BaseSplashActivity {
 
 	@Override
 	public void initListener() {
-		if (istokenValid) {
-			getSupportFragmentManager();
-			return;
-		}
+
+	}
+
+	@Override
+	protected BasePresenter createPresenter() {
+		return null;
+	}
+
+
+	/**
+	 * 登录失败（网络连接问题）
+	 */
+	private void loginError(Throwable throwable) {
+		LogUtils.e(throwable.getLocalizedMessage());
+		UIUtils.showToast(UIUtils.getString(R.string.please_check_net));
+		jumpToActivityAndClearTask(LoginActivity.class);   //跳转到登录
+		finish();
 	}
 }

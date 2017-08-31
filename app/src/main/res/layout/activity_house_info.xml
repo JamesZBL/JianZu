@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoLinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:fitsSystemWindows="true"
 	android:orientation="vertical"
 	>
@@ -38,7 +38,7 @@
 					xmlns:app="http://schemas.android.com/apk/res-auto"
 					android:id="@+id/houseinfo_banner"
 					android:layout_width="match_parent"
-					android:layout_height="300dp" />
+					android:layout_height="300dp"/>
 
 
 				<!--描述标题-->
@@ -89,13 +89,23 @@
 								/>
 
 							<TextView
+								android:id="@+id/textView2"
 								style="@style/info_red_title_text_style"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
 								android:layout_toEndOf="@+id/textView4"
 								android:layout_toRightOf="@+id/textView4"
-								android:text="@string/houseinfo_yuan_per_month"
-								/>
+								android:text="@string/houseinfo_yuan_per_month"/>
+
+							<ImageView
+								android:layout_width="40dp"
+								android:layout_height="wrap_content"
+								android:layout_alignParentTop="true"
+								android:layout_marginLeft="5dp"
+								android:layout_centerVertical="true"
+								android:layout_toEndOf="@+id/textView2"
+								android:layout_toRightOf="@+id/textView2"
+								android:src="@drawable/ic_zhuanxiang"/>
 						</com.zhy.autolayout.AutoRelativeLayout>
 
 					</com.zhy.autolayout.AutoLinearLayout>
@@ -584,11 +594,11 @@
 
 					<Button
 						android:id="@+id/btn_upload_signature"
-						style="@style/btn3"
+						style="@style/btn_orange"
 						android:layout_width="match_parent"
 						android:layout_height="match_parent"
 						android:enabled="true"
-						android:text="@string/signature_upload_sig"
+						android:text="@string/houseinfo_pay_online"
 						android:textSize="@dimen/global_normal_font_size_sm"/>
 				</com.zhy.autolayout.AutoLinearLayout>
 

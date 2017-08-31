@@ -35,12 +35,12 @@
 		<item name="android:windowIsTranslucent">true</item>
 	</style>
 
-	<!--全屏带状态栏样式-->
+	<!--全屏带状态栏样式 启动页面样式 -->
 	<style name="FullWindowTransStatusTheme" parent="Theme.AppCompat.Light.NoActionBar">
 		<!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
 		<item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true</item>
 		<!-- 设置activity切换动画 -->
-		<item name="android:windowAnimationStyle">@style/activityAnimation</item>
+		<item name="android:windowAnimationStyle">@style/activityAnimation_scale</item>
 		<item name="android:windowBackground">@mipmap/splash</item>
 	</style>
 
@@ -143,6 +143,14 @@
 		<item name="android:background">@drawable/selector_option_item</item>
 		<item name="android:scaleType">fitXY</item>
 		<item name="android:textColor">@color/gray0</item>
+		<item name="android:height">35dp</item>
+	</style>
+
+	<style name="btn_orange"
+		   parent="Base.Widget.AppCompat.Button.Borderless.Colored">
+		<item name="android:background">@drawable/selector_squre_orange_btn</item>
+		<item name="android:scaleType">fitXY</item>
+		<item name="android:textColor">@android:color/white</item>
 		<item name="android:height">35dp</item>
 	</style>
 
@@ -251,7 +259,7 @@
 	<!-- 红色字体标题 样式 -->
 	<style name="info_red_title_text_style"
 		>
-		<item name="android:textColor">@color/red0</item>
+		<item name="android:textColor">@color/colorPrimary</item>
 		<item name="android:textSize">@dimen/global_normal_font_size</item>
 		<item name="android:layout_centerVertical">true</item>
 	</style>

@@ -6,39 +6,9 @@
 	>
 
 	<include
-		layout="@layout/include_toolbar"
+		layout="@layout/include_toolbar_white"
 		android:visibility="gone"
 		/>
 
-	<com.zhy.autolayout.AutoRelativeLayout
-		android:id="@+id/rlButton"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:visibility="gone">
 
-		<Button
-			android:id="@+id/btnLogin"
-			android:layout_width="260px"
-			android:layout_height="90px"
-			android:layout_alignParentBottom="true"
-			android:layout_alignParentLeft="true"
-			android:layout_marginBottom="40px"
-			android:layout_marginLeft="40px"
-			android:background="@drawable/shape_splash_login"
-			android:text="@string/login"
-			android:textColor="@color/white"
-			android:textSize="32px"/>
-
-		<Button
-			android:id="@+id/btnRegister"
-			android:layout_width="260px"
-			android:layout_height="90px"
-			android:layout_alignParentBottom="true"
-			android:layout_alignParentRight="true"
-			android:layout_marginBottom="40px"
-			android:layout_marginRight="40px"
-			android:background="@drawable/shape_splash_register"
-			android:text="@string/register"
-			android:textSize="32px"/>
-	</com.zhy.autolayout.AutoRelativeLayout>
 </com.zhy.autolayout.AutoFrameLayout>

@@ -1,28 +1,17 @@
 package com.zbl.anju.ui.base;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 
 import butterknife.ButterKnife;
 
 /**
+ * 启动画面基类
  * Created by James on 2017/6/6.
  */
 
-public abstract class BaseSplashActivity extends AppCompatActivity {
-	@Override
-	protected void onCreate(@Nullable Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		init();
-	}
+public abstract class BaseSplashActivity extends BaseActivity {
 
-	/**
-	 * 初始化
-	 * 启动界面已经在style中指定windowBackground
-	 */
-	public abstract void init();
 
 	/**
 	 * 视图初始化
@@ -49,8 +38,4 @@ public abstract class BaseSplashActivity extends AppCompatActivity {
 	 */
 	protected abstract int provideContentViewId();
 
-	public void jumpToActivity(Class activity) {
-		Intent intent = new Intent(this, activity);
-		startActivity(intent);
-	}
 }

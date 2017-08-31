@@ -1,7 +1,5 @@
 package com.zbl.anju.db;
 
-import com.andrognito.patternlockview.utils.RandomUtils;
-import com.litesuits.common.utils.RandomUtil;
 import com.tencent.mapsdk.raster.model.LatLng;
 
 import java.util.ArrayList;
@@ -32,6 +30,8 @@ public class DBManager {
 		return mInstance;
 	}
 
+
+
 	/**
 	 * 根据地图中心点获取周围方圆一定距离内的房源位置
 	 *
@@ -52,4 +52,5 @@ public class DBManager {
 
 		return latLngList;
 	}
+
 }

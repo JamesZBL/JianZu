@@ -2,7 +2,7 @@
 	<string name="app_name">简租</string>
 
 	<!--首次启动-->
-	<string name="disp_at_first_launch"></string>
+	<string name="disp_at_first_launch">first_launch</string>
 
 	<!-- ____________________________________Anju___________________________________ -->
 	<string name="houseinfo_description_tiltle">房屋描述标题</string>
@@ -26,6 +26,7 @@
 	<string name="houseinfo_peizhi">房间配置</string>
 	<string name="houseinfo_video">实拍视频</string>
 
+	<string name="houseinfo_pay_online">在线支付</string>
 
 
 	<string name="main_normal_vip">普通会员</string>
@@ -43,37 +44,46 @@
 	<string name="main_left_menu_txt_9">房屋管家</string>
 
 
-
 	<string name="main_left_list_1">订单</string>
 	<string name="main_left_list_2">钱包</string>
 	<string name="main_left_list_3">客服</string>
 	<string name="main_left_list_4">设置</string>
 
 
+	<string name="login_username">用户名</string>
+	<string name="login_password">密码</string>
+	<string name="login_login">登录</string>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<!-- ___________________________________________________________________________ -->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
+	<!---->
 
 	<string name="error_code">错误代码：</string>
 	<string name="please_check_net">请检查网络</string>
 	<string name="load_error">加载失败</string>
 	<string name="please_wait">请稍等</string>
+	<string name="login_ing">正在登录</string>
+	<string name="id_invalidate_please_login_again">身份验证过期，请重新登录</string>
 	<string name="content_no_empty">内容不能为空</string>
 	<string name="complete">完成</string>
 	<string name="change_success">修改成功</string>
