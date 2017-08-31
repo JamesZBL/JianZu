@@ -1,5 +1,7 @@
 package com.zbl.anju.ui.presenter;
 
+import android.view.View;
+
 import com.tencent.map.geolocation.TencentLocation;
 import com.tencent.map.geolocation.TencentLocationListener;
 import com.tencent.map.geolocation.TencentLocationManager;
@@ -18,12 +20,15 @@ import com.zbl.anju.ui.base.BasePresenter;
 import com.zbl.anju.ui.view.IMainAtView;
 import com.zbl.anju.util.LogUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainAtPresenter extends BasePresenter<IMainAtView> {
 
-	protected boolean isFirstLocation = true;  //首次定位成功
+	protected boolean isFirstLocation = true;        //首次定位成功
 	private LatLng lalng = null;
+	protected View markerView;                       //当前位置标记
+	protected List<View> markerViewHouses;           //房屋标记集合
 
 	public MainAtPresenter(BaseActivity context) {
 		super(context);
@@ -58,14 +63,6 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 		}
 	}
 
-	/**
-	 * 首次定位成功回调
-	 *
-	 * @throws Exception activity销毁后产生空指针异常
-	 */
-	protected void onFirstLocSuccess() throws Exception {
-
-	}
 
 	/**
 	 * 设置地图中心点为设备当前位置
@@ -85,34 +82,43 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 		if (lalng == null) {
 			return;
 		}
+		if (markerViewHouses == null) {
+			markerViewHouses = new ArrayList<>();
+		}
 
 		List<LatLng> getHousesLatLng = DBManager.getInstance().getHousesLocsByLatLng(lalng, 3, AppConst.HOUSE_DEFAULT_HOUSE_NUM, 1);
 
 		if (centerLatLng != null) {
-			getView().getTenMap().setCenter(centerLatLng);      //指定中心点了
+			getView().getTenMap().setCenter(centerLatLng);                  //指定中心点了,将中心点放到指定的点上
 		} else {
-			getView().getTenMap().setCenter(lalng);             //未指定中心点（当前位置）
+			getView().getTenMap().setCenter(lalng);                         //未指定中心点（当前位置）
 		}
 		getView().getTenMap().setZoom(AppConst.MAP_3_KM_ZOOM_LEVEL);        //缩放到3公里级别
-		getView().getTenMap().clearAllOverlays();       //清除所有标记
-		addCurrentLocMarker();                          //添加位置标记
 
-		//添加房屋标记
+		//遍历房屋标记集合，逐个清除标记
+		for (View markerViewHouse : markerViewHouses
+				) {
+			markerViewHouse.setVisibility(View.GONE);
+		}
+
+		//逐个添加房屋标记
 		for (LatLng latLng : getHousesLatLng
 				) {
-			addMarker(true, latLng, R.drawable.ic_house_here, "Hi,I'm a tag.");
-
+			//获得标记View
+			View markerView = addMarker(true, latLng, R.drawable.ic_house_here, "Hi,I'm a tag.").getMarkerView();
+			//将View存到房屋标记的集合中
+			markerViewHouses.add(markerView);
 		}
 	}
 
 	/**
 	 * 添加当前位置标记
 	 */
-	public void addCurrentLocMarker() {
+	public Marker addCurrentLocMarker() {
 		if (lalng == null) {
-			return;
+			return null;
 		}
-		addMarker(false, lalng, R.drawable.ic_im_here, null);
+		return addMarker(false, lalng, R.drawable.ic_im_here, null);
 	}
 
 	/**
@@ -122,7 +128,7 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 	 * @param latLng      经纬度
 	 * @param resId       图标
 	 */
-	public void addMarker(boolean isAnimation, LatLng latLng, int resId, Object tag) {
+	public Marker addMarker(boolean isAnimation, LatLng latLng, int resId, Object tag) {
 		Marker marker = getView().getTenMap().addMarker(new MarkerOptions()
 				.position(latLng)
 				.icon(BitmapDescriptorFactory.fromResource(resId))
@@ -130,9 +136,12 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 				.tag(tag)
 		);
 		if (isAnimation) {
-			MarkerRotateAnimator rotateAnimator = new MarkerRotateAnimator(marker, 500, 0, 360);
-			rotateAnimator.startAnimation();
+			View markerView = marker.getMarkerView();
+			//// TODO: 17-8-31 给marker添加动画
+
 		}
+
+		return marker;
 	}
 
 
@@ -157,19 +166,34 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 						tenMap.setCenter(lalng);                                //设置中心点
 						tenMap.setZoom(AppConst.MAP_LOC_SUCCESS_ZOOM_LEVEL);    //设置放大级别
 						/*添加设备所在位置标记*/
-						addCurrentLocMarker();
+						markerView = addCurrentLocMarker().getMarkerView();
 						/*缩放到3公里级别并推荐房源*/
 						tenMap.setZoom(AppConst.MAP_3_KM_ZOOM_LEVEL);
 						loadHouses(lalng);          //当前位置房源
+
+						isFirstLocation = false;
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
+				} else {
+					/*不是首次定位（位置有可能发生变化）*/
+					if (markerView != null) {
+						markerView.setVisibility(View.GONE);    //隐藏掉当前标记
+					}
+					/*添加新标记*/
+					markerView = addCurrentLocMarker().getMarkerView();
 				}
 
 				String address = tencentLocation.getAddress();
 
-				isFirstLocation = false;
-				LogUtils.d("--------------定位成功--------------\n经度：" + latitude + "，纬度：" + longitude + "\n" + "地址：" + address);
+
+				LogUtils.d(
+						"--------------定位成功--------------\n经度："
+								+ latitude
+								+ "，纬度："
+								+ longitude + "\n"
+								+ "地址："
+								+ address);
 
 			} else {
 				// 定位失败
