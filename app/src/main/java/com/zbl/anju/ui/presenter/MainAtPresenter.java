@@ -1,6 +1,7 @@
 package com.zbl.anju.ui.presenter;
 
 import android.view.View;
+import android.view.animation.AnimationUtils;
 
 import com.tencent.map.geolocation.TencentLocation;
 import com.tencent.map.geolocation.TencentLocationListener;
@@ -19,6 +20,7 @@ import com.zbl.anju.ui.base.BaseActivity;
 import com.zbl.anju.ui.base.BasePresenter;
 import com.zbl.anju.ui.view.IMainAtView;
 import com.zbl.anju.util.LogUtils;
+import com.zbl.anju.util.UIUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,17 +91,27 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 		List<LatLng> getHousesLatLng = DBManager.getInstance().getHousesLocsByLatLng(lalng, 3, AppConst.HOUSE_DEFAULT_HOUSE_NUM, 1);
 
 		if (centerLatLng != null) {
-			getView().getTenMap().setCenter(centerLatLng);                  //指定中心点了,将中心点放到指定的点上
+
+			//指定中心点了,将中心点放到指定的点上
+			getView().getTenMap().setCenter(centerLatLng);
+
 		} else {
-			getView().getTenMap().setCenter(lalng);                         //未指定中心点（当前位置）
+
+			//未指定中心点（当前位置）
+			getView().getTenMap().setCenter(lalng);
+
 		}
-		getView().getTenMap().setZoom(AppConst.MAP_3_KM_ZOOM_LEVEL);        //缩放到3公里级别
+
+		//缩放到3公里级别
+		getView().getTenMap().setZoom(AppConst.MAP_3_KM_ZOOM_LEVEL);
 
 		//遍历房屋标记集合，逐个清除标记
 		for (View markerViewHouse : markerViewHouses
 				) {
 			markerViewHouse.setVisibility(View.GONE);
 		}
+		//清空集合
+		markerViewHouses.clear();
 
 		//逐个添加房屋标记
 		for (LatLng latLng : getHousesLatLng
@@ -113,11 +125,14 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 
 	/**
 	 * 添加当前位置标记
+	 *
+	 * @return 添加后的标记
 	 */
 	public Marker addCurrentLocMarker() {
 		if (lalng == null) {
 			return null;
 		}
+
 		return addMarker(false, lalng, R.drawable.ic_im_here, null);
 	}
 
@@ -127,6 +142,7 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 	 * @param isAnimation 动画
 	 * @param latLng      经纬度
 	 * @param resId       图标
+	 * @return 添加后的标记
 	 */
 	public Marker addMarker(boolean isAnimation, LatLng latLng, int resId, Object tag) {
 		Marker marker = getView().getTenMap().addMarker(new MarkerOptions()
@@ -137,8 +153,8 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 		);
 		if (isAnimation) {
 			View markerView = marker.getMarkerView();
-			//// TODO: 17-8-31 给marker添加动画
-
+			//// TODO: 17-8-31 修改动画
+			UIUtils.startAnimation(markerView, R.anim.map_marker_low_to_high);
 		}
 
 		return marker;

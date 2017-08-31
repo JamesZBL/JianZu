@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+	<!--上面是0，下面是100-->
+	<!--地图标记上下跳动，无限循环-->
+	<translate xmlns:android="http://schemas.android.com/apk/res/android"
+			   android:duration="500"
+			   android:fillBefore="true"
+			   android:fromXDelta="0"
+			   android:fromYDelta="0"
+			   android:repeatCount="infinite"
+			   android:repeatMode="reverse"
+			   android:toXDelta="0"
+			   android:toYDelta="-50%"
+		>
+	</translate>
+</set>

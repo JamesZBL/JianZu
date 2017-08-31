@@ -9,8 +9,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.ViewDragHelper;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -384,5 +387,17 @@ public class UIUtils {
 			e.printStackTrace();
 		}
 	}
+
+	/**
+	 * 为指定View加载动画
+	 *
+	 * @param v     视图
+	 * @param resId 动画资源
+	 */
+	public static void startAnimation(View v, int resId) {
+		Animation animation = AnimationUtils.loadAnimation(getContext(), resId);
+		v.startAnimation(animation);
+	}
 }
+
 
