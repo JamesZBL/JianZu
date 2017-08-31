@@ -25,12 +25,15 @@ import com.zbl.anju.util.UIUtils;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ */
 public class MainAtPresenter extends BasePresenter<IMainAtView> {
 
-	protected boolean isFirstLocation = true;        //首次定位成功
 	private LatLng lalng = null;
-	protected View markerView;                       //当前位置标记
-	protected List<View> markerViewHouses;           //房屋标记集合
+	private boolean isFirstLocation = true;        //首次定位成功
+	private View markerView;                       //当前位置标记
+	private List<View> markerViewHouses;           //房屋标记集合
 
 	public MainAtPresenter(BaseActivity context) {
 		super(context);
@@ -41,7 +44,7 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 	/**
 	 * 定位
 	 */
-	public void initLocation() {
+	private void initLocation() {
 		TencentLocationListener listener = new MyTencentLocationListener();
 		TencentLocationRequest request = TencentLocationRequest.create();
 		request.setInterval(AppConst.LOCATION_DEFAULT_INTERVAL);    //设置定位周期
@@ -71,8 +74,8 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 	 */
 	public synchronized void setMapCenter() {
 		if (lalng != null) {
-			getView().getTenMap().setCenter(lalng);
-			getView().getTenMap().setZoom(AppConst.MAP_LOC_SUCCESS_ZOOM_LEVEL);
+			setCenter(lalng);
+			setZoom(AppConst.MAP_LOC_SUCCESS_ZOOM_LEVEL);
 		}
 	}
 
@@ -93,17 +96,17 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 		if (centerLatLng != null) {
 
 			//指定中心点了,将中心点放到指定的点上
-			getView().getTenMap().setCenter(centerLatLng);
+			setCenter(centerLatLng);
 
 		} else {
 
 			//未指定中心点（当前位置）
-			getView().getTenMap().setCenter(lalng);
+			setCenter(lalng);
 
 		}
 
 		//缩放到3公里级别
-		getView().getTenMap().setZoom(AppConst.MAP_3_KM_ZOOM_LEVEL);
+		setZoom(AppConst.MAP_3_KM_ZOOM_LEVEL);
 
 		//遍历房屋标记集合，逐个清除标记
 		for (View markerViewHouse : markerViewHouses
@@ -153,13 +156,25 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 		);
 		if (isAnimation) {
 			View markerView = marker.getMarkerView();
-			//// TODO: 17-8-31 修改动画
 			UIUtils.startAnimation(markerView, R.anim.map_marker_low_to_high);
 		}
 
 		return marker;
 	}
 
+	/**
+	 * 设置缩放比（通用）
+	 */
+	private void setZoom(int zoomLevel) {
+		getView().getTenMap().setZoom(zoomLevel);
+	}
+
+	/**
+	 * 设置中心点（通用）
+	 */
+	private void setCenter(LatLng latLng) {
+		getView().getTenMap().setCenter(latLng);
+	}
 
 	/**
 	 * 定位监听器
@@ -178,13 +193,12 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 				if (isFirstLocation) {
 					try {
 						/* 首次定位 */
-						TencentMap tenMap = getView().getTenMap();
-						tenMap.setCenter(lalng);                                //设置中心点
-						tenMap.setZoom(AppConst.MAP_LOC_SUCCESS_ZOOM_LEVEL);    //设置放大级别
+						setCenter(lalng);                                //设置中心点
+						setZoom(AppConst.MAP_LOC_SUCCESS_ZOOM_LEVEL);    //设置放大级别
 						/*添加设备所在位置标记*/
 						markerView = addCurrentLocMarker().getMarkerView();
 						/*缩放到3公里级别并推荐房源*/
-						tenMap.setZoom(AppConst.MAP_3_KM_ZOOM_LEVEL);
+						setZoom(AppConst.MAP_3_KM_ZOOM_LEVEL);
 						loadHouses(lalng);          //当前位置房源
 
 						isFirstLocation = false;
