@@ -38,8 +38,15 @@
 					xmlns:app="http://schemas.android.com/apk/res-auto"
 					android:id="@+id/houseinfo_banner"
 					android:layout_width="match_parent"
-					android:layout_height="300dp"/>
+					android:layout_height="300dp"
+					android:visibility="gone"
+					/>
 
+				<!--视频播放-->
+				<com.zbl.anju.widget.CustomJcVideoPlayerStandard
+					android:id="@+id/houseinfo_video_player"
+					android:layout_width="match_parent"
+					android:layout_height="200dp"/>
 
 				<!--描述标题-->
 				<TextView
@@ -446,6 +453,7 @@
 					android:orientation="horizontal"
 					android:paddingBottom="@dimen/info_detail_padding_vertical"
 					android:paddingTop="@dimen/info_detail_padding_vertical"
+					android:visibility="gone"
 					>
 
 					<View
@@ -464,11 +472,7 @@
 				<View
 					style="@style/Line"/>
 
-				<!--视频播放-->
-				<com.zbl.anju.widget.CustomJcVideoPlayerStandard
-					android:id="@+id/houseinfo_video_player"
-					android:layout_width="match_parent"
-					android:layout_height="300dp"/>
+
 
 
 			</com.zhy.autolayout.AutoLinearLayout>
