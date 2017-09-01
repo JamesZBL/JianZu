@@ -15,7 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gigamole.navigationtabstrip.NavigationTabStrip;
@@ -24,6 +24,10 @@ import com.ikimuhendis.ldrawer.DrawerArrowDrawable;
 import com.tencent.mapsdk.raster.model.LatLng;
 import com.tencent.tencentmap.mapsdk.map.MapView;
 import com.tencent.tencentmap.mapsdk.map.TencentMap;
+import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
+import com.youth.banner.Transformer;
+import com.zaaach.citypicker.CityPickerActivity;
 import com.zbl.anju.R;
 import com.zbl.anju.app.AppConst;
 import com.zbl.anju.db.model.TagHolder;
@@ -31,16 +35,15 @@ import com.zbl.anju.manager.BroadcastManager;
 import com.zbl.anju.ui.base.BaseActivity;
 import com.zbl.anju.ui.presenter.MainAtPresenter;
 import com.zbl.anju.ui.view.IMainAtView;
-import com.zbl.anju.util.PopupWindowUtils;
-import com.zbl.anju.util.StringUtils;
+import com.zbl.anju.util.GlideImageLoader;
 import com.zbl.anju.util.UIUtils;
 import com.zbl.anju.widget.LinePathView;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
-import java.io.Serializable;
-
 import butterknife.Bind;
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerSimple;
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 import kr.co.namee.permissiongen.PermissionGen;
 import me.shaohui.bottomdialog.BottomDialog;
 
@@ -72,7 +75,13 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	View mToolbarLine;
 	@Bind(R.id.navi_main_top)
 	NavigationTabStrip mNavigationTop;   //顶部导航栏
+	@Bind(R.id.all_main_toolbar_city_pick)
+	AutoLinearLayout mAllToolBarCityPick;//顶部城市选择按钮
+	@Bind(R.id.tv_main_toobar_city_name)
+	TextView mTvToolbarCityName;         //顶部城市名称文字
 
+	@Bind(R.id.main_anju_guanggao_banner)
+	Banner mBannerAdvertisement;        //广告轮播图
 
 	/* 地图相关 */
 	@Bind(R.id.house_map_view)
@@ -84,8 +93,10 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	@Bind(R.id.arl_left_menu_1)
 	AutoRelativeLayout mArlLeftMenu1;
 
-
 	BottomSheetBehavior mBottomSheetBehavior;
+
+	@Bind(R.id.main_jc_player)
+	JCVideoPlayerStandard mJcPlayer;
 
 	TencentMap mTenMap;                 //地图实例
 	DrawerArrowDrawable mDrawerArrow;
@@ -94,7 +105,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	EditText mEdtSigBtmDlgName;
 	EditText mEdtSigBtmDlgDescription;
 
-	BottomDialog mBottomDialog;
+	BottomDialog mBottomDialog;        //底部弹窗
 
 
 	/* 重写方法 activity生命周期方法实现对 地图 MapView 的舍命周期管理 */
@@ -111,7 +122,6 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		/*地图*/
 		mTenMapView.onDestroy();
 		super.onDestroy();
-
 	}
 
 	@Override
@@ -123,6 +133,10 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 
 	@Override
 	protected void onResume() {
+		/*重新定位*/
+		//// TODO: 17-9-1 need test
+		mPresenter.initLocation();
+
 		/*地图*/
 		mTenMapView.onResume();
 		super.onResume();
@@ -130,6 +144,9 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 
 	@Override
 	protected void onStop() {
+		/*删除定位监听器*/
+		//// TODO: 17-9-1 删除定位监听器 need test
+		mPresenter.removeLocationListener();
 		/*地图*/
 		mTenMapView.onStop();
 		super.onStop();
@@ -150,7 +167,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	public void initView() {
 		super.initView();
 		//设置toolbar 细线不可见
-		mToolbarLine.setVisibility(View.GONE);
+//		mToolbarLine.setVisibility(View.GONE);
 		//设置toolbar按钮可见
 		mIbToolbarMsg.setVisibility(View.VISIBLE);
 		mIbToolbarLeftMenu.setVisibility(View.VISIBLE);
@@ -158,6 +175,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		initTenMap();   //初始化地图
 		initDrawer();   //初始化侧边菜单
 		initBottomSheet();   //初始化底部滑动菜单
+		initJcVideoPlayer();
 	}
 
 
@@ -170,6 +188,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	@Override
 	public void initData() {
 		super.initData();
+		mPresenter.initData();
 	}
 
 	@Override
@@ -208,8 +227,27 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 			//测试登录界面
 			jumpToActivity(LoginActivity.class);
 		});
+
+		/* 顶部 城市选择按钮 */
+		mAllToolBarCityPick.setOnClickListener(v->{
+			//启动城市选择activity
+			//启动
+			startActivityForResult(new Intent(MainActivity.this, CityPickerActivity.class),
+					AppConst.REQ_CITY_PICK);
+		});
 	}
 
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if (requestCode == AppConst.REQ_CITY_PICK && resultCode == RESULT_OK){
+			//成功选择城市
+			if (data != null){
+				String city = data.getStringExtra(CityPickerActivity.KEY_PICKED_CITY);
+				mTvToolbarCityName.setText(city);                       //设置城市文字
+			}
+		}
+	}
 
 	private void registerBR() {
 		BroadcastManager.getInstance(this).register(AppConst.SIGNATURE_UPLOAD_STARTED, new BroadcastReceiver() {
@@ -268,6 +306,23 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	@Override
 	public NavigationTabStrip getNavigationTabStrip() {
 		return mNavigationTop;
+	}
+
+	@Override
+	public Banner getBannerAd() {
+		return mBannerAdvertisement;
+	}
+
+	@Override
+	public JCVideoPlayerStandard getJcPlayer() {
+		return mJcPlayer;
+	}
+
+	/**
+	 * 初始化视频播放器
+	 */
+	private void initJcVideoPlayer() {
+		mJcPlayer.thumbImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 	}
 
 

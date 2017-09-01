@@ -66,7 +66,7 @@ public class HouseInfoAtPresenter extends BasePresenter<IHouseInfoAtView> {
 	}
 
 
-	class MyUserActionStandard implements JCUserActionStandard {
+	static class MyUserActionStandard implements JCUserActionStandard {
 
 		@Override
 		public void onEvent(int type, String url, int screen, Object... objects) {

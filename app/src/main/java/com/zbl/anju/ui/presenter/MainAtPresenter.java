@@ -3,6 +3,7 @@ package com.zbl.anju.ui.presenter;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 
+import com.bumptech.glide.Glide;
 import com.tencent.map.geolocation.TencentLocation;
 import com.tencent.map.geolocation.TencentLocationListener;
 import com.tencent.map.geolocation.TencentLocationManager;
@@ -13,17 +14,24 @@ import com.tencent.mapsdk.raster.model.Marker;
 import com.tencent.mapsdk.raster.model.MarkerOptions;
 import com.tencent.tencentmap.mapsdk.map.TencentMap;
 import com.tencent.tencentmap.mapsdk.raster.utils.animation.MarkerRotateAnimator;
+import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
+import com.youth.banner.Transformer;
 import com.zbl.anju.R;
 import com.zbl.anju.app.AppConst;
 import com.zbl.anju.db.DBManager;
 import com.zbl.anju.ui.base.BaseActivity;
 import com.zbl.anju.ui.base.BasePresenter;
 import com.zbl.anju.ui.view.IMainAtView;
+import com.zbl.anju.util.GlideImageLoader;
 import com.zbl.anju.util.LogUtils;
 import com.zbl.anju.util.UIUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 
 /**
  *
@@ -34,23 +42,99 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 	private boolean isFirstLocation = true;        //首次定位成功
 	private View markerView;                       //当前位置标记
 	private List<View> markerViewHouses;           //房屋标记集合
+	private TencentLocationListener mLocationListener;//定位监听器
+	private TencentLocationRequest mLocationRequest;//定位请求
+	TencentLocationManager mLocationManager;       //定位管理器
 
 	public MainAtPresenter(BaseActivity context) {
 		super(context);
 		initLocation();
 	}
 
+	/**
+	 * 加载数据
+	 * 视频
+	 */
+	public void initData() {
+		initBanner();
+		initJcPlayer();
+	}
+
+	/**
+	 * 加载视频
+	 */
+	private void initJcPlayer() {
+		//设置视频播放源
+		getView().getJcPlayer().setUp("http://pgccdn.v.baidu.com/446673505_4133162716_20170806132327.mp4?authorization=bce-auth-v1%2Fc308a72e7b874edd9115e4614e1d62f6%2F2017-08-06T05%3A23%3A33Z%2F-1%2F%2Fe4fa01ec4352ddb38314a70c809264a6fc0e6894dd0638710acbf712a1c0a6f3&responseCacheControl=max-age%3D8640000&responseExpires=Tue%2C+14+Nov+2017+13%3A23%3A33+GMT&xcode=c64b1919385aa116dc50d92e5054a7741d93c9f3c454ab2f&time=1504139813&_=1504054789526"
+				, JCVideoPlayerStandard.SCREEN_LAYOUT_LIST);
+		//设置视频缩略图
+		Glide.with(mContext)
+				.load("http://pic3.58cdn.com.cn/anjuke_58/46bbe80f123d3425211a2b1e25397895")
+				.into(getView().getJcPlayer().thumbImageView);
+		JCVideoPlayer.setJcUserAction(new HouseInfoAtPresenter.MyUserActionStandard());
+	}
+
+
+	/**
+	 * 设置轮播各个属性
+	 */
+	private void initBannerProperty() {
+		//设置banner样式
+//		mBannerAdvertisement.setBannerStyle(BannerConfig.);  //显示指示器，不显示标题
+		Banner mBannerAdvertisement = getView().getBannerAd();
+		//设置图片加载器
+		mBannerAdvertisement.setImageLoader(new GlideImageLoader());
+		//设置图片集合
+//		banner.setImages(images);  //在presenter中设置
+		//设置banner动画效果
+		mBannerAdvertisement.setBannerAnimation(Transformer.Default);
+		//设置标题集合（当banner样式有显示title时）
+//		mBanner.setBannerTitles(titles);
+		//设置自动轮播，默认为true
+		mBannerAdvertisement.isAutoPlay(true);
+		//设置轮播时间
+		mBannerAdvertisement.setDelayTime(AppConst.MAIN_AD_BANNER_INTERVAL);
+		//设置指示器位置（当banner模式中有指示器时）
+		mBannerAdvertisement.setIndicatorGravity(BannerConfig.CENTER);
+		//banner设置方法全部调用完毕时最后调用
+//		mBanner.start();            //在presenter中设置
+	}
+
+	/**
+	 * 初始化广告轮播图
+	 */
+	private void initBanner() {
+		//设置轮播图的各个属性
+		initBannerProperty();
+		//设置轮播图
+		List<String> imageList = new ArrayList<>();
+		imageList.add("http://pic.58pic.com/58pic/13/80/06/68558PIC7Fn_1024.jpg");
+		imageList.add("http://pic.58pic.com/58pic/14/32/00/83A58PICDH5_1024.jpg");
+		imageList.add("http://pic.58pic.com/58pic/13/23/73/67y58PICzAc_1024.jpg");
+		imageList.add("http://pic.58pic.com/58pic/16/41/62/95I58PICRFd_1024.jpg");
+
+		imageList.add("http://pic56.nipic.com/file/20141213/15265552_175423699768_2.jpg");
+		imageList.add("http://pic.58pic.com/58pic/13/22/62/13V58PICAk2_1024.jpg");
+		imageList.add("http://pic.58pic.com/58pic/17/07/88/98y58PIChDF_1024.jpg");
+		imageList.add("http://pic.58pic.com/58pic/13/60/04/49K58PICjWN_1024.jpg");
+
+		//设置图片来源
+		getView().getBannerAd().setImages(imageList);
+		//开始加载图片
+		getView().getBannerAd().start();
+	}
+
 
 	/**
 	 * 定位
 	 */
-	private void initLocation() {
-		TencentLocationListener listener = new MyTencentLocationListener();
-		TencentLocationRequest request = TencentLocationRequest.create();
-		request.setInterval(AppConst.LOCATION_DEFAULT_INTERVAL);    //设置定位周期
-		request.setRequestLevel(TencentLocationRequest.REQUEST_LEVEL_NAME);  //设置定位精准度
-		TencentLocationManager locationManager = TencentLocationManager.getInstance(mContext);
-		int error = locationManager.requestLocationUpdates(request, listener);
+	public void initLocation() {
+		mLocationListener = new MyTencentLocationListener();
+		mLocationRequest = TencentLocationRequest.create();
+		mLocationRequest.setInterval(AppConst.LOCATION_DEFAULT_INTERVAL);    //设置定位周期
+		mLocationRequest.setRequestLevel(TencentLocationRequest.REQUEST_LEVEL_NAME);  //设置定位精准度
+		mLocationManager = TencentLocationManager.getInstance(mContext);
+		int error = mLocationManager.requestLocationUpdates(mLocationRequest, mLocationListener);
 
 		switch (error) {
 			case 0:
@@ -65,6 +149,15 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 			case 3:
 				LogUtils.e("--------自动加载libtencentloc.so失败-------");
 				break;
+		}
+	}
+
+	/**
+	 * 移除定位监听器
+	 */
+	public void removeLocationListener() {
+		if (null != mLocationManager && null != mLocationListener) {
+			mLocationManager.removeUpdates(mLocationListener);
 		}
 	}
 
@@ -175,6 +268,8 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 	private void setCenter(LatLng latLng) {
 		getView().getTenMap().setCenter(latLng);
 	}
+
+
 
 	/**
 	 * 定位监听器

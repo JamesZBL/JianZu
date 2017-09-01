@@ -166,7 +166,7 @@
 					</com.zhy.autolayout.AutoRelativeLayout>
 
 					<!-- 宫格菜单 -->
-					<include layout="@layout/include_lef_grid_menu"/>
+					<!--<include layout="@layout/include_lef_grid_menu"/>-->
 
 
 				</com.zhy.autolayout.AutoLinearLayout>

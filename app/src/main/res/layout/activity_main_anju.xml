@@ -17,14 +17,15 @@
 		>
 
 		<!-- App Bar -->
-		<include layout="@layout/include_toolbar_white"/>
+		<include layout="@layout/include_toolbar_color"/>
 
-		<!-- 顶部导航 -->
+		<!-- 顶部导航 隐藏 -->
 		<com.gigamole.navigationtabstrip.NavigationTabStrip
 			android:id="@+id/navi_main_top"
 			android:layout_width="match_parent"
 			android:layout_height="40dp"
 			android:background="@color/gray0.5"
+			android:visibility="gone"
 			app:nts_active_color="@color/colorPrimary"
 			app:nts_animation_duration="300"
 			app:nts_color="@color/colorPrimary"
@@ -37,15 +38,286 @@
 			app:nts_type="point"
 			app:nts_weight="3dp"/>
 
-		<View
-			style="@style/Line"/>
+		<!-- 主界面宫格菜单 -->
+		<com.zhy.autolayout.AutoLinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			>
+			<!-- 第 1 行 -->
+			<com.zhy.autolayout.AutoLinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="10dp"
+				android:layout_marginTop="15dp"
+				android:orientation="horizontal"
+				>
+				<!-- 1 -->
+				<com.zhy.autolayout.AutoRelativeLayout
+					android:id="@+id/arl_left_menu_1"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:background="@drawable/selector_option_item_trans"
+					>
 
-		<!--  -->
+					<ImageView
+						android:id="@+id/iv_l_grid_1"
+						android:layout_width="40dp"
+						android:layout_height="40dp"
+						android:layout_alignParentTop="true"
+						android:layout_centerHorizontal="true"
+						android:src="@drawable/ic_h_house_purple"
+						app:civ_border_color="@color/gray"
+						app:civ_border_width="0.2dp"/>
+
+					<TextView
+						style="@style/main_left_gird_txt_style"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/iv_l_grid_1"
+						android:text="@string/main_left_menu_txt_1"
+						/>
+
+				</com.zhy.autolayout.AutoRelativeLayout>
+
+				<!-- 2 -->
+				<com.zhy.autolayout.AutoRelativeLayout
+					android:id="@+id/arl_left_menu_2"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:background="@drawable/selector_option_item_trans"
+					>
+
+					<ImageView
+						android:id="@+id/iv_l_grid_2"
+						android:layout_width="40dp"
+						android:layout_height="40dp"
+						android:layout_alignParentTop="true"
+						android:layout_centerHorizontal="true"
+						android:src="@drawable/ic_h_house_blue"
+						app:civ_border_color="@color/gray"
+						app:civ_border_width="0.2dp"/>
+
+					<TextView
+						style="@style/main_left_gird_txt_style"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/iv_l_grid_2"
+						android:text="@string/main_left_menu_txt_2"
+						/>
+
+				</com.zhy.autolayout.AutoRelativeLayout>
+
+				<!-- 3 -->
+				<com.zhy.autolayout.AutoRelativeLayout
+					android:id="@+id/arl_left_menu_3"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:background="@drawable/selector_option_item_trans"
+					>
+
+					<ImageView
+						android:id="@+id/iv_l_grid_3"
+						android:layout_width="40dp"
+						android:layout_height="40dp"
+						android:layout_alignParentTop="true"
+						android:layout_centerHorizontal="true"
+						android:src="@drawable/ic_h_dingzhi"
+						app:civ_border_color="@color/gray"
+						app:civ_border_width="0.2dp"/>
+
+					<TextView
+						style="@style/main_left_gird_txt_style"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/iv_l_grid_3"
+						android:text="@string/main_left_menu_txt_3"
+						/>
+
+				</com.zhy.autolayout.AutoRelativeLayout>
+
+				<!-- 4 -->
+				<com.zhy.autolayout.AutoRelativeLayout
+					android:id="@+id/arl_left_menu_4"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:background="@drawable/selector_option_item_trans"
+					>
+
+					<ImageView
+						android:id="@+id/iv_l_grid_4"
+						android:layout_width="40dp"
+						android:layout_height="40dp"
+						android:layout_alignParentTop="true"
+						android:layout_centerHorizontal="true"
+						android:src="@drawable/ic_h_gongxiang"
+						app:civ_border_color="@color/gray"
+						app:civ_border_width="0.2dp"/>
+
+					<TextView
+						style="@style/main_left_gird_txt_style"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/iv_l_grid_4"
+						android:text="@string/main_left_menu_txt_4"
+						/>
+
+				</com.zhy.autolayout.AutoRelativeLayout>
+
+			</com.zhy.autolayout.AutoLinearLayout>
+
+			<!-- 第 2 行 -->
+			<com.zhy.autolayout.AutoLinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="10dp"
+				android:orientation="horizontal"
+				>
+				<!-- 5 -->
+				<com.zhy.autolayout.AutoRelativeLayout
+					android:id="@+id/arl_left_menu_5"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:background="@drawable/selector_option_item_trans"
+					>
+
+					<ImageView
+						android:id="@+id/iv_l_grid_5"
+						android:layout_width="40dp"
+						android:layout_height="40dp"
+						android:layout_alignParentTop="true"
+						android:layout_centerHorizontal="true"
+						android:src="@drawable/ic_h_dianfu"
+						app:civ_border_color="@color/gray"
+						app:civ_border_width="0.2dp"/>
+
+					<TextView
+						style="@style/main_left_gird_txt_style"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/iv_l_grid_5"
+						android:text="@string/main_left_menu_txt_5"
+						/>
+
+				</com.zhy.autolayout.AutoRelativeLayout>
+
+				<!-- 6 -->
+				<com.zhy.autolayout.AutoRelativeLayout
+					android:id="@+id/arl_left_menu_6"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:background="@drawable/selector_option_item_trans"
+					>
+
+					<ImageView
+						android:id="@+id/iv_l_grid_6"
+						android:layout_width="40dp"
+						android:layout_height="40dp"
+						android:layout_alignParentTop="true"
+						android:layout_centerHorizontal="true"
+						android:src="@drawable/ic_h_ershou"
+						app:civ_border_color="@color/gray"
+						app:civ_border_width="0.2dp"/>
+
+					<TextView
+						style="@style/main_left_gird_txt_style"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/iv_l_grid_6"
+						android:text="@string/main_left_menu_txt_6"
+						/>
+
+				</com.zhy.autolayout.AutoRelativeLayout>
+
+				<!-- 7 -->
+				<com.zhy.autolayout.AutoRelativeLayout
+					android:id="@+id/arl_left_menu_7"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:background="@drawable/selector_option_item_trans"
+					>
+
+					<ImageView
+						android:id="@+id/iv_l_grid_7"
+						android:layout_width="40dp"
+						android:layout_height="40dp"
+						android:layout_alignParentTop="true"
+						android:layout_centerHorizontal="true"
+						android:src="@drawable/ic_xiaoedaikuan"
+						app:civ_border_color="@color/gray"
+						app:civ_border_width="0.2dp"/>
+
+					<TextView
+						style="@style/main_left_gird_txt_style"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/iv_l_grid_7"
+						android:text="@string/main_left_menu_txt_7"
+						/>
+
+				</com.zhy.autolayout.AutoRelativeLayout>
+
+				<!-- 8 -->
+				<com.zhy.autolayout.AutoRelativeLayout
+					android:id="@+id/arl_left_menu_8"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:background="@drawable/selector_option_item_trans"
+					>
+
+					<ImageView
+						android:id="@+id/iv_l_grid_8"
+						android:layout_width="40dp"
+						android:layout_height="40dp"
+						android:layout_alignParentTop="true"
+						android:layout_centerHorizontal="true"
+						android:src="@drawable/ic_h_fangzulicai"
+						app:civ_border_color="@color/gray"
+						app:civ_border_width="0.2dp"/>
+
+					<TextView
+						style="@style/main_left_gird_txt_style"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/iv_l_grid_8"
+						android:text="@string/main_left_menu_txt_8"
+						/>
+
+				</com.zhy.autolayout.AutoRelativeLayout>
+
+			</com.zhy.autolayout.AutoLinearLayout>
+		</com.zhy.autolayout.AutoLinearLayout>
+
+		<!-- 视频 -->
+		<fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
+			android:id="@+id/main_jc_player"
+			android:layout_width="match_parent"
+			android:layout_height="150dp">
+
+		</fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard>
+
+		<!-- 广告轮播图 -->
+		<com.youth.banner.Banner
+			android:id="@+id/main_anju_guanggao_banner"
+			android:layout_width="match_parent"
+			android:layout_height="75dp"/>
+
+
+		<!-- 地图及其中的按钮 -->
 		<com.zhy.autolayout.AutoRelativeLayout
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:orientation="vertical"
 			>
+
 
 			<!-- 地图 -->
 			<com.tencent.tencentmap.mapsdk.map.MapView
@@ -54,6 +326,21 @@
 				android:layout_height="fill_parent">
 
 			</com.tencent.tencentmap.mapsdk.map.MapView>
+
+			<!-- 地图搜索 文字 -->
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/shape_jianbian_black"
+				android:paddingBottom="3dp"
+				android:paddingLeft="16dp"
+				android:paddingRight="16dp"
+				android:paddingTop="3dp"
+				android:text="@string/main_map_sousuo"
+				android:textColor="@color/gray0"
+				android:layout_toStartOf="@+id/rr_sig_btm"
+				android:layout_toRightOf="@+id/rr_sig_btm"
+				/>
 
 			<Button
 				android:id="@+id/btn_main_loc"
@@ -420,7 +707,6 @@
 
 	<!-- 侧边栏 new-->
 	<include layout="@layout/left_sliding_menu"/>
-
 
 
 </android.support.v4.widget.DrawerLayout>

@@ -5,7 +5,10 @@ import android.widget.EditText;
 import com.gigamole.navigationtabstrip.NavigationTabStrip;
 import com.tencent.tencentmap.mapsdk.map.MapView;
 import com.tencent.tencentmap.mapsdk.map.TencentMap;
+import com.youth.banner.Banner;
 import com.zbl.anju.widget.LinePathView;
+
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 
 /**
  * 手写Activity视图接口
@@ -21,4 +24,6 @@ public interface IMainAtView {
 	TencentMap getTenMap();
 
 	NavigationTabStrip getNavigationTabStrip();
+	Banner getBannerAd();
+	JCVideoPlayerStandard getJcPlayer();
 }

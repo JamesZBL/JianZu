@@ -18,6 +18,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.muddzdev.styleabletoastlibrary.StyleableToast;
+import com.zbl.anju.R;
 import com.zbl.anju.app.AppConst;
 import com.zbl.anju.app.MyApp;
 import com.zbl.anju.app.base.BaseApp;
@@ -36,6 +38,7 @@ import static com.zhy.autolayout.utils.ScreenUtils.getStatusBarHeight;
 public class UIUtils {
 
 	public static Toast mToast;
+	public static StyleableToast mStyleableToast;
 	public static int screenWidth;
 	public static int screenHeight;
 	public static int screenMin;// 宽高中，小的一边
@@ -66,11 +69,18 @@ public class UIUtils {
 	 * @param duration 显示时长
 	 */
 	public static void showToast(String msg, int duration) {
-		if (mToast == null) {
+		/*if (mToast == null) {
 			mToast = Toast.makeText(getContext(), "", duration);
 		}
 		mToast.setText(msg);
-		mToast.show();
+		mToast.show();*/
+
+		if (mStyleableToast == null) {
+			mStyleableToast = StyleableToast.makeText(getContext(), msg, duration, R.style.styleable_toast);
+		} else {
+			mStyleableToast.setText(msg);
+		}
+		mStyleableToast.show();
 	}
 
 	/**

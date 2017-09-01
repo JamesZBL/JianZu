@@ -77,10 +77,16 @@
 		<!--android:name="UMENG_APPKEY"-->
 		<!--android:value="59a60c2465b6d6586c000aa8"/>-->
 
-		 <!--友盟统计 假数据 -->
+		<!--友盟统计 假数据 -->
 		<meta-data
-		android:name="UMENG_APPKEY"
-		android:value="59a60c2465b6d6586c000aa1"/>
+			android:name="UMENG_APPKEY"
+			android:value="59a60c2465b6d6586c000aa1"/>
+
+		<!-- 高德定位(城市选择组件所用) -->
+		<meta-data
+			android:name="com.amap.api.v2.apikey"
+			android:value="dfb06feea86acc231f9d6ed5eb7fc3ef"/>
+
 		<meta-data
 			android:name="UMENG_CHANNEL"
 			android:value="Debug"/>
@@ -133,6 +139,13 @@
 			>
 
 		</activity>
+
+		<!-- 城市选择组件 -->
+		<activity
+			android:name="com.zaaach.citypicker.CityPickerActivity"
+			android:theme="@style/CityPicker.NoActionBar"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="stateHidden|adjustPan"/>
 
 
 		<!--房屋信息-->

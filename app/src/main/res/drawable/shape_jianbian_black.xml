@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+	<!-- 开始颜色="" 结束颜色="" 颜色渐变="" -->
+	<gradient android:angle="270" android:endColor="@color/transparent" android:startColor="@color/colorPrimary"/>
+</shape>

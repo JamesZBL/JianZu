@@ -132,4 +132,6 @@ dependencies {
     compile files('libs/TencentMapSDK_Raster_v_1.2.8_e45bcd0.jar')
     compile files('libs/TencentmapRasterUtils_v1.0.2968883.jar')
     compile 'com.rengwuxian.materialedittext:library:2.1.4'
+    compile 'com.muddzdev:styleabletoast:1.0.9'
+    compile 'com.zaaach:citypicker:1.2'
 }
