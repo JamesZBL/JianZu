@@ -103,7 +103,7 @@
 
 				<!-- 发布 -->
 				<TextView
-					android:id="@+id/tv_detail_1"
+					android:id="@+id/tv_release"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="10px"

@@ -59,4 +59,20 @@ public class DBManager {
 	public House getRandomSingleHouse() {
 		return null;
 	}
+
+
+	/**
+	 * 根据条件获取房源列表
+	 *
+	 * @param priceStr     价格
+	 * @param houseTypeStr 户型
+	 */
+	public List<House> getHouseList(String priceStr, String houseTypeStr) {
+		List<House> houseList = new ArrayList<>();
+
+
+
+
+		return null;
+	}
 }

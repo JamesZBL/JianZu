@@ -17,7 +17,6 @@ import com.zhy.autolayout.AutoLinearLayout;
 import butterknife.Bind;
 
 /**
- *
  * Created by James on 17-9-1.
  */
 
@@ -41,12 +40,12 @@ public class HouseListActiity extends BaseActivity<IHouseLIistAtView, HouseListA
 	ImageView iv_tri_1;                     //价格tri
 
 	@Bind(R.id.v_type)
-	View v_0;
+	View v_0;                               //遮罩
 	@Bind(R.id.v_price)
-	View v_1;
+	View v_1;                               //遮罩
 
 	@Bind(R.id.rv_house_list)
-	LQRRecyclerView rvHouseInfo;            //
+	LQRRecyclerView rvHouseInfo;            //房源recyclerView
 
 	private boolean isDropOpened = false;
 	private int openIndex = -1;
@@ -60,6 +59,12 @@ public class HouseListActiity extends BaseActivity<IHouseLIistAtView, HouseListA
 	public void initView() {
 		super.initView();
 		mPresenter.initDropDownMenu();
+	}
+
+	@Override
+	public void initData() {
+		super.initData();
+		mPresenter.initData();
 	}
 
 	@Override
@@ -116,6 +121,11 @@ public class HouseListActiity extends BaseActivity<IHouseLIistAtView, HouseListA
 	@Override
 	public ListView getListViewPrices() {
 		return lvMenuPrices;
+	}
+
+	@Override
+	public LQRRecyclerView getRvHouses() {
+		return rvHouseInfo;
 	}
 
 	/**
