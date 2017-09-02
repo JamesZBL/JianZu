@@ -224,8 +224,8 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 
 		/* 左侧宫格菜单 内容 */
 		mArlLeftMenu1.setOnClickListener(v -> {
-			//测试登录界面
-			jumpToActivity(LoginActivity.class);
+			//房屋列表
+			jumpToActivity(HouseListActiity.class);
 		});
 
 		/* 顶部 城市选择按钮 */

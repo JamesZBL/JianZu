@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/all_menu_prices"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:layout_alignParentStart="true"
+	android:layout_alignParentTop="true"
+	android:background="@color/mask_light"
+	android:orientation="vertical"
+	>
+
+	<ListView
+		android:id="@+id/lv_menu_prices"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:divider="@drawable/shape_horizontal_line_gray"
+		android:background="@color/white"
+		android:choiceMode="singleChoice"/>
+
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/v_price"
+		/>
+</com.zhy.autolayout.AutoLinearLayout>

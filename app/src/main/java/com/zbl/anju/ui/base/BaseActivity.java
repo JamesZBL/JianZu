@@ -358,4 +358,5 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AppCom
 	public void hasFirstLaunch(Class clazz) {
 		SPUtils.getInstance(this).putBoolean(AppConst.FIRST_LAUNCH + MyApp.getVersionCode(this) + clazz.getName(), false);
 	}
+
 }

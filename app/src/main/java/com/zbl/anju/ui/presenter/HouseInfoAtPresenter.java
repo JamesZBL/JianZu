@@ -63,6 +63,7 @@ public class HouseInfoAtPresenter extends BasePresenter<IHouseInfoAtView> {
 			e.printStackTrace();
 		}
 		UIUtils.showToast("initBundle");
+
 	}
 
 

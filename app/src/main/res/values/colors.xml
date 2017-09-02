@@ -85,6 +85,8 @@
 
 	<!--遮盖层颜色-->
 	<color name="mask">#32000000</color>
+	<!-- 轻度遮盖 -->
+	<color name="mask_light">#19000000</color>
 
 	<!--快速索引bar颜色-->
 	<color name="side_bar">#919091</color>

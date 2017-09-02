@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	android:orientation="vertical"
+	>
+	<!-- 标题栏 -->
+	<include layout="@layout/include_toolbar_white"/>
+
+	<!-- 下拉菜单 header -->
+	<com.zhy.autolayout.AutoLinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="40dp"
+		android:orientation="horizontal"
+		android:background="@color/white"
+		>
+		<!-- 户型 toggle -->
+		<com.zhy.autolayout.AutoLinearLayout
+			android:id="@+id/all_house_list_tab_house_type"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			>
+
+			<com.zhy.autolayout.AutoRelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:text="户型"
+					android:textSize="16dp"
+					android:layout_centerVertical="true"
+					android:layout_centerHorizontal="true"
+					android:id="@+id/textView3"/>
+
+				<ImageView
+					android:id="@+id/iv_tab_tri_type"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:src="@drawable/ic_down_tri"
+					android:layout_centerVertical="true"
+					android:layout_toRightOf="@+id/textView3"
+					android:layout_toEndOf="@+id/textView3"/>
+			</com.zhy.autolayout.AutoRelativeLayout>
+
+
+		</com.zhy.autolayout.AutoLinearLayout>
+
+		<!-- 价格toggle -->
+		<com.zhy.autolayout.AutoLinearLayout
+			android:id="@+id/all_house_list_tab_prices"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1">
+
+			<com.zhy.autolayout.AutoRelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:text="价格"
+					android:textSize="16dp"
+					android:layout_centerVertical="true"
+					android:layout_centerHorizontal="true"
+					android:id="@+id/textView5"/>
+				<ImageView
+					android:id="@+id/iv_tab_tri_price"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:src="@drawable/ic_down_tri"
+					android:layout_centerVertical="true"
+					android:layout_toRightOf="@+id/textView5"
+					android:layout_toEndOf="@+id/textView5"/>
+			</com.zhy.autolayout.AutoRelativeLayout>
+
+
+		</com.zhy.autolayout.AutoLinearLayout>
+	</com.zhy.autolayout.AutoLinearLayout>
+
+	<View
+		style="@style/Line"/>
+
+	<!-- 房屋列表和下拉菜单的相对布局 -->
+	<com.zhy.autolayout.AutoRelativeLayout
+		android:id="@+id/arl_house_list"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+
+		<com.lqr.recyclerview.LQRRecyclerView
+			android:id="@+id/rv_house_list"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_alignParentStart="true"
+			android:layout_alignParentTop="true"
+			app:rv_divider_color="@color/line"
+			app:rv_divider_size="1px"/>
+
+		<include
+			layout="@layout/menu_housetypes"
+			android:visibility="gone"
+			/>
+
+		<include
+			layout="@layout/menu_prices"
+			android:visibility="gone"
+			/>
+	</com.zhy.autolayout.AutoRelativeLayout>
+
+
+</com.zhy.autolayout.AutoLinearLayout>

@@ -1,6 +1,7 @@
 package com.zbl.anju.db;
 
 import com.tencent.mapsdk.raster.model.LatLng;
+import com.zbl.anju.model.data.House;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.Random;
 
 /**
  * @author James
- * @描述 数据库管理器
+ * @描述 数据管理器
  */
 public class DBManager {
 
@@ -31,7 +32,6 @@ public class DBManager {
 	}
 
 
-
 	/**
 	 * 根据地图中心点获取周围方圆一定距离内的房源位置
 	 *
@@ -39,7 +39,7 @@ public class DBManager {
 	 * @param areaKiloMeter 范围/公里
 	 * @return 房源列表
 	 */
-	public List<LatLng> getHousesLocsByLatLng(LatLng centerLatLng, int areaKiloMeter, int house_num,int type) {
+	public List<LatLng> getHousesLocsByLatLng(LatLng centerLatLng, int areaKiloMeter, int house_num, int type) {
 		List<LatLng> latLngList = new ArrayList<>();
 		Random random = new Random();
 		for (int i = 0; i < house_num; i++) {
@@ -53,4 +53,10 @@ public class DBManager {
 		return latLngList;
 	}
 
+	/**
+	 * 随机获取一个房源
+	 */
+	public House getRandomSingleHouse() {
+		return null;
+	}
 }

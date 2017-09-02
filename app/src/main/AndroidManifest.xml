@@ -157,6 +157,15 @@
 			>
 		</activity>
 
+		<!--房屋列表-->
+		<activity
+			android:name="com.zbl.anju.ui.activity.HouseListActiity"
+			android:configChanges="orientation|screenSize|keyboardHidden"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="adjustNothing"
+			>
+		</activity>
+
 		<!-- 登录 -->
 		<activity
 			android:name="com.zbl.anju.ui.activity.LoginActivity"
