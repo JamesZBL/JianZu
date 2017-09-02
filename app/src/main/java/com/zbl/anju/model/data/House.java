@@ -11,6 +11,7 @@ public class House {
 
 	private String id;
 	private String name;
+	private String type;
 	private String description;
 	private String xiaoquName;
 	private String distance;
@@ -134,5 +135,13 @@ public class House {
 
 	public void setLatLng(LatLng latLng) {
 		this.latLng = latLng;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 }

@@ -11,6 +11,7 @@ import com.lqr.adapter.LQRViewHolderForRecyclerView;
 import com.zbl.anju.R;
 import com.zbl.anju.db.DBManager;
 import com.zbl.anju.model.data.House;
+import com.zbl.anju.ui.activity.HouseInfoActivity;
 import com.zbl.anju.ui.base.BaseActivity;
 import com.zbl.anju.ui.base.BasePresenter;
 import com.zbl.anju.ui.view.IHouseLIistAtView;
@@ -18,7 +19,10 @@ import com.zbl.anju.ui.view.IHouseLIistAtView;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 /**
+ * 房屋列表
  * Created by James on 17-9-1.
  */
 
@@ -74,7 +78,7 @@ public class HouseListAtPresenter extends BasePresenter<IHouseLIistAtView> {
 	 * 初次加载数据
 	 */
 	public void initData() {
-		loadHouses("一室", "500以下");
+		loadHouses("一室", "1000以下");
 	}
 
 	/**
@@ -94,24 +98,24 @@ public class HouseListAtPresenter extends BasePresenter<IHouseLIistAtView> {
 				@Override
 				public void convert(LQRViewHolderForRecyclerView helper, House item, int position) {
 
-					ImageView ivHeader = helper.getView(R.id.ivHeader);
+					CircleImageView ivHeader = helper.getView(R.id.ivHeader);
 					/* 加载缩略图 */
-					Glide.with(mContext).load(item).centerCrop().into(ivHeader);
+					Glide.with(mContext).load(item.getUrlVideoThumbnail()).centerCrop().into(ivHeader);
 
 					helper.setText(R.id.tvDescTitle, item.getXiaoquName())
-							.setText(R.id.tvRelease, item.getReleaseTime())
+							.setText(R.id.tv_release, item.getReleaseTime())
 							.setText(R.id.tv_price, item.getPrice())
+							.setText(R.id.tvHouseType, item.getType())
 							.setText(R.id.tvDistance, item.getDistance());
-
 
 				}
 			};
 			mAdapter.setOnItemClickListener((helper, parent, itemView, position) -> {
-//				Intent intent = new Intent(mContext, SessionActivity.class);
+				Intent intent = new Intent(mContext, HouseInfoActivity.class);
 				House item = mData.get(position);
 //				intent.putExtra("sessionId", item.getTargetId());
 
-//				mContext.jumpToActivity(intent);
+				mContext.jumpToActivity(intent);
 			});
 
 			getView().getRvHouses().setAdapter(mAdapter);
@@ -125,5 +129,51 @@ public class HouseListAtPresenter extends BasePresenter<IHouseLIistAtView> {
 		List<House> houseList = DBManager.getInstance().getHouseList(type, price);
 		mData.clear();
 		mData.addAll(houseList);
+	}
+
+	public void reloadHouses() {
+		int typeIndex = this.typeIndex;
+		int priceIndex = this.priceIndex;
+		String priceStr = "";
+		String typeStr = "";
+		switch (priceIndex) {
+			case 0: {
+				priceStr = "1000以下";
+				break;
+			}
+			case 1: {
+				priceStr = "1000-1500";
+				break;
+			}
+			case 2: {
+				priceStr = "1500-2000";
+				break;
+			}
+			case 3: {
+				priceStr = "2000以上";
+				break;
+			}
+		}
+		switch (typeIndex) {
+			case 0: {
+				typeStr = "一室";
+				break;
+			}
+			case 1: {
+				typeStr = "两室";
+				break;
+			}
+			case 2: {
+				typeStr = "三室";
+				break;
+			}
+			case 3: {
+				typeStr = "合租";
+				break;
+			}
+		}
+
+		getView().getRvHouses().removeAllViews();
+		loadHouses(typeStr, priceStr);
 	}
 }

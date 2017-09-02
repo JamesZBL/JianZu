@@ -41,6 +41,7 @@ public class AppConst {
 
 	/* ----------------------房屋-----------------------------*/
 	public static final int HOUSE_DEFAULT_HOUSE_NUM = 15;    //默认推荐房源数量
+	public static final int HOUSE_DEFAULT_HOUSE_list_NUM = 50;    //默认推荐房源数量
 
 
 

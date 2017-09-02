@@ -94,13 +94,15 @@ public class HouseListActiity extends BaseActivity<IHouseLIistAtView, HouseListA
 			@Override
 			public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 				mPresenter.setTypeIndex(i);
+				mPresenter.reloadHouses();
 				closeAllDrop();
 			}
 		});
 		lvMenuPrices.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-				mPresenter.setTypeIndex(i);
+				mPresenter.setPriceIndex(i);
+				mPresenter.reloadHouses();
 				closeAllDrop();
 			}
 		});

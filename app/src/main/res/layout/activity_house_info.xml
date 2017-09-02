@@ -53,7 +53,7 @@
 					style="@style/info_black_title_text_style"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:text="精装修拎包入住有空调能做饭石家庄站附近xx小区交通方便"
+					android:text="华夏家园一室"
 					/>
 
 				<View
@@ -400,7 +400,7 @@
 							style="@style/info_gray_text_style"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
-							android:text="精装修拎包入住有空调能做饭长租价格可议炫彩大学城博士园未来石"
+							android:text="可议价，可自行添置家具"
 							/>
 
 					</com.zhy.autolayout.AutoLinearLayout>
