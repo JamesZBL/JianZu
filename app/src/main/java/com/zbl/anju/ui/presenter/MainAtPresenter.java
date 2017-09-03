@@ -280,7 +280,7 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 	public void showAd(){
 		List<AdInfo> advList = new ArrayList<>();
 		AdInfo adInfo = new AdInfo();
-		adInfo.setActivityImg("https://raw.githubusercontent.com/yipianfengye/android-adDialog/master/images/testImage1.png");
+		adInfo.setActivityImg(AppConst.URL_AD_IMG);
 		advList.add(adInfo);
 		AdManager adManager = new AdManager(mContext, advList);
 		adManager.setOverScreen(true)
