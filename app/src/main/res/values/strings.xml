@@ -5,6 +5,7 @@
 	<string name="disp_at_first_launch">first_launch</string>
 
 	<!-- ____________________________________Anju___________________________________ -->
+	<string name="houseinfo_act_tiltle">房屋详情</string>
 	<string name="houseinfo_description_tiltle">房屋描述标题</string>
 	<string name="houseinfo_rent_price">租金：</string>
 	<string name="houseinfo_price">价格：</string>
@@ -21,6 +22,7 @@
 	<string name="houseinfo_house_property_type">类型：</string>
 	<string name="houseinfo_release">发布：</string>
 	<string name="houseinfo_address">地址：</string>
+	<string name="houseinfo_see_phone">看电话</string>
 
 	<string name="main_map_sousuo">地图搜索</string>
 

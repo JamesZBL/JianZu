@@ -76,6 +76,7 @@ public class HouseInfoActivity extends BaseActivity<IHouseInfoAtView, HouseInfoA
 	@Override
 	public void initView() {
 		super.initView();
+		setToolbarTitle(getString(R.string.houseinfo_act_tiltle));
 		mIbToolbarMore.setVisibility(View.VISIBLE);
 		initBanner();
 		initJcVideoPlayer();

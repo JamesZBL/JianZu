@@ -46,7 +46,7 @@
 				<com.zbl.anju.widget.CustomJcVideoPlayerStandard
 					android:id="@+id/houseinfo_video_player"
 					android:layout_width="match_parent"
-					android:layout_height="200dp"/>
+					android:layout_height="300dp"/>
 
 				<!--描述标题-->
 				<TextView
@@ -520,25 +520,18 @@
 						android:padding="3dp"
 						>
 
-						<ImageView
+						<de.hdodenhof.circleimageview.CircleImageView
 							android:id="@+id/imageView2"
-							android:layout_width="match_parent"
+							android:layout_width="35dp"
 							android:layout_height="wrap_content"
 							android:layout_margin="2dp"
 							android:layout_weight="1"
-							android:src="@drawable/ic_down_fill"/>
+							android:src="@drawable/ic_n_man_orange"/>
 
-						<TextView
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:text="@string/save"
-							android:textAlignment="center"
-							android:textSize="@dimen/global_normal_font_size_vxsm"
-							/>
+
 					</com.zhy.autolayout.AutoLinearLayout>
 
-					<View
-						style="@style/Line_Vertical"/>
+
 
 					<com.zhy.autolayout.AutoLinearLayout
 						android:id="@+id/ll_sig_btm_clear"
@@ -549,25 +542,33 @@
 						android:padding="3dp"
 						>
 
-						<ImageView
+						<com.zhy.autolayout.AutoRelativeLayout
 							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:layout_margin="2dp"
-							android:layout_weight="1"
-							android:src="@drawable/ic_eraser_fill"/>
+							android:layout_height="match_parent">
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="183****3210"
+								android:textAlignment="center"
+								android:textSize="@dimen/global_normal_font_size_xsm"
+								android:id="@+id/textView7"/>
 
-						<TextView
-							android:layout_width="match_parent"
-							android:layout_height="wrap_content"
-							android:text="@string/clear"
-							android:textAlignment="center"
-							android:textSize="@dimen/global_normal_font_size_vxsm"
-							/>
+							<TextView
+								android:id="@+id/textView6"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text="李先生"
+								android:textAlignment="textStart"
+								android:textSize="@dimen/global_normal_font_size_xsm"
+								android:layout_below="@+id/textView7"
+								android:layout_alignParentLeft="true"
+								android:layout_alignParentStart="true"/>
+						</com.zhy.autolayout.AutoRelativeLayout>
+
 					</com.zhy.autolayout.AutoLinearLayout>
 
 					<View
 						style="@style/Line_Vertical"/>
-
 					<com.zhy.autolayout.AutoLinearLayout
 						android:id="@+id/ll_sig_btm_color"
 						android:layout_width="wrap_content"
@@ -582,12 +583,12 @@
 							android:layout_height="wrap_content"
 							android:layout_margin="2dp"
 							android:layout_weight="1"
-							android:src="@drawable/ic_color_picker"/>
+							android:src="@drawable/ic_h_phone_circle"/>
 
 						<TextView
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
-							android:text="@string/signature_color"
+							android:text="@string/houseinfo_see_phone"
 							android:textAlignment="center"
 							android:textSize="@dimen/global_normal_font_size_vxsm"
 							/>

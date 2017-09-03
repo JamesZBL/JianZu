@@ -141,7 +141,7 @@ public class DBManager {
 	 */
 	public List<House> getHouseList(String houseTypeStr, String priceStr) {
 		List<House> houseList = new ArrayList<>();
-		for (int i = 0; i < AppConst.HOUSE_DEFAULT_HOUSE_list_NUM; i++) {
+		for (int i = 0; i < AppConst.HOUSE_DEFAULT_HOUSE_LIST_NUM; i++) {
 			House houseItem = getRandomSingleHouse(houseTypeStr, priceStr);
 			houseList.add(houseItem);
 		}

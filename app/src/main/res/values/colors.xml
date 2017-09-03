@@ -94,4 +94,8 @@
 
 	<!--appbar_imgbtn_ripple颜色-->
 	<color name="color_ripple_imgbtn_appbar">#4f0073ff</color>
+
+	<!-- taobao 渐变 -->
+	<color name="color_taobao_light">#FE9001</color>
+	<color name="color_taobao_dark">#FE5000</color>
 </resources>
