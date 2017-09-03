@@ -178,6 +178,12 @@
 			android:screenOrientation="portrait"
 			>
 		</activity>
+		<!-- 购买分类 -->
+		<activity
+			android:name="com.zbl.anju.ui.activity.BuyClassifyActivity"
+			android:screenOrientation="portrait"
+			>
+		</activity>
 
 	</application>
 

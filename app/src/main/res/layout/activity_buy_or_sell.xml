@@ -19,6 +19,7 @@
 		android:padding="10dp"
 		>
 		<com.zbl.anju.widget.AutoCardView
+			android:id="@+id/cv_iwanna_sell"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:layout_weight="1"
@@ -37,8 +38,8 @@
 					android:layout_centerVertical="true"
 					android:layout_centerHorizontal="true">
 					<ImageView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
+						android:layout_width="150dp"
+						android:layout_height="150dp"
 						android:src="@drawable/ic_h_iwanna_sell"
 						/>
 					<TextView
@@ -47,7 +48,7 @@
 						android:text="@string/ershou_i_wanna_sell"
 						android:layout_gravity="center"
 						android:layout_margin="10dp"
-						android:textSize="@dimen/global_normal_font_size_sm"
+						android:textSize="22dp"
 						/>
 				</com.zhy.autolayout.AutoLinearLayout>
 			</com.zhy.autolayout.AutoRelativeLayout>
@@ -58,11 +59,14 @@
 			android:layout_height="match_parent"
 			android:layout_margin="5dp"
 			android:layout_weight="1"
-			android:background="@drawable/selector_option_item"
+
 			>
 			<com.zhy.autolayout.AutoRelativeLayout
+				android:id="@+id/all_i_wanna_buy"
 				android:layout_width="match_parent"
-				android:layout_height="match_parent">
+				android:layout_height="match_parent"
+				android:background="@drawable/selector_option_item"
+				>
 				<!-- 图标和字 -->
 				<com.zhy.autolayout.AutoLinearLayout
 					android:layout_width="wrap_content"
@@ -71,8 +75,8 @@
 					android:layout_centerVertical="true"
 					android:layout_centerHorizontal="true">
 					<ImageView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
+						android:layout_width="150dp"
+						android:layout_height="150dp"
 						android:src="@drawable/ic_h_iwanna_buy"
 						/>
 					<TextView
@@ -81,7 +85,7 @@
 						android:text="@string/ershou_i_wanna_buy"
 						android:layout_gravity="center"
 						android:layout_margin="10dp"
-						android:textSize="@dimen/global_normal_font_size_sm"
+						android:textSize="22dp"
 						/>
 				</com.zhy.autolayout.AutoLinearLayout>
 			</com.zhy.autolayout.AutoRelativeLayout>
