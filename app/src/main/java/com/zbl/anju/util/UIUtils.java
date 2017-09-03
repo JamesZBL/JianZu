@@ -18,6 +18,11 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.flyco.animation.BaseAnimatorSet;
+import com.flyco.animation.BounceEnter.BounceTopEnter;
+import com.flyco.animation.SlideExit.SlideBottomExit;
+import com.flyco.dialog.listener.OnBtnClickL;
+import com.flyco.dialog.widget.NormalDialog;
 import com.muddzdev.styleabletoastlibrary.StyleableToast;
 import com.zbl.anju.R;
 import com.zbl.anju.app.AppConst;
@@ -407,6 +412,38 @@ public class UIUtils {
 	public static void startAnimation(View v, int resId) {
 		Animation animation = AnimationUtils.loadAnimation(getContext(), resId);
 		v.startAnimation(animation);
+	}
+
+	/**
+	 * 显示对称对话框
+	 *
+	 * @param content
+	 */
+	public static NormalDialog getNormalDialogStyleTwo(String content,Activity activity) {
+		BaseAnimatorSet mBasIn = new BounceTopEnter();
+		BaseAnimatorSet mBasOut = new SlideBottomExit();
+
+		final NormalDialog dialog = new NormalDialog(activity);
+		dialog.content(content)//
+				.style(NormalDialog.STYLE_TWO)//
+				.titleTextSize(23)//
+				.showAnim(mBasIn)//
+				.dismissAnim(mBasOut);
+		return dialog;
+	}
+
+	public static NormalDialog getNormalDialogStyleOne(String content,Activity activity) {
+		BaseAnimatorSet mBasIn = new BounceTopEnter();
+		BaseAnimatorSet mBasOut = new SlideBottomExit();
+
+		final NormalDialog dialog = new NormalDialog(activity);
+		dialog.content(content)//
+				.style(NormalDialog.STYLE_TWO)//
+				.btnNum(1)
+				.titleTextSize(23)//
+				.showAnim(mBasIn)//
+				.dismissAnim(mBasOut);
+		return dialog;
 	}
 }
 

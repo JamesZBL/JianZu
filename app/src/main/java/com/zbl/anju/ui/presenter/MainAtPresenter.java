@@ -14,12 +14,17 @@ import com.tencent.mapsdk.raster.model.Marker;
 import com.tencent.mapsdk.raster.model.MarkerOptions;
 import com.tencent.tencentmap.mapsdk.map.TencentMap;
 import com.tencent.tencentmap.mapsdk.raster.utils.animation.MarkerRotateAnimator;
+import com.uuch.adlibrary.AdConstant;
+import com.uuch.adlibrary.AdManager;
+import com.uuch.adlibrary.bean.AdInfo;
+import com.uuch.adlibrary.transformer.DepthPageTransformer;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
 import com.zbl.anju.R;
 import com.zbl.anju.app.AppConst;
 import com.zbl.anju.db.DBManager;
+import com.zbl.anju.ui.activity.MainActivity;
 import com.zbl.anju.ui.base.BaseActivity;
 import com.zbl.anju.ui.base.BasePresenter;
 import com.zbl.anju.ui.view.IMainAtView;
@@ -269,7 +274,20 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 		getView().getTenMap().setCenter(latLng);
 	}
 
+	/**
+	 * 弹ad
+	 */
+	public void showAd(){
+		List<AdInfo> advList = new ArrayList<>();
+		AdInfo adInfo = new AdInfo();
+		adInfo.setActivityImg("https://raw.githubusercontent.com/yipianfengye/android-adDialog/master/images/testImage1.png");
+		advList.add(adInfo);
+		AdManager adManager = new AdManager(mContext, advList);
+		adManager.setOverScreen(true)
+				.setPageTransformer(new DepthPageTransformer());
 
+		adManager.showAdDialog(AdConstant.ANIM_DOWN_TO_UP);
+	}
 
 	/**
 	 * 定位监听器

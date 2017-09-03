@@ -148,7 +148,7 @@
 
 	<style name="btn_orange"
 		   parent="Base.Widget.AppCompat.Button.Borderless.Colored">
-		<item name="android:background">@drawable/shape_jianbian_taobao</item>
+		<item name="android:background">@drawable/selector_jianbian_taobao</item>
 		<item name="android:scaleType">fitXY</item>
 		<item name="android:textColor">@android:color/white</item>
 		<item name="android:height">35dp</item>

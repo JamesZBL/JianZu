@@ -24,6 +24,10 @@ import com.ikimuhendis.ldrawer.DrawerArrowDrawable;
 import com.tencent.mapsdk.raster.model.LatLng;
 import com.tencent.tencentmap.mapsdk.map.MapView;
 import com.tencent.tencentmap.mapsdk.map.TencentMap;
+import com.uuch.adlibrary.AdConstant;
+import com.uuch.adlibrary.AdManager;
+import com.uuch.adlibrary.bean.AdInfo;
+import com.uuch.adlibrary.transformer.DepthPageTransformer;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
@@ -40,6 +44,9 @@ import com.zbl.anju.util.UIUtils;
 import com.zbl.anju.widget.LinePathView;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerSimple;
@@ -106,7 +113,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	EditText mEdtSigBtmDlgDescription;
 
 	BottomDialog mBottomDialog;        //底部弹窗
-
+	private boolean hasLaunchAd = false;//是否已经显示ad
 
 	/* 重写方法 activity生命周期方法实现对 地图 MapView 的舍命周期管理 */
 
@@ -133,6 +140,11 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 
 	@Override
 	protected void onResume() {
+		/*弹ad*/
+		if (!hasLaunchAd) {
+			this.hasLaunchAd = true;
+			showAd();
+		}
 		/*重新定位*/
 		//// TODO: 17-9-1 need test
 		mPresenter.initLocation();
@@ -141,6 +153,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		mTenMapView.onResume();
 		super.onResume();
 	}
+
 
 	@Override
 	protected void onStop() {
@@ -229,7 +242,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		});
 
 		/* 顶部 城市选择按钮 */
-		mAllToolBarCityPick.setOnClickListener(v->{
+		mAllToolBarCityPick.setOnClickListener(v -> {
 			//启动城市选择activity
 			//启动
 			startActivityForResult(new Intent(MainActivity.this, CityPickerActivity.class),
@@ -240,9 +253,9 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		if (requestCode == AppConst.REQ_CITY_PICK && resultCode == RESULT_OK){
+		if (requestCode == AppConst.REQ_CITY_PICK && resultCode == RESULT_OK) {
 			//成功选择城市
-			if (data != null){
+			if (data != null) {
 				String city = data.getStringExtra(CityPickerActivity.KEY_PICKED_CITY);
 				mTvToolbarCityName.setText(city);                       //设置城市文字
 			}
@@ -462,6 +475,13 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	 */
 	private void closeDrawer() {
 		mDrawerLayout.closeDrawers();
+	}
+
+	/**
+	 * 弹 ad
+	 */
+	private void showAd() {
+		mPresenter.showAd();
 	}
 
 

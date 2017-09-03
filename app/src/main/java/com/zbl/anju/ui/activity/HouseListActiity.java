@@ -17,6 +17,7 @@ import com.zhy.autolayout.AutoLinearLayout;
 import butterknife.Bind;
 
 /**
+ * 房屋列表
  * Created by James on 17-9-1.
  */
 

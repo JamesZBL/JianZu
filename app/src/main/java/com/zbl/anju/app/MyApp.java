@@ -6,8 +6,11 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.umeng.analytics.MobclickAgent;
+import com.uuch.adlibrary.utils.DisplayUtil;
 import com.zbl.anju.app.base.BaseApp;
 import com.zbl.anju.model.data.GroupNotificationMessageData;
 import com.zbl.anju.umeng.UmengTestUtil;
@@ -39,7 +42,23 @@ public class MyApp extends BaseApp {
 		//// TODO: 2017/6/20 发布之前删掉此段
 		MobclickAgent.setDebugMode(true);
 		UmengTestUtil.getDeviceInfo(getContext());
+		initFresco();
 		/*****************************************************************************************/
+	}
+
+	/**
+	 * 初始化 Fresco
+	 *  adDialog用到
+	 */
+	private void initFresco() {
+		Fresco.initialize(this);
+		DisplayMetrics dm = getResources().getDisplayMetrics();
+		DisplayUtil.density = dm.density;
+		DisplayUtil.densityDPI = dm.densityDpi;
+		DisplayUtil.screenWidthPx = dm.widthPixels;
+		DisplayUtil.screenhightPx = dm.heightPixels;
+		DisplayUtil.screenWidthDip = DisplayUtil.px2dip(getApplicationContext(), dm.widthPixels);
+		DisplayUtil.screenHightDip = DisplayUtil.px2dip(getApplicationContext(), dm.heightPixels);
 	}
 
 

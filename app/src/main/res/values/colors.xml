@@ -97,5 +97,7 @@
 
 	<!-- taobao 渐变 -->
 	<color name="color_taobao_light">#FE9001</color>
+	<color name="color_taobao_light_pr">#d67900</color>
 	<color name="color_taobao_dark">#FE5000</color>
+	<color name="color_taobao_dark_pr">#d14200</color>
 </resources>

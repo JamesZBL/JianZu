@@ -3,6 +3,7 @@ package com.zbl.anju.ui.activity;
 import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Rect;
@@ -17,6 +18,8 @@ import android.widget.PopupWindow;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
+import com.flyco.dialog.listener.OnBtnClickL;
+import com.flyco.dialog.widget.NormalDialog;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
@@ -55,12 +58,8 @@ public class HouseInfoActivity extends BaseActivity<IHouseInfoAtView, HouseInfoA
 	Banner mBanner;     //轮播图
 	@Bind(R.id.scv_houseinfo)
 	ScrollView mScrollView;
-
-
-	EditText mEdtSigBtmDlgName;
-	EditText mEdtSigBtmDlgDescription;
-
-	BottomDialog mBottomDialog;
+	@Bind(R.id.all_houseinfo_btm_seephone)
+	AutoLinearLayout allBtmSeePhone;
 
 	@Override
 	protected HouseInfoAtPresenter createPresenter() {
@@ -122,7 +121,7 @@ public class HouseInfoActivity extends BaseActivity<IHouseInfoAtView, HouseInfoA
 			menuView.findViewById(R.id.tvUploadSig).setOnClickListener(v1 -> {
 				popupWindow.dismiss();
 //				mPresenter.uploadSig();
-				showNameDialog();
+
 			});
 
 			/* 滑动监听 */
@@ -143,6 +142,11 @@ public class HouseInfoActivity extends BaseActivity<IHouseInfoAtView, HouseInfoA
 				});
 			}
 
+		});
+
+		/* 看电话提示 */
+		allBtmSeePhone.setOnClickListener(v -> {
+			showSeePhoneDialog(true);
 		});
 	}
 
@@ -211,25 +215,56 @@ public class HouseInfoActivity extends BaseActivity<IHouseInfoAtView, HouseInfoA
 //		mBanner.start();            //在presenter中设置
 	}
 
+
 	/**
-	 * 弹出姓名输入dialog
+	 * 点击“看电话”后的弹框
 	 */
-	private void showNameDialog() {
-		mBottomDialog = UIUtils.showBottomDialog(getSupportFragmentManager(), R.layout.dialog_sig, v1 -> {
-			mEdtSigBtmDlgName = (EditText) v1.findViewById(R.id.edt_sig_name);
-			mEdtSigBtmDlgDescription = (EditText) v1.findViewById(R.id.edt_sig_description);
+	private void showSeePhoneDialog(boolean hasReg) {
+		// TODO: 17-9-3 判断是否注册
+		/*if () {
 
-			v1.findViewById(R.id.btn_sig_dialog_submit).setOnClickListener(v2 -> {
-				String name = mEdtSigBtmDlgName.getText().toString();
-				if (!StringUtils.isEmpty(name) && !StringUtils.isBlank(name)) {
-					mBottomDialog.dismiss();
+		} else {
 
-				} else {
-					UIUtils.showToast("请填写正确的姓名", Toast.LENGTH_SHORT, Gravity.CENTER_VERTICAL);
+		}*/
+		NormalDialog dialog;
+		if (!hasReg) {
+			dialog = UIUtils.getNormalDialogStyleTwo(getString(R.string.houseinfo_see_phone_dialog_content), this);
+			/* 未认证*/
+			dialog.btnText("取消", "去认证");
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+				dialog.titleTextColor(getColor(R.color.colorPrimary));
+			}
+			dialog.setOnBtnClickL(new OnBtnClickL() {
+				@Override
+				public void onBtnClick() {
+					//取消
+					dialog.dismiss();
+				}
+			}, new OnBtnClickL() {
+				@Override
+				public void onBtnClick() {
+					//确定
+					dialog.dismiss();
 				}
 			});
-			UIUtils.focusEdt(mEdtSigBtmDlgName);
-		});
+			dialog.show();
+		} else {
+			/* 认证过了 */
+			dialog = UIUtils.getNormalDialogStyleOne(getString(R.string.houseinfo_see_phone_dialog_content_has_reg), this);
+			dialog.btnText("知道了");
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+				dialog.titleTextColor(getColor(R.color.colorPrimary));
+			}
+			dialog.setOnBtnClickL(new OnBtnClickL() {
+				@Override
+				public void onBtnClick() {
+					//取消
+					dialog.dismiss();
+				}
+			});
+			dialog.show();
+		}
+
 	}
 
 	/**

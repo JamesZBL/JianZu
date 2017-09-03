@@ -570,7 +570,7 @@
 					<View
 						style="@style/Line_Vertical"/>
 					<com.zhy.autolayout.AutoLinearLayout
-						android:id="@+id/ll_sig_btm_color"
+						android:id="@+id/all_houseinfo_btm_seephone"
 						android:layout_width="wrap_content"
 						android:layout_height="match_parent"
 						android:background="@drawable/selector_option_item_trans"
