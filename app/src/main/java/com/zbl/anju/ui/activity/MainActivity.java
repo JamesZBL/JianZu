@@ -96,9 +96,11 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	@Bind(R.id.btn_main_loc)
 	Button mBtnMainLoc;
 
-	/* 左侧宫格菜单 */
+	/* 主页宫格菜单 */
 	@Bind(R.id.arl_left_menu_1)
-	AutoRelativeLayout mArlLeftMenu1;
+	AutoRelativeLayout mArlLeftMenu1;   //整租
+	@Bind(R.id.arl_left_menu_6)
+	AutoRelativeLayout mArlLeftMenu6;   //二手
 
 	BottomSheetBehavior mBottomSheetBehavior;
 
@@ -235,10 +237,14 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 			mPresenter.setMapCenter();
 		});
 
-		/* 左侧宫格菜单 内容 */
+		/* 主页宫格菜单 内容 */
 		mArlLeftMenu1.setOnClickListener(v -> {
 			//房屋列表
 			jumpToActivity(HouseListActiity.class);
+		});
+		mArlLeftMenu6.setOnClickListener(v -> {
+			//二手
+			jumpToActivity(BuyOrSellActivity.class);
 		});
 
 		/* 顶部 城市选择按钮 */

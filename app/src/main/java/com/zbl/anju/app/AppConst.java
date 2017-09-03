@@ -45,7 +45,7 @@ public class AppConst {
 
 
 	/* ----------------------URL-----------------------------*/
-	public static final String  URL_AD_IMG="file:///android_asset/anju/ad.png";
+	public static final String  URL_AD_IMG="asset://com.zbl.anju/anju/ad.png";
 
 	/**/
 	/**/

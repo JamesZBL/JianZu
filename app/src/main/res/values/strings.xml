@@ -26,6 +26,10 @@
 	<string name="houseinfo_see_phone_dialog_content">亲，您还没有进行实名认证哦，请您实名认证后再来看电话吧（＾-＾）</string>
 	<string name="houseinfo_see_phone_dialog_content_has_reg">亲，为了避免上当受骗，请尽量选择在线支付</string>
 
+
+	<string name="ershou_i_wanna_sell">我要卖</string>
+	<string name="ershou_i_wanna_buy">我要买</string>
+
 	<string name="main_map_sousuo">地图搜索</string>
 
 

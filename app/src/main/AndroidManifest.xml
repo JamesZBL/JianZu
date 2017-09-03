@@ -69,10 +69,10 @@
 		android:name="com.zbl.anju.app.MyApp"
 		android:allowBackup="true"
 		android:icon="@mipmap/ic_launcher"
-		tools:replace="android:name"
 		android:label="@string/app_name"
 		android:supportsRtl="true"
-		android:theme="@style/AppTheme">
+		android:theme="@style/AppTheme"
+		tools:replace="android:name">
 
 		<!-- 友盟统计 -->
 		<!--<meta-data-->
@@ -137,7 +137,6 @@
 		<activity
 			android:name="com.zbl.anju.ui.activity.MainActivity"
 			android:screenOrientation="portrait"
-			android:windowSoftInputMode="adjustNothing"
 			>
 
 		</activity>
@@ -145,8 +144,8 @@
 		<!-- 城市选择组件 -->
 		<activity
 			android:name="com.zaaach.citypicker.CityPickerActivity"
-			android:theme="@style/CityPicker.NoActionBar"
 			android:screenOrientation="portrait"
+			android:theme="@style/CityPicker.NoActionBar"
 			android:windowSoftInputMode="stateHidden|adjustPan"/>
 
 
@@ -155,7 +154,6 @@
 			android:name="com.zbl.anju.ui.activity.HouseInfoActivity"
 			android:configChanges="orientation|screenSize|keyboardHidden"
 			android:screenOrientation="portrait"
-			android:windowSoftInputMode="adjustNothing"
 			>
 		</activity>
 
@@ -164,7 +162,6 @@
 			android:name="com.zbl.anju.ui.activity.HouseListActiity"
 			android:configChanges="orientation|screenSize|keyboardHidden"
 			android:screenOrientation="portrait"
-			android:windowSoftInputMode="adjustNothing"
 			>
 		</activity>
 
@@ -172,11 +169,16 @@
 		<activity
 			android:name="com.zbl.anju.ui.activity.LoginActivity"
 			android:screenOrientation="portrait"
-			android:windowSoftInputMode="adjustNothing"
+			android:windowSoftInputMode="adjustResize"
 			>
-
-
 		</activity>
+		<!-- 买和卖 -->
+		<activity
+			android:name="com.zbl.anju.ui.activity.BuyOrSellActivity"
+			android:screenOrientation="portrait"
+			>
+		</activity>
+
 	</application>
 
 </manifest>
