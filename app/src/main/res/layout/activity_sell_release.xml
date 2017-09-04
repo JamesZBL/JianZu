@@ -111,6 +111,7 @@
 			android:text="元"
 			/>
 	</com.zhy.autolayout.AutoLinearLayout>
+
 	<View
 		style="@style/LineGrayDividerNoMargin"
 		/>
@@ -156,46 +157,6 @@
 			android:layout_height="50dp"
 			android:layout_margin="10dp"
 			android:src="@drawable/ic_h_plus"
-			/>
-	</com.zhy.autolayout.AutoLinearLayout>
-
-	<View
-		style="@style/LineGrayDividerNoMargin"
-		/>
-
-	<!-- 价格 -->
-	<com.zhy.autolayout.AutoLinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:background="@color/white"
-		android:gravity="center_vertical"
-		android:orientation="horizontal"
-		android:padding="30px"
-		>
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="卖价"
-			android:textColor="@color/black"
-			/>
-		<EditText
-			android:id="@+id/edt_sell_price"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:maxLength="6"
-			android:inputType="numberDecimal"
-			android:background="@null"
-			android:textColorHint="@color/black"
-			android:gravity="end"
-			android:singleLine="true"
-			android:layout_marginRight="5dp"
-			android:layout_marginLeft="5dp"
-			/>
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="元"
 			/>
 	</com.zhy.autolayout.AutoLinearLayout>
 
