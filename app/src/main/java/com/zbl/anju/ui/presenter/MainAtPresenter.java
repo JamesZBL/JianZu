@@ -1,7 +1,6 @@
 package com.zbl.anju.ui.presenter;
 
 import android.view.View;
-import android.view.animation.AnimationUtils;
 
 import com.bumptech.glide.Glide;
 import com.tencent.map.geolocation.TencentLocation;
@@ -12,8 +11,6 @@ import com.tencent.mapsdk.raster.model.BitmapDescriptorFactory;
 import com.tencent.mapsdk.raster.model.LatLng;
 import com.tencent.mapsdk.raster.model.Marker;
 import com.tencent.mapsdk.raster.model.MarkerOptions;
-import com.tencent.tencentmap.mapsdk.map.TencentMap;
-import com.tencent.tencentmap.mapsdk.raster.utils.animation.MarkerRotateAnimator;
 import com.uuch.adlibrary.AdConstant;
 import com.uuch.adlibrary.AdManager;
 import com.uuch.adlibrary.bean.AdInfo;
@@ -24,7 +21,6 @@ import com.youth.banner.Transformer;
 import com.zbl.anju.R;
 import com.zbl.anju.app.AppConst;
 import com.zbl.anju.db.DBManager;
-import com.zbl.anju.ui.activity.MainActivity;
 import com.zbl.anju.ui.base.BaseActivity;
 import com.zbl.anju.ui.base.BasePresenter;
 import com.zbl.anju.ui.view.IMainAtView;
@@ -39,7 +35,7 @@ import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 
 /**
- *
+ * 主页
  */
 public class MainAtPresenter extends BasePresenter<IMainAtView> {
 

@@ -34,8 +34,8 @@
 			android:layout_height="wrap_content"
 			android:background="@null"
 			android:hint="@string/sell_input_your_title"
-			android:text=""
 			android:maxLength="20"
+			android:text=""
 			android:textColorHint="@color/gray3"
 			android:textSize="@dimen/global_normal_font_size_sm"/>
 
@@ -63,8 +63,8 @@
 			android:gravity="start"
 			android:hint="@string/sell_input_your_description"
 			android:inputType="textMultiLine"
-			android:maxLines="4"
 			android:maxLength="300"
+			android:maxLines="4"
 			android:singleLine="false"
 			android:text=""
 			android:textColorHint="@color/gray3"
@@ -90,38 +90,77 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:background="@color/white"
-			android:paddingTop="5dp"
 			android:paddingBottom="5dp"
+			android:paddingTop="5dp"
 			>
+
 			<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:text="@string/sell_input_your_img"
 				android:layout_alignParentTop="true"
-				android:layout_toRightOf="@+id/imageView3"
 				android:layout_toEndOf="@+id/imageView3"
+				android:layout_toRightOf="@+id/imageView3"
+				android:text="@string/sell_input_your_img"
 
 				/>
 		</com.zhy.autolayout.AutoRelativeLayout>
+
 		<android.support.v7.widget.RecyclerView
 			android:id="@+id/rv_sell_imgs"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:layout_below="@+id/btn_unlimited"/>
+
 		<ImageView
 			android:id="@+id/iv_sell_add_pic"
 			android:layout_width="50dp"
 			android:layout_height="50dp"
-			android:src="@drawable/ic_h_plus"
 			android:layout_margin="10dp"
+			android:src="@drawable/ic_h_plus"
+			/>
+	</com.zhy.autolayout.AutoLinearLayout>
+
+	<View
+		style="@style/LineGrayDividerNoMargin"
+		/>
+
+	<!-- 价格 -->
+	<com.zhy.autolayout.AutoLinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/white"
+		android:gravity="center_vertical"
+		android:orientation="horizontal"
+		android:padding="30px"
+		>
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="卖价"
+			android:textColor="@color/black"
+			/>
+		<EditText
+			android:id="@+id/edt_sell_price"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:maxLength="6"
+			android:inputType="numberDecimal"
+			android:background="@null"
+			android:textColorHint="@color/black"
+			/>
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="元"
 			/>
 	</com.zhy.autolayout.AutoLinearLayout>
 
 	<Button
 		android:id="@+id/btn_sell_release"
+		style="@style/btn2"
 		android:layout_width="match_parent"
 		android:layout_height="50dp"
-		style="@style/btn2"
 		android:layout_margin="16dp"
 		android:text="@string/sell_release_now"
 		/>

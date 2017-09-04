@@ -435,6 +435,10 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 				}
 				return false;
 			});
+			//点击地图
+			mTenMap.setOnMapClickListener(latLng->{
+				jumpToActivity(HouseListActiity.class);
+			});
 		}
 	}
 
