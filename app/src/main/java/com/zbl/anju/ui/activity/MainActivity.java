@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
@@ -12,6 +13,7 @@ import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -181,6 +183,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	@Override
 	public void initView() {
 		super.initView();
+		initThisStatusBar();
 		//设置toolbar 细线不可见
 //		mToolbarLine.setVisibility(View.GONE);
 		//设置toolbar按钮可见
@@ -295,6 +298,26 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	@Override
 	protected boolean isToolbarCanBack() {
 		return false;
+	}
+
+	/**
+	 * 初始化状态栏
+	 */
+	private void initThisStatusBar() {
+		if (Build.VERSION.SDK_INT >= 19) {
+			getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+			mAppBar.setPadding(0, UIUtils.getStatusbarheight(this), 0, 0);
+			if (Build.VERSION.SDK_INT >= 21) {
+				getWindow().setStatusBarColor(UIUtils.getColor(R.color.colorPrimary));
+				getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+			}
+
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+			{
+				getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+				getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimary));
+			}
+		}
 	}
 
 	@Override

@@ -127,7 +127,8 @@
 				android:layout_height="20dp"
 				android:text="房屋管家"
 				android:textColor="@color/white"
-				android:textSize="14dp"
+				android:textSize="12sp"
+				android:gravity="center"
 				android:layout_below="@+id/imageView"
 				android:layout_centerHorizontal="true"/>
 
