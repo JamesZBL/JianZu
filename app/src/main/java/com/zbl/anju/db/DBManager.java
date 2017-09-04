@@ -35,6 +35,7 @@ public class DBManager {
 	private List<String> canDao = new ArrayList<>();
 	private List<String> canAddFir = new ArrayList<>();
 	private List<String> latLng = new ArrayList<>();
+	private List<String> houseTypes = new ArrayList<>();
 
 	/* ershouThing*/
 	private List<String> ershouNames = new ArrayList<>();
@@ -81,7 +82,7 @@ public class DBManager {
 	}
 
 	/**
-	 * 随机获取一个房源
+	 * 随机获取一个房源 按条件
 	 */
 	public House getRandomSingleHouse(String houseTypeStr, String priceStr) {
 		House houseItem = new House();
@@ -140,6 +141,44 @@ public class DBManager {
 		return houseItem;
 	}
 
+	/**
+	 * 随机获取一个房源
+	 *
+	 * @return
+	 */
+	public House getRandomSingleHouse() {
+		House houseItem = new House();
+
+		int i1 = RandomUtil.getRandom(0, xiaoquName.size() - 1);
+		houseItem.setXiaoquName(xiaoquName.get(i1));
+
+		int i3 = RandomUtil.getRandom(0, releaseTime.size() - 1);
+		houseItem.setReleaseTime(releaseTime.get(i3));
+
+		int i4 = RandomUtil.getRandom(0, price2.size() - 1);
+		houseItem.setPrice(price2.get(i4));
+
+
+		int i5 = RandomUtil.getRandom(0, hostName.size() - 1);
+		houseItem.setHostName(hostName.get(i5));
+
+		int i6 = RandomUtil.getRandom(0, hostPhoneNum.size() - 1);
+		houseItem.setHostPhoneNum(hostPhoneNum.get(i6));
+
+		int i7 = RandomUtil.getRandom(0, urlVideoThumbnail.size() - 1);
+		houseItem.setUrlVideoThumbnail(urlVideoThumbnail.get(i7));
+
+		int i8 = RandomUtil.getRandom(0, canDao.size() - 1);
+		houseItem.setCanDao(canDao.get(i8));
+
+		int i9 = RandomUtil.getRandom(0, canAddFir.size() - 1);
+		houseItem.setCanAddFir(canAddFir.get(i9));
+
+		int i10 = RandomUtil.getRandom(0, houseTypes.size() - 1);
+		houseItem.setType(houseTypes.get(i10));
+
+		return houseItem;
+	}
 
 	/**
 	 * 根据条件获取房源列表
@@ -185,6 +224,12 @@ public class DBManager {
 	 * 初始化假数据
 	 */
 	private void initFalseData() {
+		/* 房屋户型 */
+		{
+			houseTypes.add("一室");
+			houseTypes.add("两室");
+			houseTypes.add("三室");
+		}
 		/* 小区名称 */
 		{
 			xiaoquName.add("华夏家园");
@@ -219,9 +264,12 @@ public class DBManager {
 			distance.add("据我750m");
 			distance.add("据我800m");
 			distance.add("据我1km");
+			distance.add("据我1.2km");
 			distance.add("据我1.3km");
 			distance.add("据我1.5km");
+			distance.add("据我1.6km");
 			distance.add("据我1.7km");
+			distance.add("据我1.8km");
 			distance.add("据我1.9km");
 			distance.add("据我2km");
 			distance.add("据我3km");
@@ -393,7 +441,14 @@ public class DBManager {
 	 * @return
 	 */
 	public List<House> getHouseListByDistance() {
+		List<House> houseList = new ArrayList<>();
+		//17
+		for (int i = 0; i < 17; i++) {
+			House houseItem = getRandomSingleHouse();
+			houseItem.setDistance(distance.get(i));
+			houseList.add(houseItem);
+		}
 
-		return null;
+		return houseList;
 	}
 }

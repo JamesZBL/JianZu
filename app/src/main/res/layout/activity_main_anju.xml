@@ -167,6 +167,34 @@
 						/>
 
 				</com.zhy.autolayout.AutoRelativeLayout>
+				<!-- 9 -->
+				<com.zhy.autolayout.AutoRelativeLayout
+					android:id="@+id/arl_left_menu_9"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:background="@drawable/selector_option_item_trans"
+					>
+
+					<ImageView
+						android:id="@+id/iv_l_grid_9"
+						android:layout_width="40dp"
+						android:layout_height="40dp"
+						android:layout_alignParentTop="true"
+						android:layout_centerHorizontal="true"
+						android:src="@drawable/ic_h_fabu"
+						app:civ_border_color="@color/gray"
+						app:civ_border_width="0.2dp"/>
+
+					<TextView
+						style="@style/main_left_gird_txt_style"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/iv_l_grid_9"
+						android:text="@string/main_left_menu_txt_9"
+						/>
+
+				</com.zhy.autolayout.AutoRelativeLayout>
 
 			</com.zhy.autolayout.AutoLinearLayout>
 
@@ -289,6 +317,35 @@
 						android:layout_height="wrap_content"
 						android:layout_below="@id/iv_l_grid_8"
 						android:text="@string/main_left_menu_txt_8"
+						/>
+
+				</com.zhy.autolayout.AutoRelativeLayout>
+
+				<!-- 10 -->
+				<com.zhy.autolayout.AutoRelativeLayout
+					android:id="@+id/arl_left_menu_10"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:background="@drawable/selector_option_item_trans"
+					>
+
+					<ImageView
+						android:id="@+id/iv_l_grid_10"
+						android:layout_width="40dp"
+						android:layout_height="40dp"
+						android:layout_alignParentTop="true"
+						android:layout_centerHorizontal="true"
+						android:src="@drawable/ic_h_guanjia"
+						app:civ_border_color="@color/gray"
+						app:civ_border_width="0.2dp"/>
+
+					<TextView
+						style="@style/main_left_gird_txt_style"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/iv_l_grid_10"
+						android:text="@string/main_left_menu_txt_10"
 						/>
 
 				</com.zhy.autolayout.AutoRelativeLayout>

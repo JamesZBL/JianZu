@@ -66,7 +66,8 @@
 	<string name="main_left_menu_txt_7">租金垫付</string>
 	<string name="main_left_menu_txt_8">全程代理</string>-->
 
-	<string name="main_left_menu_txt_9">房屋管家</string>
+	<string name="main_left_menu_txt_9">房源发布</string>
+	<string name="main_left_menu_txt_10">房屋管家</string>
 
 
 	<string name="main_left_list_1">订单</string>
