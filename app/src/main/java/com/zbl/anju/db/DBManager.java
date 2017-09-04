@@ -3,6 +3,7 @@ package com.zbl.anju.db;
 import com.litesuits.common.utils.RandomUtil;
 import com.tencent.mapsdk.raster.model.LatLng;
 import com.zbl.anju.app.AppConst;
+import com.zbl.anju.model.data.ErShouThing;
 import com.zbl.anju.model.data.House;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class DBManager {
 	private static final double ABS_LOC_3_KM = 0.035835;    //3公里对应的经纬度变化
 	private static final String QINIU_HOST = "http://ovi01lb03.bkt.clouddn.com";    //七牛云host
 
+	/* house */
 	private List<String> xiaoquName = new ArrayList<>();
 	private List<String> description = new ArrayList<>();
 	private List<String> distance = new ArrayList<>();
@@ -33,6 +35,12 @@ public class DBManager {
 	private List<String> canDao = new ArrayList<>();
 	private List<String> canAddFir = new ArrayList<>();
 	private List<String> latLng = new ArrayList<>();
+
+	/* ershouThing*/
+	private List<String> ershouNames = new ArrayList<>();
+	private List<String> ershouPrices = new ArrayList<>();
+	private List<String> ershouDiscription = new ArrayList<>();
+	private List<String> ershouImageUrl = new ArrayList<>();
 
 	public DBManager() {
 		initFalseData();
@@ -147,6 +155,30 @@ public class DBManager {
 		}
 
 		return houseList;
+	}
+
+	/**
+	 * 获取二手推荐
+	 *
+	 * @return
+	 */
+	public List<ErShouThing> getErshouTuijian() {
+		List<ErShouThing> ershouList = new ArrayList<>();
+		for (int i = 0; i < ershouNames.size(); i++) {
+			ErShouThing ershouItem = new ErShouThing();
+			ershouItem.setName(ershouNames.get(i));
+			ershouItem.setPrice(ershouPrices.get(i));
+			ershouItem.setImgUrl(ershouImageUrl.get(i));
+
+			int i1 = RandomUtil.getRandom(0, releaseTime.size() - 1);
+			ershouItem.setRerleaseTime(releaseTime.get(i1));
+
+			int i2 = RandomUtil.getRandom(0, distance.size() - 1);
+			ershouItem.setDistance(distance.get(i1));
+
+			ershouList.add(ershouItem);
+		}
+		return ershouList;
 	}
 
 	/**
@@ -298,6 +330,56 @@ public class DBManager {
 		{
 			canAddFir.add("可自行添置家具");
 			canAddFir.add("不可自行添置家具");
+		}
+
+
+		/*------- erhou -------*/
+		/* 名称 */
+		{
+			ershouNames.add("二手原装松下TH-P50ST30H");
+			ershouNames.add("进口二手索尼KDL-46X4500王牌LED电视机");
+			ershouNames.add("出售海尔双杠洗衣机7.0公斤基本全新的");
+
+			ershouNames.add("海尔全自动洗衣机");
+			ershouNames.add("09年容声BCD_183C冰箱（只现同城自提）");
+			ershouNames.add("全新未拆封海尔Leader/统帅 BCD-206LSTPF三门家用节能电冰箱");
+
+			ershouNames.add("ghd正品意大利版aura负离子电吹风");
+			ershouNames.add("九阳榨汁机便宜转");
+			ershouNames.add("处理布艺床一套带床垫");
+
+			ershouNames.add("老榆木 柜子 床头柜 电视柜");
+		}
+		/* 价格 */
+		{
+			ershouPrices.add("¥3680.00");
+			ershouPrices.add("¥2800.00");
+			ershouPrices.add("¥950.00");
+
+			ershouPrices.add("¥380.00");
+			ershouPrices.add("¥300.00");
+			ershouPrices.add("¥950.00");
+
+			ershouPrices.add("¥90.00");
+			ershouPrices.add("¥300.00");
+			ershouPrices.add("¥300.00");
+
+			ershouPrices.add("¥500.00");
+		}
+		/* 缩略图 */
+		{
+			ershouImageUrl.add("http://img1.cache.netease.com/catchpic/1/16/1668D219B94A7013BB77241FC8BC6380.JPG");
+			ershouImageUrl.add("http://photocdn.sohu.com/20140808/Img403253747.jpg");
+			ershouImageUrl.add("http://att2.citysbs.com/tiaozao/2012/09/10/23/middle_232322_16441347290602162_095d51bd6a8c5bc49f6b049dd6723080.jpg");
+			ershouImageUrl.add("http://image5.suning.cn/uimg/shp/userItems/146885039746954447_1_1000x1000.jpg");
+			ershouImageUrl.add("http://appimg.pba.cn/2016/08/31/3BD18C7D1ACCF9E24CC542D9D79F8FFB1472620981401.jpg");
+			ershouImageUrl.add("http://att2.citysbs.com/tiaozao/2013/12/09/20/middle_2448x3264-205904_19251386593944910_17c182e82a82e4b44cb1df792bffa059.jpg");
+			ershouImageUrl.add("http://img005.hc360.cn/hb/MTQ1NTk0MDQ5NDAwNjE4NzkyMjg0MDc=.jpg");
+			ershouImageUrl.add("http://image3.suning.cn/uimg/shp/userItems/145403665063976893_1_1000x1000.jpg");
+			ershouImageUrl.add("http://www.qhmb1.com/upfile/proimage/20135141956366382.jpg");
+
+			ershouImageUrl.add("http://www.91spj.com/eb8ced3cb78ca086c25c8ce2bf449769");
+
 		}
 	}
 }
