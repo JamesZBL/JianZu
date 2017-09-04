@@ -209,6 +209,7 @@
 		<activity
 			android:name="com.zbl.anju.ui.activity.SellReleaseActivity"
 			android:screenOrientation="portrait"
+			android:windowSoftInputMode="adjustResize"
 			>
 		</activity>
 		<!-- 实名认证 -->
