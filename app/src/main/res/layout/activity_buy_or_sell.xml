@@ -29,7 +29,10 @@
 
 			<com.zhy.autolayout.AutoRelativeLayout
 				android:layout_width="match_parent"
-				android:layout_height="match_parent">
+				android:layout_height="match_parent"
+				android:id="@+id/all_i_wanna_sell"
+				android:background="@drawable/selector_option_item"
+				>
 				<!-- 图标和字 -->
 				<com.zhy.autolayout.AutoLinearLayout
 					android:layout_width="wrap_content"

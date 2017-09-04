@@ -212,8 +212,11 @@ public class DBManager {
 		/* 距离 */
 		{
 			distance.add("据我100m");
+			distance.add("据我150m");
 			distance.add("据我300m");
+			distance.add("据我370m");
 			distance.add("据我500m");
+			distance.add("据我750m");
 			distance.add("据我800m");
 			distance.add("据我1km");
 			distance.add("据我1.3km");
@@ -381,5 +384,16 @@ public class DBManager {
 			ershouImageUrl.add("http://www.91spj.com/eb8ced3cb78ca086c25c8ce2bf449769");
 
 		}
+	}
+
+	/**
+	 * 按距离获取房源
+	 * 3km以内的
+	 *
+	 * @return
+	 */
+	public List<House> getHouseListByDistance() {
+
+		return null;
 	}
 }

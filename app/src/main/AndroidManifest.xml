@@ -157,10 +157,16 @@
 			>
 		</activity>
 
-		<!--房屋列表-->
+		<!-- 房屋列表 整租 -->
 		<activity
 			android:name="com.zbl.anju.ui.activity.HouseListActiity"
-			android:configChanges="orientation|screenSize|keyboardHidden"
+			android:screenOrientation="portrait"
+			>
+		</activity>
+
+		<!-- 房屋列表 合租 -->
+		<activity
+			android:name="com.zbl.anju.ui.activity.HouseListHezuActiity"
 			android:screenOrientation="portrait"
 			>
 		</activity>
@@ -181,6 +187,12 @@
 		<!-- 购买分类 -->
 		<activity
 			android:name="com.zbl.anju.ui.activity.BuyClassifyActivity"
+			android:screenOrientation="portrait"
+			>
+		</activity>
+		<!-- 实名认证 -->
+		<activity
+			android:name="com.zbl.anju.ui.activity.RegActivity"
 			android:screenOrientation="portrait"
 			>
 		</activity>

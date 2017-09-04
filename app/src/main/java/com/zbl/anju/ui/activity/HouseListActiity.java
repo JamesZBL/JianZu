@@ -60,6 +60,7 @@ public class HouseListActiity extends BaseActivity<IHouseLIistAtView, HouseListA
 	public void initView() {
 		super.initView();
 		mPresenter.initDropDownMenu();
+		setToolbarTitle("整租");
 	}
 
 	@Override

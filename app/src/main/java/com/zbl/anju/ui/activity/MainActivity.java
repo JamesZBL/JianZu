@@ -101,6 +101,8 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	/* 主页宫格菜单 */
 	@Bind(R.id.arl_left_menu_1)
 	AutoRelativeLayout mArlLeftMenu1;   //整租
+	@Bind(R.id.arl_left_menu_2)
+	AutoRelativeLayout mArlLeftMenu2;   //合租
 	@Bind(R.id.arl_left_menu_6)
 	AutoRelativeLayout mArlLeftMenu6;   //二手
 
@@ -242,8 +244,12 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 
 		/* 主页宫格菜单 内容 */
 		mArlLeftMenu1.setOnClickListener(v -> {
-			//房屋列表
+			//房屋列表整租
 			jumpToActivity(HouseListActiity.class);
+		});
+		mArlLeftMenu2.setOnClickListener(v->{
+			//合租
+			jumpToActivity(HouseListHezuActiity.class);
 		});
 		mArlLeftMenu6.setOnClickListener(v -> {
 			//二手

@@ -16,6 +16,8 @@ public class BuyOrSellActivity extends BaseActivity {
 
 	@Bind(R.id.all_i_wanna_buy)
 	AutoRelativeLayout allIWannaBuy;
+	@Bind(R.id.all_i_wanna_sell)
+	AutoRelativeLayout allIWannaSell;
 
 	@Override
 	protected BasePresenter createPresenter() {
@@ -37,8 +39,13 @@ public class BuyOrSellActivity extends BaseActivity {
 	public void initListener() {
 		super.initListener();
 		/* 我要买 */
-		allIWannaBuy.setOnClickListener(v->{
+		allIWannaBuy.setOnClickListener(v -> {
 			jumpToActivityAndClearTask(BuyClassifyActivity.class);
+			finish();
+		});
+		/* 我要卖 */
+		allIWannaSell.setOnClickListener(v -> {
+			jumpToActivityAndClearTask(RegActivity.class);
 			finish();
 		});
 	}

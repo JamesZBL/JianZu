@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	android:orientation="vertical"
+	>
+	<!-- 标题栏 -->
+	<include layout="@layout/include_toolbar_white"/>
+
+
+
+	<!-- 房屋列表和下拉菜单的相对布局 -->
+	<com.zhy.autolayout.AutoRelativeLayout
+		android:id="@+id/arl_house_list"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+
+		<com.lqr.recyclerview.LQRRecyclerView
+			android:id="@+id/rv_house_list"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_alignParentStart="true"
+			android:layout_alignParentTop="true"
+			app:rv_divider_color="@color/line"
+			app:rv_divider_size="1px"/>
+
+		<include
+			layout="@layout/menu_housetypes"
+			android:visibility="gone"
+			/>
+
+		<include
+			layout="@layout/menu_prices"
+			android:visibility="gone"
+			/>
+	</com.zhy.autolayout.AutoRelativeLayout>
+
+
+</com.zhy.autolayout.AutoLinearLayout>

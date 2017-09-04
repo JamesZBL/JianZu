@@ -35,7 +35,7 @@ public class HouseListAtPresenter extends BasePresenter<IHouseLIistAtView> {
 
 	private String headers[] = {"户型", "价格"};
 
-	private String mHouseTypes[] = {"一室", "两室", "三室", "合租"};
+	private String mHouseTypes[] = {"一室", "两室", "三室"};
 	private String mPrices[] = {"1000以下", "1000-1500", "1500-2000", "2000以上"};
 
 	private int typeIndex = 0;       //当前选中的户型

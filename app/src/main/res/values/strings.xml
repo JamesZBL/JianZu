@@ -79,6 +79,12 @@
 	<string name="login_password">密码</string>
 	<string name="login_login">登录</string>
 
+	<string name="regist_name">姓名</string>
+	<string name="regist_your_real_name">您的真实姓名</string>
+	<string name="regist_phone_num">手机号</string>
+	<string name="regist_id_num">身份证号</string>
+	<string name="regist_real_id_num">请输入您的真实身份证号</string>
+
 	<!---->
 	<!---->
 	<!---->
