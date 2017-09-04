@@ -15,7 +15,6 @@
 		<!--<item name="android:navigationMode"></item>-->
 	</style>
 
-
 	<!--全屏样式(启动画面)-->
 	<style name="FullWindowTheme" parent="Theme.AppCompat.Light.NoActionBar">
 		<!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
@@ -195,7 +194,6 @@
 		<item name="android:windowExitAnimation">@anim/popup_exit_main</item>
 	</style>
 
-
 	<!--默认字体样式-->
 	<style name="info_default_text_style"
 		>
@@ -221,7 +219,6 @@
 		<item name="android:textColor">@color/gray0</item>
 	</style>
 
-
 	<!-- 默认字体样式 -->
 	<style name="info_black_text_style"
 		>
@@ -235,7 +232,6 @@
 		<item name="android:layout_centerVertical">true</item>
 	</style>
 
-
 	<!-- 黑色字体标题 样式 -->
 	<style name="info_black_title_text_style"
 		>
@@ -243,7 +239,6 @@
 		<item name="android:textColor">@color/black</item>
 		<item name="android:textSize">@dimen/global_normal_font_size</item>
 	</style>
-
 
 	<!-- 红色字体标题 样式 -->
 	<style name="info_red_title_text_style"
@@ -259,6 +254,13 @@
 		<item name="android:layout_height">8dp</item>
 		<item name="android:layout_marginTop">8dp</item>
 		<item name="android:layout_marginBottom">8dp</item>
+		<item name="android:background">@color/gray4</item>
+	</style>
+
+	<!--灰色分隔条无margin-->
+	<style name="LineGrayDividerNoMargin">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">8dp</item>
 		<item name="android:background">@color/gray4</item>
 	</style>
 

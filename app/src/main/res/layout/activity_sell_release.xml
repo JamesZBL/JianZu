@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	>
+
+	<!-- appbar(required) -->
+	<include
+		layout="@layout/include_toolbar_white"
+		/>
+
+	<View
+		style="@style/LineGrayDividerNoMargin"
+		/>
+	<!-- 表单项目 -->
+
+	<!-- 标题 -->
+	<com.zhy.autolayout.AutoLinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="90px"
+		android:background="@color/white"
+		android:gravity="center_vertical"
+		android:orientation="horizontal"
+		android:paddingLeft="30px"
+		android:paddingRight="30px"
+		>
+
+		<EditText
+			android:id="@+id/et_sell_title"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@null"
+			android:hint="@string/sell_input_your_title"
+			android:text=""
+			android:maxLength="20"
+			android:textColorHint="@color/gray3"
+			android:textSize="@dimen/global_normal_font_size_sm"/>
+
+	</com.zhy.autolayout.AutoLinearLayout>
+
+	<View
+		style="@style/LineGrayDividerNoMargin"
+		/>
+
+	<!-- 描述 -->
+	<com.zhy.autolayout.AutoLinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="120dp"
+		android:background="@color/white"
+		android:gravity="center_vertical"
+		android:orientation="horizontal"
+		android:padding="30px"
+		>
+
+		<EditText
+			android:id="@+id/et_sell_description"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@null"
+			android:gravity="start"
+			android:hint="@string/sell_input_your_description"
+			android:inputType="textMultiLine"
+			android:maxLines="4"
+			android:maxLength="300"
+			android:singleLine="false"
+			android:text=""
+			android:textColorHint="@color/gray3"
+			android:textSize="@dimen/global_normal_font_size_sm"/>
+
+	</com.zhy.autolayout.AutoLinearLayout>
+
+	<View
+		style="@style/LineGrayDividerNoMargin"
+		/>
+
+	<!-- 图片选择  -->
+	<com.zhy.autolayout.AutoLinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/white"
+		android:gravity="center_vertical"
+		android:orientation="vertical"
+		android:padding="30px"
+		>
+		<!---->
+		<com.zhy.autolayout.AutoRelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/white"
+			android:paddingTop="5dp"
+			android:paddingBottom="5dp"
+			>
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/sell_input_your_img"
+				android:layout_alignParentTop="true"
+				android:layout_toRightOf="@+id/imageView3"
+				android:layout_toEndOf="@+id/imageView3"
+
+				/>
+		</com.zhy.autolayout.AutoRelativeLayout>
+		<android.support.v7.widget.RecyclerView
+			android:id="@+id/rv_sell_imgs"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_below="@+id/btn_unlimited"/>
+		<ImageView
+			android:id="@+id/iv_sell_add_pic"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			android:src="@drawable/ic_h_plus"
+			android:layout_margin="10dp"
+			/>
+	</com.zhy.autolayout.AutoLinearLayout>
+
+	<Button
+		android:id="@+id/btn_sell_release"
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		style="@style/btn2"
+		android:layout_margin="16dp"
+		android:text="@string/sell_release_now"
+		/>
+
+</com.zhy.autolayout.AutoLinearLayout>

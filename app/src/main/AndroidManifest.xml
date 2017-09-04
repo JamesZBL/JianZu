@@ -74,6 +74,7 @@
 		android:theme="@style/AppTheme"
 		tools:replace="android:name">
 
+
 		<!-- 友盟统计 -->
 		<!--<meta-data-->
 		<!--android:name="UMENG_APPKEY"-->
@@ -110,6 +111,20 @@
 			android:name="TencentMapSDK"
 			android:value="JX2BZ-PMSWU-QJVVQ-267NU-MFGJZ-TSBJN"/>
 
+		<!-- 图片 选择 -->
+		<activity
+			android:name="com.donkingliang.imageselector.ImageSelectorActivity"
+			android:configChanges="orientation|keyboardHidden|screenSize"
+			android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
+		<activity
+			android:name="com.donkingliang.imageselector.PreviewActivity"
+			android:configChanges="orientation|keyboardHidden|screenSize"
+			android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
+		<activity
+			android:name="com.donkingliang.imageselector.ClipImageActivity"
+			android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
 		<!-- 启动页 -->
 		<activity
@@ -190,13 +205,24 @@
 			android:screenOrientation="portrait"
 			>
 		</activity>
+		<!-- 二手发布 -->
+		<activity
+			android:name="com.zbl.anju.ui.activity.SellReleaseActivity"
+			android:screenOrientation="portrait"
+			>
+		</activity>
 		<!-- 实名认证 -->
 		<activity
 			android:name="com.zbl.anju.ui.activity.RegActivity"
 			android:screenOrientation="portrait"
 			>
 		</activity>
-
+		<!-- 上传成功 -->
+		<activity
+			android:name="com.zbl.anju.ui.activity.ResultOkActivity"
+			android:screenOrientation="portrait"
+			>
+		</activity>
 	</application>
 
 </manifest>

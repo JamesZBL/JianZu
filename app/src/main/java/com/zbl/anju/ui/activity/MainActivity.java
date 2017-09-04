@@ -96,9 +96,13 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	@Bind(R.id.house_map_view)
 	MapView mTenMapView;                //地图（仅视图）
 	@Bind(R.id.btn_main_loc)
-	Button mBtnMainLoc;
+	Button mBtnMainLoc;                 //缩放当前位置
+	@Bind(R.id.btn_main_full)
+	Button mBtnMainFull;                //全屏
 
 	/* 主页宫格菜单 */
+	@Bind(R.id.all_grids)
+	AutoLinearLayout mAllMainGrid;      //宫格
 	@Bind(R.id.arl_left_menu_1)
 	AutoRelativeLayout mArlLeftMenu1;   //整租
 	@Bind(R.id.arl_left_menu_2)
@@ -120,6 +124,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 
 	BottomDialog mBottomDialog;        //底部弹窗
 	private boolean hasLaunchAd = false;//是否已经显示ad
+	private boolean hasFullMap = false;//是否已经全屏显示地图
 
 	/* 重写方法 activity生命周期方法实现对 地图 MapView 的舍命周期管理 */
 
@@ -247,7 +252,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 			//房屋列表整租
 			jumpToActivity(HouseListActiity.class);
 		});
-		mArlLeftMenu2.setOnClickListener(v->{
+		mArlLeftMenu2.setOnClickListener(v -> {
 			//合租
 			jumpToActivity(HouseListHezuActiity.class);
 		});
@@ -262,6 +267,15 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 			//启动
 			startActivityForResult(new Intent(MainActivity.this, CityPickerActivity.class),
 					AppConst.REQ_CITY_PICK);
+		});
+
+		/*地图全屏按钮*/
+		mBtnMainFull.setOnClickListener(v -> {
+			if (!hasFullMap) {
+				makeMapFullScreen();
+			} else {
+				cancelMapFullScreen();
+			}
 		});
 	}
 
@@ -318,8 +332,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 				getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
 			}
 
-			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-			{
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 				getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 				getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimary));
 			}
@@ -519,6 +532,25 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		mPresenter.showAd();
 	}
 
+	/**
+	 * 地图全屏
+	 */
+	private void makeMapFullScreen() {
+		mAllMainGrid.setVisibility(View.GONE);
+		mJcPlayer.setVisibility(View.GONE);
+		mBannerAdvertisement.setVisibility(View.GONE);
+		hasFullMap=true;
+	}
+
+	/**
+	 * 取消地图全屏
+	 */
+	private void cancelMapFullScreen() {
+		mAllMainGrid.setVisibility(View.VISIBLE);
+		mJcPlayer.setVisibility(View.VISIBLE);
+		mBannerAdvertisement.setVisibility(View.VISIBLE);
+		hasFullMap=false;
+	}
 
 	@Override
 	public void onFirstLaunchThisVersionDo() {

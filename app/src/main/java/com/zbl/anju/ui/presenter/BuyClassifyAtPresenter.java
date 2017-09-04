@@ -52,7 +52,7 @@ public class BuyClassifyAtPresenter extends BasePresenter<IBuyClassifyAtView> {
 
 				ImageView ivHeader = helper.getView(R.id.ivHeader);
 					/* 加载缩略图 */
-				Glide.with(mContext).load(item.getImgUrl()).centerCrop().into(ivHeader);
+				Glide.with(mContext).load(item.getImgUrl()).into(ivHeader);
 
 				helper.setText(R.id.tvDescTitle, item.getName())
 						.setText(R.id.tv_release, item.getRerleaseTime())

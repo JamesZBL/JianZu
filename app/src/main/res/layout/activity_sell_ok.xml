@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	>
+
+	<!-- appbar(required) -->
+	<include
+		layout="@layout/include_toolbar_white"
+		/>
+
+	<View
+		style="@style/LineGrayDividerNoMargin"
+		/>
+
+	<com.zhy.autolayout.AutoRelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="260dp"
+		android:background="@color/white">
+
+		<com.zhy.autolayout.AutoLinearLayout
+			android:id="@+id/autoLinearLayout"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerHorizontal="true"
+			android:layout_centerVertical="true"
+			android:orientation="vertical">
+
+			<ImageView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/ic_h_ok_green"
+				/>
+		</com.zhy.autolayout.AutoLinearLayout>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"
+			android:layout_below="@+id/autoLinearLayout"
+			android:layout_margin="10dp"
+			android:gravity="center"
+			android:text="发布成功"
+			android:textSize="20dp"/>
+	</com.zhy.autolayout.AutoRelativeLayout>
+
+	<Button
+		android:id="@+id/btn_done"
+		style="@style/btn2"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="16dp"
+		android:text="完成"
+		/>
+</com.zhy.autolayout.AutoLinearLayout>

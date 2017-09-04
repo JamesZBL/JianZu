@@ -45,7 +45,7 @@ public class BuyOrSellActivity extends BaseActivity {
 		});
 		/* 我要卖 */
 		allIWannaSell.setOnClickListener(v -> {
-			jumpToActivityAndClearTask(RegActivity.class);
+			jumpToActivityAndClearTask(SellReleaseActivity.class);
 			finish();
 		});
 	}

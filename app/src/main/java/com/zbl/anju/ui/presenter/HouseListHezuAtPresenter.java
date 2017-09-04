@@ -64,7 +64,7 @@ public class HouseListHezuAtPresenter extends BasePresenter<IHouseLIistHezuAtVie
 
 					CircleImageView ivHeader = helper.getView(R.id.ivHeader);
 					/* 加载缩略图 */
-					Glide.with(mContext).load(item.getUrlVideoThumbnail()).centerCrop().into(ivHeader);
+					Glide.with(mContext).load(item.getUrlVideoThumbnail()).into(ivHeader);
 
 					helper.setText(R.id.tvDescTitle, item.getXiaoquName())
 							.setText(R.id.tv_release, item.getReleaseTime())

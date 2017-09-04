@@ -86,6 +86,12 @@
 	<string name="regist_id_num">身份证号</string>
 	<string name="regist_real_id_num">请输入您的真实身份证号</string>
 
+
+	<string name="sell_input_your_title">标题 醒目的标题更容易吸引买家哦</string>
+	<string name="sell_input_your_description">描述一下您要发布的宝贝</string>
+	<string name="sell_input_your_img">宝贝照片</string>
+	<string name="sell_release_now">立即发布</string>
+
 	<!---->
 	<!---->
 	<!---->

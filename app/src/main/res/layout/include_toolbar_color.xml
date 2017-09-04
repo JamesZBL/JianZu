@@ -72,12 +72,13 @@
 					android:layout_height="wrap_content"
 					android:text="石家庄"
 					android:textColor="@color/white"/>
+
 				<ImageView
 					android:layout_width="10dp"
 					android:layout_height="10dp"
-					android:src="@drawable/ic_down_tri_white"
 					android:layout_gravity="center_vertical"
 					android:layout_marginLeft="5dp"
+					android:src="@drawable/ic_down_tri_white"
 					/>
 			</com.zhy.autolayout.AutoLinearLayout>
 			<!--<TextView
@@ -110,9 +111,9 @@
 				android:id="@+id/imageView"
 				android:layout_width="50dp"
 				android:layout_height="30dp"
-				android:layout_marginTop="10dp"
 				android:layout_alignParentTop="true"
 				android:layout_centerHorizontal="true"
+				android:layout_marginTop="10dp"
 				android:src="@drawable/ic_logo_txt"/>
 
 			<!--标题广告语文字图片-->
@@ -125,12 +126,12 @@
 			<TextView
 				android:layout_width="60dp"
 				android:layout_height="20dp"
+				android:layout_below="@+id/imageView"
+				android:layout_centerHorizontal="true"
+				android:gravity="center"
 				android:text="房屋管家"
 				android:textColor="@color/white"
-				android:textSize="12sp"
-				android:gravity="center"
-				android:layout_below="@+id/imageView"
-				android:layout_centerHorizontal="true"/>
+				android:textSize="12sp"/>
 
 
 			<!--添加朋友-->
@@ -281,5 +282,7 @@
 
 	<View
 		android:id="@+id/line_include_toolbar_white"
-		style="@style/Line"/>
+		style="@style/Line"
+		android:visibility="gone"
+		/>
 </android.support.design.widget.AppBarLayout>
