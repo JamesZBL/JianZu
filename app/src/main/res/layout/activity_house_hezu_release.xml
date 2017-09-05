@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	>
+
+	<!-- appbar(required) -->
+	<include
+		layout="@layout/include_toolbar_white"
+		/>
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<com.zhy.autolayout.AutoLinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			>
+
+
+			<View
+				style="@style/LineGrayDividerNoMargin"
+				/>
+			<!-- 表单项目 -->
+
+			<!-- 基本信息 -->
+			<com.zhy.autolayout.AutoLinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				>
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="5dp"
+					android:layout_marginLeft="10dp"
+					android:layout_marginTop="5dp"
+					android:text="@string/house_jibenxinxi"
+					android:textSize="@dimen/global_normal_font_size_xsm"
+					/>
+
+				<View style="@style/Line"/>
+			</com.zhy.autolayout.AutoLinearLayout>
+
+
+			<!-- 小区 -->
+			<com.zhy.autolayout.AutoLinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="50dp"
+				android:background="@color/white"
+				android:gravity="center_vertical"
+				android:orientation="vertical"
+				android:paddingLeft="30px"
+				android:paddingRight="30px"
+				>
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:text="小区"
+					android:textSize="@dimen/global_normal_font_size_xxsm"
+
+					/>
+
+				<EditText
+					android:id="@+id/et_sell_title"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:background="@null"
+					android:gravity="center"
+					android:hint="@string/house_input_your_xiaoqu"
+					android:maxLength="20"
+					android:text=""
+					android:textColorHint="@color/gray3"
+					android:textSize="@dimen/global_normal_font_size"/>
+
+			</com.zhy.autolayout.AutoLinearLayout>
+
+			<View style="@style/Line"/>
+
+			<!-- 详细地址 -->
+			<com.zhy.autolayout.AutoLinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="50dp"
+				android:background="@color/white"
+				android:gravity="center_vertical"
+				android:orientation="vertical"
+				android:paddingLeft="30px"
+				android:paddingRight="30px"
+				>
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="center"
+					android:text="详细地址"
+					android:textSize="@dimen/global_normal_font_size_xxsm"
+
+					/>
+
+				<EditText
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:background="@null"
+					android:gravity="center"
+					android:hint="请填写小区的详细地址"
+					android:maxLength="20"
+					android:text=""
+					android:textColorHint="@color/gray3"
+					android:textSize="@dimen/global_normal_font_size"/>
+
+			</com.zhy.autolayout.AutoLinearLayout>
+
+			<View style="@style/Line"/>
+
+			<!-- 详细地址 -->
+			<com.zhy.autolayout.AutoLinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="50dp"
+				android:background="@color/white"
+				android:gravity="center_vertical"
+				android:orientation="horizontal"
+				android:paddingLeft="30px"
+				android:paddingRight="30px"
+				>
+				<!-- 第1列 -->
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:orientation="vertical"
+					>
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:text="@string/house_louhao"
+						android:textSize="@dimen/global_normal_font_size_xxsm"
+						/>
+
+					<EditText
+						android:id="@+id/et_sell_address"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:background="@null"
+						android:gravity="center"
+						android:hint="@string/house_please_input"
+						android:inputType="number"
+						android:maxLength="20"
+						android:text=""
+						android:textColorHint="@color/gray3"
+						android:textSize="@dimen/global_normal_font_size"/>
+				</com.zhy.autolayout.AutoLinearLayout>
+
+				<View
+					style="@style/Line_Vertical"
+					android:layout_margin="5dp"
+					/>
+				<!-- 第2列 -->
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:orientation="vertical"
+					>
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:text="@string/house_danyuanhao"
+						android:textSize="@dimen/global_normal_font_size_xxsm"
+						/>
+
+					<EditText
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:background="@null"
+						android:gravity="center"
+						android:hint="@string/house_please_input"
+						android:inputType="number"
+						android:maxLength="20"
+						android:text=""
+						android:textColorHint="@color/gray3"
+						android:textSize="@dimen/global_normal_font_size"/>
+				</com.zhy.autolayout.AutoLinearLayout>
+
+				<View
+					style="@style/Line_Vertical"
+					android:layout_margin="5dp"
+					/>
+				<!-- 第3列 -->
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:orientation="vertical"
+					>
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:text="@string/house_menpaihao"
+						android:textSize="@dimen/global_normal_font_size_xxsm"
+						/>
+
+					<EditText
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:background="@null"
+						android:gravity="center"
+						android:hint="@string/house_please_input"
+						android:inputType="number"
+						android:maxLength="20"
+						android:text=""
+						android:textColorHint="@color/gray3"
+						android:textSize="@dimen/global_normal_font_size"/>
+				</com.zhy.autolayout.AutoLinearLayout>
+
+
+			</com.zhy.autolayout.AutoLinearLayout>
+
+			<View style="@style/Line"/>
+
+
+			<com.zhy.autolayout.AutoLinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="50dp"
+				android:background="@color/white"
+				android:gravity="center_vertical"
+				android:orientation="horizontal"
+				android:paddingLeft="30px"
+				android:paddingRight="30px"
+				>
+
+				<!-- 出租间类型 -->
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:orientation="vertical"
+					>
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:text="出租间类型"
+						android:textSize="@dimen/global_normal_font_size_xxsm"
+
+						/>
+
+					<TextView
+						android:id="@+id/edt_house_release_chuzujianleixing"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:hint="@string/house_please_input"
+						android:maxLength="20"
+						android:text=""
+						android:textColorHint="@color/gray3"
+						android:textColor="@color/black"
+						android:textSize="@dimen/global_normal_font_size"/>
+				</com.zhy.autolayout.AutoLinearLayout>
+
+				<View
+					style="@style/Line_Vertical"
+					android:layout_margin="5dp"/>
+
+				<!-- 面积 -->
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:orientation="vertical"
+					>
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:text="出租间面积"
+						android:textSize="@dimen/global_normal_font_size_xxsm"
+
+						/>
+
+					<EditText
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:background="@null"
+						android:gravity="center"
+						android:hint="@string/house_please_input"
+						android:inputType="number"
+						android:maxLength="20"
+						android:text=""
+						android:textColorHint="@color/gray3"
+						android:textSize="@dimen/global_normal_font_size"/>
+				</com.zhy.autolayout.AutoLinearLayout>
+
+				<View
+					style="@style/Line_Vertical"
+					android:layout_margin="5dp"/>
+
+
+				<com.zhy.autolayout.AutoLinearLayout
+					android:id="@+id/all_zhuangxiu"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:orientation="vertical"
+					>
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:text="装修"
+						android:textSize="@dimen/global_normal_font_size_xxsm"
+
+						/>
+
+					<TextView
+						android:id="@+id/edt_zhuangxiu"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:hint="@string/house_please_select"
+						android:maxLength="20"
+						android:text=""
+						android:textColor="@color/black"
+						android:textColorHint="@color/gray3"
+						android:textSize="@dimen/global_normal_font_size"/>
+				</com.zhy.autolayout.AutoLinearLayout>
+
+			</com.zhy.autolayout.AutoLinearLayout>
+
+			<View style="@style/Line"/>
+
+			<!-- 房屋信息 -->
+			<com.zhy.autolayout.AutoLinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="50dp"
+				android:background="@color/white"
+				android:gravity="center_vertical"
+				android:orientation="horizontal"
+				android:paddingLeft="30px"
+				android:paddingRight="30px"
+				>
+				<!-- 第1列 -->
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:orientation="vertical"
+					>
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:text="厅"
+						android:textSize="@dimen/global_normal_font_size_xxsm"
+						/>
+
+					<EditText
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:background="@null"
+						android:gravity="center"
+						android:hint="@string/house_please_input"
+						android:maxLength="20"
+						android:text=""
+						android:textColorHint="@color/gray3"
+						android:textSize="@dimen/global_normal_font_size"/>
+				</com.zhy.autolayout.AutoLinearLayout>
+
+				<View
+					style="@style/Line_Vertical"
+					android:layout_margin="5dp"
+					/>
+				<!-- 第2列 -->
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:orientation="vertical"
+					>
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:text="室"
+						android:textSize="@dimen/global_normal_font_size_xxsm"
+						/>
+
+					<EditText
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:background="@null"
+						android:gravity="center"
+						android:hint="@string/house_please_input"
+						android:maxLength="20"
+						android:text=""
+						android:textColorHint="@color/gray3"
+						android:textSize="@dimen/global_normal_font_size"/>
+				</com.zhy.autolayout.AutoLinearLayout>
+
+				<View
+					style="@style/Line_Vertical"
+					android:layout_margin="5dp"
+					/>
+				<!-- 第3列 -->
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:orientation="vertical"
+					>
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:text="卫"
+						android:textSize="@dimen/global_normal_font_size_xxsm"
+						/>
+
+					<EditText
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:background="@null"
+						android:gravity="center"
+						android:hint="@string/house_please_input"
+						android:maxLength="20"
+						android:text=""
+						android:textColorHint="@color/gray3"
+						android:textSize="@dimen/global_normal_font_size"/>
+				</com.zhy.autolayout.AutoLinearLayout>
+
+
+			</com.zhy.autolayout.AutoLinearLayout>
+
+			<View style="@style/Line"/>
+
+			<!-- 房屋信息 2-->
+			<com.zhy.autolayout.AutoLinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="50dp"
+				android:background="@color/white"
+				android:gravity="center_vertical"
+				android:orientation="horizontal"
+				android:paddingLeft="30px"
+				android:paddingRight="30px"
+				>
+
+				<!-- 第2列 -->
+				<com.zhy.autolayout.AutoLinearLayout
+					android:id="@+id/all_chaoxiang"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="2"
+					android:orientation="vertical"
+					>
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:text="@string/house_chaoxiang"
+						android:textSize="@dimen/global_normal_font_size_xxsm"
+						/>
+
+					<TextView
+						android:id="@+id/edt_chaoxiang"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:hint="@string/house_please_select"
+						android:maxLength="20"
+						android:text=""
+						android:textColor="@color/black"
+						android:textColorHint="@color/gray3"
+						android:textSize="@dimen/global_normal_font_size"/>
+				</com.zhy.autolayout.AutoLinearLayout>
+
+				<View
+					style="@style/Line_Vertical"
+					android:layout_margin="5dp"
+					/>
+				<!-- 第3列 -->
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:orientation="vertical"
+					>
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:text="@string/house_louceng"
+						android:textSize="@dimen/global_normal_font_size_xxsm"
+						/>
+
+					<com.zhy.autolayout.AutoLinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:orientation="horizontal"
+						>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="第"
+							/>
+
+						<EditText
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:background="@null"
+							android:gravity="center"
+							android:hint="@string/house_please_input"
+							android:inputType="number"
+							android:maxLength="20"
+							android:text=""
+							android:textColorHint="@color/gray3"
+							android:textSize="@dimen/global_normal_font_size"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="层"
+							/>
+
+						<View
+							style="@style/Line_Vertical"
+							android:layout_marginLeft="5dp"
+							android:layout_marginRight="5dp"
+							/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="共"
+							/>
+
+						<EditText
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:background="@null"
+							android:gravity="center"
+							android:hint="@string/house_please_input"
+							android:inputType="number"
+							android:maxLength="20"
+							android:text=""
+							android:textColorHint="@color/gray3"
+							android:textSize="@dimen/global_normal_font_size"/>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="层"
+							/>
+					</com.zhy.autolayout.AutoLinearLayout>
+
+
+				</com.zhy.autolayout.AutoLinearLayout>
+
+
+			</com.zhy.autolayout.AutoLinearLayout>
+
+			<View style="@style/Line"/>
+
+			<!--性别-->
+			<com.zhy.autolayout.AutoLinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="50dp"
+				android:background="@color/white"
+				android:gravity="center_vertical"
+				android:orientation="horizontal"
+				android:paddingLeft="30px"
+				android:paddingRight="30px"
+				>
+
+				<!-- 第2列 -->
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="2"
+					android:orientation="vertical"
+					>
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:text="性别要求"
+						android:textSize="@dimen/global_normal_font_size_xxsm"
+						/>
+
+					<TextView
+						android:id="@+id/edt_xingbie"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:hint="@string/house_please_select"
+						android:maxLength="20"
+						android:text=""
+						android:textColor="@color/black"
+						android:textColorHint="@color/gray3"
+						android:textSize="@dimen/global_normal_font_size"/>
+				</com.zhy.autolayout.AutoLinearLayout>
+
+
+
+			</com.zhy.autolayout.AutoLinearLayout>
+
+
+			<View
+				style="@style/LineGrayDividerNoMargin"
+				/>
+
+			<!-- 租金详情  -->
+			<com.zhy.autolayout.AutoLinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				>
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="5dp"
+					android:layout_marginLeft="10dp"
+					android:layout_marginTop="5dp"
+					android:text="@string/house_zujinxiangqing"
+					android:textSize="@dimen/global_normal_font_size_xsm"
+					/>
+
+				<View style="@style/Line"/>
+			</com.zhy.autolayout.AutoLinearLayout>
+
+			<!-- 月租金  -->
+			<com.zhy.autolayout.AutoLinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="50dp"
+				android:background="@color/white"
+				android:gravity="center_vertical"
+				android:orientation="horizontal"
+				android:paddingLeft="30px"
+				android:paddingRight="30px"
+				>
+
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:orientation="vertical"
+					>
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:text="月租金"
+						android:textSize="@dimen/global_normal_font_size_xxsm"
+
+						/>
+
+					<EditText
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:background="@null"
+						android:gravity="center"
+						android:hint="@string/house_please_input"
+						android:maxLength="20"
+						android:text=""
+						android:textColorHint="@color/gray3"
+						android:textSize="@dimen/global_normal_font_size"/>
+				</com.zhy.autolayout.AutoLinearLayout>
+
+				<com.zhy.autolayout.AutoLinearLayout
+					android:id="@+id/all_zhifu"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:orientation="vertical"
+					>
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:text="支付方式"
+						android:textSize="@dimen/global_normal_font_size_xxsm"
+
+						/>
+
+					<TextView
+						android:id="@+id/edt_zhifu"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:hint="@string/house_please_select"
+						android:maxLength="20"
+						android:text=""
+						android:textColor="@color/black"
+						android:textColorHint="@color/gray3"
+						android:textSize="@dimen/global_normal_font_size"/>
+				</com.zhy.autolayout.AutoLinearLayout>
+
+			</com.zhy.autolayout.AutoLinearLayout>
+
+			<!-- 描述 -->
+			<!--<com.zhy.autolayout.AutoLinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="130dp"
+				android:background="@color/white"
+				android:gravity="center_vertical"
+				android:orientation="horizontal"
+				android:padding="30px"
+				>
+
+				<EditText
+					android:id="@+id/et_sell_description"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:background="@null"
+					android:gravity="start"
+					android:hint="@string/house_input_your_description"
+					android:inputType="textMultiLine"
+					android:maxLength="300"
+					android:maxLines="4"
+					android:singleLine="false"
+					android:text=""
+					android:textColorHint="@color/gray3"
+					android:textSize="@dimen/global_normal_font_size_sm"/>
+
+			</com.zhy.autolayout.AutoLinearLayout>-->
+
+			<View
+				style="@style/LineGrayDividerNoMargin"
+				/>
+
+			<!-- 价格 -->
+			<!--<com.zhy.autolayout.AutoLinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@color/white"
+				android:gravity="center_vertical"
+				android:orientation="horizontal"
+				android:padding="30px"
+				>
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="租价"
+					android:textColor="@color/black"
+					/>
+
+				<EditText
+					android:id="@+id/edt_sell_price"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="5dp"
+					android:layout_marginRight="5dp"
+					android:layout_weight="1"
+					android:background="@null"
+					android:gravity="end"
+					android:inputType="numberDecimal"
+					android:maxLength="6"
+					android:singleLine="true"
+					android:textColorHint="@color/black"
+					/>
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="元/月"
+					/>
+			</com.zhy.autolayout.AutoLinearLayout>-->
+
+			<View
+				style="@style/LineGrayDividerNoMargin"
+				/>
+
+			<!-- 图片选择  -->
+			<com.zhy.autolayout.AutoLinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@color/white"
+				android:gravity="center_vertical"
+				android:orientation="vertical"
+				android:padding="30px"
+				>
+				<!---->
+				<com.zhy.autolayout.AutoRelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:background="@color/white"
+					android:paddingBottom="5dp"
+					android:paddingTop="5dp"
+					>
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_alignParentTop="true"
+						android:layout_toEndOf="@+id/imageView3"
+						android:layout_toRightOf="@+id/imageView3"
+						android:text="@string/house_input_your_video"
+						android:textColor="@color/black"
+						/>
+				</com.zhy.autolayout.AutoRelativeLayout>
+
+				<!-- 视频缩略图 -->
+				<ImageView
+					android:id="@+id/iv_house_release_video_thumbnail"
+					android:layout_width="match_parent"
+					android:layout_height="200dp"
+					android:visibility="gone"
+					/>
+
+				<ImageView
+					android:id="@+id/iv_house_add_video"
+					android:layout_width="50dp"
+					android:layout_height="50dp"
+					android:layout_margin="10dp"
+					android:src="@drawable/ic_h_plus"
+					/>
+			</com.zhy.autolayout.AutoLinearLayout>
+
+			<!-- 确认发布 -->
+			<Button
+				android:id="@+id/btn_sell_release"
+				style="@style/btn2"
+				android:layout_width="match_parent"
+				android:layout_height="50dp"
+				android:layout_margin="16dp"
+				android:text="@string/sell_release_now"
+				/>
+		</com.zhy.autolayout.AutoLinearLayout>
+	</ScrollView>
+
+
+</com.zhy.autolayout.AutoLinearLayout>

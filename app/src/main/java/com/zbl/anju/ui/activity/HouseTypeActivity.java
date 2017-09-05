@@ -1,5 +1,7 @@
 package com.zbl.anju.ui.activity;
 
+import android.graphics.Movie;
+
 import com.lqr.optionitemview.OptionItemView;
 import com.zbl.anju.R;
 import com.zbl.anju.ui.base.BaseActivity;
@@ -33,7 +35,12 @@ public class HouseTypeActivity extends BaseActivity {
 	public void initListener() {
 		super.initListener();
 		mOivZhengzu.setOnClickListener(v->{
-			jumpToActivity(HouseReleaseActivity.class);
+			jumpToActivityAndClearTask(HouseReleaseActivity.class);
+			finish();
+		});
+		mOivHezu.setOnClickListener(v->{
+			jumpToActivityAndClearTask(HouseReleaseHezuActivity.class);
+			finish();
 		});
 	}
 
