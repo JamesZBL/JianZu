@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialcamera.MaterialCamera;
@@ -43,11 +44,11 @@ public class HouseReleaseActivity extends BaseActivity {
 
 
 	@Bind(R.id.edt_zhuangxiu)
-	EditText edtZhuangXiu;
+	TextView edtZhuangXiu;
 	@Bind(R.id.edt_chaoxiang)
-	EditText edtChaoxiang;
+	TextView edtChaoxiang;
 	@Bind(R.id.edt_zhifu)
-	EditText edtZhifu;
+	TextView edtZhifu;
 
 	@Bind(R.id.iv_house_release_video_thumbnail)
 	ImageView ivThumbnail;
@@ -89,13 +90,13 @@ public class HouseReleaseActivity extends BaseActivity {
 			//选取视频
 			selectVideo();
 		});
-		mAllZhuangxiu.setOnClickListener(v -> {
+		edtZhuangXiu.setOnClickListener(v -> {
 			showListDialog(0);
 		});
-		mAllChaoxiang.setOnClickListener(v -> {
+		edtChaoxiang.setOnClickListener(v -> {
 			showListDialog(1);
 		});
-		mAllZhifu.setOnClickListener(v -> {
+		edtZhifu.setOnClickListener(v -> {
 			showListDialog(2);
 		});
 	}
