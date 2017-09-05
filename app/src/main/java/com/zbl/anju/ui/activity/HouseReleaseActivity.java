@@ -1,13 +1,11 @@
 package com.zbl.anju.ui.activity;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
-import android.provider.MediaStore;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -15,11 +13,14 @@ import android.widget.Toast;
 
 import com.afollestad.materialcamera.MaterialCamera;
 import com.bumptech.glide.Glide;
+import com.flyco.dialog.listener.OnOperItemClickL;
+import com.flyco.dialog.widget.NormalListDialog;
 import com.zbl.anju.R;
 import com.zbl.anju.ui.base.BaseActivity;
 import com.zbl.anju.ui.base.BasePresenter;
 import com.zbl.anju.util.UIUtils;
 import com.zbl.anju.util.VideoUtils;
+import com.zhy.autolayout.AutoLinearLayout;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -33,6 +34,20 @@ import butterknife.Bind;
 
 public class HouseReleaseActivity extends BaseActivity {
 
+	@Bind(R.id.all_zhuangxiu)
+	AutoLinearLayout mAllZhuangxiu;
+	@Bind(R.id.all_chaoxiang)
+	AutoLinearLayout mAllChaoxiang;
+	@Bind(R.id.all_zhifu)
+	AutoLinearLayout mAllZhifu;
+
+
+	@Bind(R.id.edt_zhuangxiu)
+	EditText edtZhuangXiu;
+	@Bind(R.id.edt_chaoxiang)
+	EditText edtChaoxiang;
+	@Bind(R.id.edt_zhifu)
+	EditText edtZhifu;
 
 	@Bind(R.id.iv_house_release_video_thumbnail)
 	ImageView ivThumbnail;
@@ -74,6 +89,15 @@ public class HouseReleaseActivity extends BaseActivity {
 			//选取视频
 			selectVideo();
 		});
+		mAllZhuangxiu.setOnClickListener(v -> {
+			showListDialog(0);
+		});
+		mAllChaoxiang.setOnClickListener(v -> {
+			showListDialog(1);
+		});
+		mAllZhifu.setOnClickListener(v -> {
+			showListDialog(2);
+		});
 	}
 
 
@@ -81,7 +105,7 @@ public class HouseReleaseActivity extends BaseActivity {
 	 * 选取视频
 	 */
 	private void selectVideo() {
-		File saveFolder = new File(Environment.getExternalStorageDirectory(), "AAAJianzu"+System.currentTimeMillis()+"");
+		File saveFolder = new File(Environment.getExternalStorageDirectory(), "AAAJianzu" + System.currentTimeMillis() + "");
 		if (!saveFolder.mkdirs())
 			throw new RuntimeException("Unable to create save directory, make sure WRITE_EXTERNAL_STORAGE permission is granted.");
 
@@ -132,13 +156,13 @@ public class HouseReleaseActivity extends BaseActivity {
 				if (resultCode == RESULT_OK) {
 					/*Toast.makeText(this, "Saved to: " + data.getDataString(), Toast.LENGTH_LONG).show();*/
 					try {
-						setImage(data.getDataString().replace("file:///","/"));        //设置缩略图
+						setImage(data.getDataString().replace("file:///", "/"));        //设置缩略图
 					} catch (Exception e) {
 						e.printStackTrace();
 						hideWaitingDialog();
 						UIUtils.showToast("加载视频出错");
 					}
-				} else if(data != null) {
+				} else if (data != null) {
 					Exception e = (Exception) data.getSerializableExtra(MaterialCamera.ERROR_EXTRA);
 					e.printStackTrace();
 					Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
@@ -164,8 +188,59 @@ public class HouseReleaseActivity extends BaseActivity {
 		Glide.with(this).load(bytes).into(ivThumbnail);
 		hideWaitingDialog();
 
-		ivThumbnail.setOnClickListener(v->{
+		ivThumbnail.setOnClickListener(v -> {
 			selectVideo();          //点击视频重新选择
+		});
+	}
+
+	/**
+	 * 弹listDialog
+	 */
+	private void showListDialog(int i) {
+		String[] zhuagnXiutems = {"毛坯", "简单装修", "中等装修", "精装修", "豪华装修"};
+		String[] chaoxiangItems = {"北", "南", "西", "东", "西北", "西南", "东北", "东南"};
+		String[] zhifuItems = {"押一付一", "押一付三", "半年付", "一年付"};
+		String[] items = {};
+		switch (i) {
+			case 0: {
+				items = zhuagnXiutems;
+				break;
+			}
+			case 1: {
+				items = chaoxiangItems;
+				break;
+			}
+			case 2: {
+				items = zhifuItems;
+				break;
+			}
+		}
+
+		final NormalListDialog dialog = new NormalListDialog(this, items);
+		dialog.title("请选择")//
+				.layoutAnimation(null)
+				.show(R.style.myDialogAnim);
+		String[] finalItems = items;
+		dialog.setOnOperItemClickL(new OnOperItemClickL() {
+			@Override
+			public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
+				switch (i) {
+					case 0: {
+						edtZhuangXiu.setText(finalItems[position]);
+						break;
+					}
+					case 1: {
+						edtChaoxiang.setText(finalItems[position]);
+						break;
+					}
+					case 2: {
+						edtZhifu.setText(finalItems[position]);
+						break;
+					}
+				}
+
+				dialog.dismiss();
+			}
 		});
 	}
 }

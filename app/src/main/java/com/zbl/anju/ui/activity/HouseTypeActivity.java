@@ -30,10 +30,10 @@ public class HouseTypeActivity extends BaseActivity {
 	}
 
 	@Override
-	public void init() {
-		super.init();
+	public void initListener() {
+		super.initListener();
 		mOivZhengzu.setOnClickListener(v->{
-			jumpToActivity(SellReleaseActivity.class);
+			jumpToActivity(HouseReleaseActivity.class);
 		});
 	}
 

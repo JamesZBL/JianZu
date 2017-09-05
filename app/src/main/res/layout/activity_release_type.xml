@@ -22,8 +22,8 @@
 		<TextView
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:text="居民住宅"
 			android:layout_margin="10dp"
+			android:text="居民住宅"
 			android:textSize="@dimen/global_normal_font_size_vxsm"
 			/>
 
@@ -31,21 +31,34 @@
 			android:id="@+id/oiv_house_type_zhengzu"
 			android:layout_width="match_parent"
 			android:layout_height="60dp"
-			app:right_src="@drawable/ic_h_forward"
+			android:background="@drawable/selector_option_item"
+			app:left_image_margin_left="16dp"
 			app:left_src="@drawable/ic_h_house_blue"
-			app:left_image_margin_left="10dp"
 			app:left_text="整租"
+			app:right_text="一整套房子，也包括开间"
+			app:right_text_size="@dimen/global_normal_font_size_xxsm"
+			app:right_text_color="@color/gray1"
+			app:right_src="@drawable/ic_h_forward"
 			/>
+
 		<View style="@style/Line"/>
+
 		<com.lqr.optionitemview.OptionItemView
 			android:id="@+id/oiv_house_type_hezu"
 			android:layout_width="match_parent"
 			android:layout_height="60dp"
-			app:right_src="@drawable/ic_h_forward"
+			android:background="@drawable/selector_option_item"
+			app:left_image_margin_left="16dp"
 			app:left_src="@drawable/ic_h_door_red"
-			app:left_image_margin_left="10dp"
 			app:left_text="合租"
+			app:right_src="@drawable/ic_h_forward"
+			app:right_text="一个房间"
+			app:right_text_size="@dimen/global_normal_font_size_xxsm"
+			app:right_text_color="@color/gray1"
 			/>
+
+		<View style="@style/Line"/>
+
 	</com.zhy.autolayout.AutoLinearLayout>
 
 

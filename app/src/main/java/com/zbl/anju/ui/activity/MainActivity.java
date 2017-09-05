@@ -549,6 +549,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		mAllMainGrid.setVisibility(View.GONE);
 		mJcPlayer.setVisibility(View.GONE);
 		mBannerAdvertisement.setVisibility(View.GONE);
+		mAppBar.setVisibility(View.GONE);
 		hasFullMap=true;
 	}
 
@@ -559,6 +560,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		mAllMainGrid.setVisibility(View.VISIBLE);
 		mJcPlayer.setVisibility(View.VISIBLE);
 		mBannerAdvertisement.setVisibility(View.VISIBLE);
+		mAppBar.setVisibility(View.VISIBLE);
 		hasFullMap=false;
 	}
 

@@ -299,4 +299,12 @@
 		<item name="android:alpha">200</item>   <!--value between 0-255 where 255 is full solid-->
 		<!--<item name="android:icon"></item>-->  <!--drawable id of the icon. R.drawable.xx-->
 	</style>
+
+	<style name="myDialogAnim" parent="android:Animation">
+
+		<!-- 进入时的动画 -->
+		<item name="@android:windowEnterAnimation">@anim/dialog_enter</item>
+		<!-- 退出时的动画 -->
+		<item name="@android:windowExitAnimation">@anim/dialog_exit</item>
+	</style>
 </resources>
