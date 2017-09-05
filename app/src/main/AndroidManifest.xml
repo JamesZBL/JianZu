@@ -212,6 +212,13 @@
 			android:windowSoftInputMode="adjustResize"
 			>
 		</activity>
+		<!-- 房源发布 -->
+		<activity
+			android:name="com.zbl.anju.ui.activity.HouseReleaseActivity"
+			android:screenOrientation="portrait"
+			android:windowSoftInputMode="adjustResize"
+			>
+		</activity>
 		<!-- 实名认证 -->
 		<activity
 			android:name="com.zbl.anju.ui.activity.RegActivity"

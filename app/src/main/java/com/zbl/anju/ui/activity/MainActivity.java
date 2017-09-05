@@ -109,6 +109,8 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	AutoRelativeLayout mArlLeftMenu2;   //合租
 	@Bind(R.id.arl_left_menu_6)
 	AutoRelativeLayout mArlLeftMenu6;   //二手
+	@Bind(R.id.arl_left_menu_9)
+	AutoRelativeLayout mArlLeftMenu9;   //房源发布
 
 	BottomSheetBehavior mBottomSheetBehavior;
 
@@ -259,6 +261,10 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		mArlLeftMenu6.setOnClickListener(v -> {
 			//二手
 			jumpToActivity(BuyOrSellActivity.class);
+		});
+		mArlLeftMenu9.setOnClickListener(v->{
+			//房源发布
+			jumpToActivity(HouseReleaseActivity.class);
 		});
 
 		/* 顶部 城市选择按钮 */

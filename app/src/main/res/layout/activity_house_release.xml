@@ -88,7 +88,7 @@
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="卖价"
+			android:text="租价"
 			android:textColor="@color/black"
 			/>
 		<EditText
@@ -108,7 +108,7 @@
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="元"
+			android:text="元/月"
 			/>
 	</com.zhy.autolayout.AutoLinearLayout>
 
@@ -145,14 +145,16 @@
 				/>
 		</com.zhy.autolayout.AutoRelativeLayout>
 
-		<android.support.v7.widget.RecyclerView
-			android:id="@+id/rv_sell_imgs"
+		<!-- 视频缩略图 -->
+		<ImageView
+			android:id="@+id/iv_house_release_video_thumbnail"
 			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:layout_below="@+id/btn_unlimited"/>
+			android:layout_height="200dp"
+			android:visibility="gone"
+			/>
 
 		<ImageView
-			android:id="@+id/iv_sell_add_pic"
+			android:id="@+id/iv_house_add_video"
 			android:layout_width="50dp"
 			android:layout_height="50dp"
 			android:layout_margin="10dp"
