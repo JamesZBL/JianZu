@@ -209,7 +209,7 @@ public class HouseReleaseHezuActivity extends BaseActivity {
 	private void showListDialog(int i) {
 		String[] zhuagnXiutems = {"毛坯", "简单装修", "中等装修", "精装修", "豪华装修"};
 		String[] chaoxiangItems = {"北", "南", "西", "东", "西北", "西南", "东北", "东南"};
-		String[] zhifuItems = {"押一付一", "押一付三", "半年付", "一年付"};
+		String[] zhifuItems = {"押一付一","押一付二", "押一付三","押二付一","押二付二","押二付三", "半年付", "一年付","面议","半年付不押","半年付押一","年付不押","年付押一"};
 		String[] leixingItems = {"主卧", "次卧", "隔断"};
 		String[] xingbieItems = {"男女不限", "限男生", "限女生", "限夫妻"};
 		String[] items = {};
