@@ -264,7 +264,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		});
 		mArlLeftMenu9.setOnClickListener(v->{
 			//房源发布
-			jumpToActivity(HouseReleaseActivity.class);
+			jumpToActivity(HouseTypeActivity.class);
 		});
 
 		/* 顶部 城市选择按钮 */

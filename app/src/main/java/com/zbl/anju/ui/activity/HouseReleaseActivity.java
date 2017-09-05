@@ -2,17 +2,27 @@ package com.zbl.anju.ui.activity;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.afollestad.materialcamera.MaterialCamera;
+import com.bumptech.glide.Glide;
 import com.zbl.anju.R;
 import com.zbl.anju.ui.base.BaseActivity;
 import com.zbl.anju.ui.base.BasePresenter;
+import com.zbl.anju.util.UIUtils;
+import com.zbl.anju.util.VideoUtils;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 
 import butterknife.Bind;
 
@@ -23,10 +33,7 @@ import butterknife.Bind;
 
 public class HouseReleaseActivity extends BaseActivity {
 
-	@Bind(R.id.et_sell_title)
-	EditText mEdtTitle;
-	@Bind(R.id.et_sell_description)
-	EditText mEdtDescription;
+
 	@Bind(R.id.iv_house_release_video_thumbnail)
 	ImageView ivThumbnail;
 	@Bind(R.id.iv_house_add_video)
@@ -34,7 +41,7 @@ public class HouseReleaseActivity extends BaseActivity {
 	@Bind(R.id.btn_sell_release)
 	Button btnRelease;
 
-	private static final int REQUEST_CODE = 0x00000012;
+	private final static int CAMERA_RQ = 6969;
 
 	@Override
 	protected BasePresenter createPresenter() {
@@ -49,7 +56,7 @@ public class HouseReleaseActivity extends BaseActivity {
 	@Override
 	public void initView() {
 		super.initView();
-		setToolbarTitle("房源发布");
+		setToolbarTitle("整租发布");
 	}
 
 	@Override
@@ -74,8 +81,40 @@ public class HouseReleaseActivity extends BaseActivity {
 	 * 选取视频
 	 */
 	private void selectVideo() {
-		Intent i = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
-		startActivityForResult(i, REQUEST_CODE);
+		File saveFolder = new File(Environment.getExternalStorageDirectory(), "AAAJianzu"+System.currentTimeMillis()+"");
+		if (!saveFolder.mkdirs())
+			throw new RuntimeException("Unable to create save directory, make sure WRITE_EXTERNAL_STORAGE permission is granted.");
+
+		new MaterialCamera(this)                               // Constructor takes an Activity
+				.allowRetry(true)                                  // Whether or not 'Retry' is visible during playback
+				.autoSubmit(false)                                 // Whether or not user is allowed to playback videos after recording. This can affect other things, discussed in the next section.
+				.saveDir(saveFolder)                               // The folder recorded videos are saved to
+				.primaryColorAttr(R.attr.colorPrimary)             // The theme color used for the camera, defaults to colorPrimary of Activity in the constructor
+				.showPortraitWarning(true)                         // Whether or not a warning is displayed if the user presses record in portrait orientation
+				.defaultToFrontFacing(false)                       // Whether or not the camera will initially show the front facing camera
+				.retryExits(false)                                 // If true, the 'Retry' button in the playback screen will exit the camera instead of going back to the recorder
+				.restartTimerOnRetry(false)                        // If true, the countdown timer is reset to 0 when the user taps 'Retry' in playback
+				.continueTimerInPlayback(false)                    // If true, the countdown timer will continue to go down during playback, rather than pausing.
+				.videoEncodingBitRate(1024000)                     // Sets a custom bit rate for video recording.
+				.audioEncodingBitRate(50000)                       // Sets a custom bit rate for audio recording.
+				.videoFrameRate(24)                                // Sets a custom frame rate (FPS) for video recording.
+				.qualityProfile(MaterialCamera.QUALITY_HIGH)       // Sets a quality profile, manually setting bit rates or frame rates with other settings will overwrite individual quality profile settings
+				.videoPreferredHeight(720)                         // Sets a preferred height for the recorded video output.
+				.videoPreferredAspect(4f / 3f)                     // Sets a preferred aspect ratio for the recorded video output.
+				.maxAllowedFileSize(1024 * 1024 * 5)               // Sets a max file size of 5MB, recording will stop if file reaches this limit. Keep in mind, the FAT file system has a file size limit of 4GB.
+				.iconRecord(R.drawable.mcam_action_capture)        // Sets a custom icon for the button used to start recording
+				.iconStop(R.drawable.mcam_action_stop)             // Sets a custom icon for the button used to stop recording
+				.iconFrontCamera(R.drawable.mcam_camera_front)     // Sets a custom icon for the button used to switch to the front camera
+				.iconRearCamera(R.drawable.mcam_camera_rear)       // Sets a custom icon for the button used to switch to the rear camera
+				.iconPlay(R.drawable.evp_action_play)              // Sets a custom icon used to start playback
+				.iconPause(R.drawable.evp_action_pause)            // Sets a custom icon used to pause playback
+				.iconRestart(R.drawable.evp_action_restart)        // Sets a custom icon used to restart playback
+				.labelRetry(R.string.mcam_retry)                   // Sets a custom button label for the button used to retry recording, when available
+				.labelConfirm(R.string.mcam_use_video)             // Sets a custom button label for the button used to confirm/submit a recording
+				.autoRecordWithDelaySec(5)                         // The video camera will start recording automatically after a 5 second countdown. This disables switching between the front and back camera initially.
+				.autoRecordWithDelayMs(5000)                       // Same as the above, expressed with milliseconds instead of seconds.
+				.audioDisabled(false)                              // Set to true to record video without any audio.
+				.start(CAMERA_RQ);                                 // Starts the camera activity, the result will be sent back to the current Activity
 	}
 
 	/**
@@ -85,27 +124,48 @@ public class HouseReleaseActivity extends BaseActivity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 
-		if (requestCode == REQUEST_CODE && resultCode == RESULT_OK && null != data) {
-			Uri selectedVideo = data.getData();
-			String[] filePathColumn = {MediaStore.Video.Media.DATA};
+		if (requestCode == requestCode && resultCode == RESULT_OK && null != data) {
+//			showWaitingDialog("视频处理中");
+			// Received recording or error from MaterialCamera
+			if (requestCode == CAMERA_RQ) {
 
-			Cursor cursor = getContentResolver().query(selectedVideo,
-					filePathColumn, null, null, null);
-			cursor.moveToFirst();
+				if (resultCode == RESULT_OK) {
+					/*Toast.makeText(this, "Saved to: " + data.getDataString(), Toast.LENGTH_LONG).show();*/
+					try {
+						setImage(data.getDataString().replace("file:///","/"));        //设置缩略图
+					} catch (Exception e) {
+						e.printStackTrace();
+						hideWaitingDialog();
+						UIUtils.showToast("加载视频出错");
+					}
+				} else if(data != null) {
+					Exception e = (Exception) data.getSerializableExtra(MaterialCamera.ERROR_EXTRA);
+					e.printStackTrace();
+					Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
+				}
+			}
 
-			int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-			String videoPath = cursor.getString(columnIndex);
-			cursor.close();
-			setImage(videoPath);        //设置缩略图
+
 		}
 	}
 
 	/**
 	 * 根据视频url设置缩略图
+	 *
 	 * @param videoPath
 	 */
 	private void setImage(String videoPath) {
 		ivThumbnail.setVisibility(View.VISIBLE);
 		ivPlus.setVisibility(View.GONE);
+		Bitmap bitmap = VideoUtils.getVideoThumbnail(videoPath);
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+		byte[] bytes = baos.toByteArray();
+		Glide.with(this).load(bytes).into(ivThumbnail);
+		hideWaitingDialog();
+
+		ivThumbnail.setOnClickListener(v->{
+			selectVideo();          //点击视频重新选择
+		});
 	}
 }

@@ -49,7 +49,11 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
-    repositories { flatDir { dirs 'libs' } }
+    repositories {
+        flatDir { dirs 'libs' }
+        jcenter()
+        maven { url "https://dl.bintray.com/drummer-aidan/maven" }
+    }
 
 
 }
@@ -138,4 +142,5 @@ dependencies {
     compile 'com.flyco.dialog:FlycoDialog_Lib:1.3.2@aar'
     compile 'cn.yipianfengye.android:ad-library:1.0'
     compile 'com.github.donkingliang:ImageSelector:1.2.0'
+    compile 'com.afollestad:material-camera:0.4.4'
 }

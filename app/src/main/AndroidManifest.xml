@@ -111,6 +111,14 @@
 			android:name="TencentMapSDK"
 			android:value="JX2BZ-PMSWU-QJVVQ-267NU-MFGJZ-TSBJN"/>
 
+		<!-- 拍照 -->
+		<activity
+			android:name="com.afollestad.materialcamera.CaptureActivity"
+			android:theme="@style/MaterialCamera.CaptureActivity" />
+		<activity
+			android:name="com.afollestad.materialcamera.CaptureActivity2"
+			android:theme="@style/MaterialCamera.CaptureActivity" />
+
 		<!-- 图片 选择 -->
 		<activity
 			android:name="com.donkingliang.imageselector.ImageSelectorActivity"
@@ -210,6 +218,12 @@
 			android:name="com.zbl.anju.ui.activity.SellReleaseActivity"
 			android:screenOrientation="portrait"
 			android:windowSoftInputMode="adjustResize"
+			>
+		</activity>
+		<!-- 房源类型 -->
+		<activity
+			android:name="com.zbl.anju.ui.activity.HouseTypeActivity"
+			android:screenOrientation="portrait"
 			>
 		</activity>
 		<!-- 房源发布 -->

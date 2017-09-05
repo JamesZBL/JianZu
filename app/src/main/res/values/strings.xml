@@ -89,11 +89,29 @@
 
 	<string name="sell_input_your_title">标题 醒目的标题更容易吸引买家哦</string>
 	<string name="house_input_your_title">标题 建议输入房子所在小区</string>
+	<string name="house_input_your_xiaoqu">输入小区名称</string>
 	<string name="sell_input_your_description">描述一下您要发布的宝贝\n\n描述一下宝贝来源，新旧程度，型号/尺码等，可以让宝贝更快卖出哦</string>
 	<string name="house_input_your_description">描述一下您要发布的房屋\n\n描述一下价格是否可以商议，是否允许租房者自行添置家具等，方便租房者更清楚的了解您的房屋</string>
 	<string name="sell_input_your_img">宝贝照片</string>
-	<string name="house_input_your_video">房屋视频</string>
+	<string name="house_input_your_video">房屋视频\n请务必保证视频真实性，平台稍候会进行审核</string>
 	<string name="house_input_your_address">您的房屋所在详细位置</string>
+
+	<string name="house_jibenxinxi">基本信息</string>
+	<string name="house_zujinxiangqing">租金详情</string>
+	<string name="house_lianxiren">联系人</string>
+	<string name="house_please_input_your_name">联系人</string>
+	<string name="house_sir">先生</string>
+	<string name="house_lady">女生</string>
+	<string name="house_shoujihaoma">手机号码</string>
+	<string name="house_louhao">楼号</string>
+	<string name="house_danyuanhao">单元号</string>
+	<string name="house_menpaihao">门牌号</string>
+	<string name="house_mianji">面积</string>
+	<string name="house_tingshi">厅室</string>
+	<string name="house_chaoxiang">朝向</string>
+	<string name="house_louceng">楼层</string>
+	<string name="house_please_input">请填写</string>
+	<string name="house_please_select">请选择</string>
 	<string name="sell_release_now">立即发布</string>
 	<string name="house_release_now">立即发布</string>
 

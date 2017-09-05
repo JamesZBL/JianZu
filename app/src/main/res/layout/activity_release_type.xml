@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	>
+
+	<!-- appbar(required) -->
+	<include
+		layout="@layout/include_toolbar_white"
+		/>
+
+	<com.zhy.autolayout.AutoLinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/white"
+		android:orientation="vertical"
+		>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="居民住宅"
+			android:layout_margin="10dp"
+			android:textSize="@dimen/global_normal_font_size_vxsm"
+			/>
+
+		<com.lqr.optionitemview.OptionItemView
+			android:id="@+id/oiv_house_type_zhengzu"
+			android:layout_width="match_parent"
+			android:layout_height="60dp"
+			app:right_src="@drawable/ic_h_forward"
+			app:left_src="@drawable/ic_h_house_blue"
+			app:left_image_margin_left="10dp"
+			app:left_text="整租"
+			/>
+		<View style="@style/Line"/>
+		<com.lqr.optionitemview.OptionItemView
+			android:id="@+id/oiv_house_type_hezu"
+			android:layout_width="match_parent"
+			android:layout_height="60dp"
+			app:right_src="@drawable/ic_h_forward"
+			app:left_src="@drawable/ic_h_door_red"
+			app:left_image_margin_left="10dp"
+			app:left_text="合租"
+			/>
+	</com.zhy.autolayout.AutoLinearLayout>
+
+
+</com.zhy.autolayout.AutoLinearLayout>
