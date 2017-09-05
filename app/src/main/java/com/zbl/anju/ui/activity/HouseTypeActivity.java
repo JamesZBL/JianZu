@@ -1,7 +1,5 @@
 package com.zbl.anju.ui.activity;
 
-import android.graphics.Movie;
-
 import com.lqr.optionitemview.OptionItemView;
 import com.zbl.anju.R;
 import com.zbl.anju.ui.base.BaseActivity;

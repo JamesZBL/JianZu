@@ -12,6 +12,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -262,7 +263,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 			//二手
 			jumpToActivity(BuyOrSellActivity.class);
 		});
-		mArlLeftMenu9.setOnClickListener(v->{
+		mArlLeftMenu9.setOnClickListener(v -> {
 			//房源发布
 			jumpToActivity(HouseTypeActivity.class);
 		});
@@ -442,7 +443,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 				return false;
 			});
 			//点击地图
-			mTenMap.setOnMapClickListener(latLng->{
+			mTenMap.setOnMapClickListener(latLng -> {
 				jumpToActivity(HouseListActiity.class);
 			});
 		}
@@ -550,7 +551,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		mJcPlayer.setVisibility(View.GONE);
 		mBannerAdvertisement.setVisibility(View.GONE);
 		mAppBar.setVisibility(View.GONE);
-		hasFullMap=true;
+		hasFullMap = true;
 	}
 
 	/**
@@ -561,7 +562,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		mJcPlayer.setVisibility(View.VISIBLE);
 		mBannerAdvertisement.setVisibility(View.VISIBLE);
 		mAppBar.setVisibility(View.VISIBLE);
-		hasFullMap=false;
+		hasFullMap = false;
 	}
 
 	@Override
@@ -569,4 +570,5 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		super.onFirstLaunchThisVersionDo();
 		initPermission();
 	}
+
 }

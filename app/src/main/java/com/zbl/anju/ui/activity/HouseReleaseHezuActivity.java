@@ -69,7 +69,7 @@ public class HouseReleaseHezuActivity extends BaseActivity {
 
 	@Override
 	protected int provideContentViewId() {
-		return R.layout.activity_house_release;
+		return R.layout.activity_house_hezu_release;
 	}
 
 	@Override
@@ -211,7 +211,7 @@ public class HouseReleaseHezuActivity extends BaseActivity {
 		String[] chaoxiangItems = {"北", "南", "西", "东", "西北", "西南", "东北", "东南"};
 		String[] zhifuItems = {"押一付一", "押一付三", "半年付", "一年付"};
 		String[] leixingItems = {"主卧", "次卧", "隔断"};
-		String[] xingbieItems = {"那女不限", "限男生", "限女生", "限夫妻"};
+		String[] xingbieItems = {"男女不限", "限男生", "限女生", "限夫妻"};
 		String[] items = {};
 		switch (i) {
 			case 0: {
