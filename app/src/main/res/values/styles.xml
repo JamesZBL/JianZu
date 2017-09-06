@@ -40,7 +40,8 @@
 		<item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true</item>
 		<!-- 设置activity切换动画 -->
 		<item name="android:windowAnimationStyle">@style/activityAnimation_scale</item>
-		<item name="android:windowBackground">@mipmap/splash</item>
+		<!--<item name="android:windowBackground">@mipmap/splash</item>-->
+		<item name="android:windowBackground">@color/white</item>
 	</style>
 
 	<!--无ActionBar样式-->

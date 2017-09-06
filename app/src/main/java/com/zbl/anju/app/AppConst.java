@@ -23,7 +23,7 @@ public class AppConst {
 
 	/*-----------------------  UI  -------------------------*/
 	//启动画面延迟时间（完成初始化后的延迟时间，防止出现启动主Activity时黑屏一段时间）
-	public static final long SPLASH_DELAY = 500;
+	public static final long SPLASH_DELAY = 2000;
 	public static final int MAIN_AD_BANNER_INTERVAL = 4000; //主页广告轮播间隔(毫秒)
 	public static final int BANNER_DELAY = 5000;  //轮播图延迟
 	public static final int SCROLL_LISTEN = 100;  //滑动监听
