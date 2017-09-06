@@ -17,6 +17,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.zbl.anju.R;
 import com.zbl.anju.app.AppConst;
@@ -268,6 +269,14 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AppCom
 			mMaterialDialog.dismiss();
 			mMaterialDialog = null;
 		}
+	}
+
+	/**
+	 * 显示Toast
+	 * @param msg
+	 */
+	public void showToast(String msg) {
+		UIUtils.showToast(msg);
 	}
 
 	public void jumpToActivity(Intent intent) {

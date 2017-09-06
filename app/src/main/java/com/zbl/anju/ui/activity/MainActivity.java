@@ -39,6 +39,7 @@ import com.zbl.anju.R;
 import com.zbl.anju.app.AppConst;
 import com.zbl.anju.db.model.TagHolder;
 import com.zbl.anju.manager.BroadcastManager;
+import com.zbl.anju.model.cache.UserCache;
 import com.zbl.anju.ui.base.BaseActivity;
 import com.zbl.anju.ui.presenter.MainAtPresenter;
 import com.zbl.anju.ui.view.IMainAtView;
@@ -52,6 +53,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
+import de.hdodenhof.circleimageview.CircleImageView;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerSimple;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 import kr.co.namee.permissiongen.PermissionGen;
@@ -112,6 +114,10 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	AutoRelativeLayout mArlLeftMenu6;   //二手
 	@Bind(R.id.arl_left_menu_9)
 	AutoRelativeLayout mArlLeftMenu9;   //房源发布
+
+	/* 左侧菜单项目 */
+	@Bind(R.id.iv_header_left_menu)
+	CircleImageView iv_left_header;     //头像
 
 	BottomSheetBehavior mBottomSheetBehavior;
 
@@ -283,6 +289,12 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 			} else {
 				cancelMapFullScreen();
 			}
+		});
+
+		/* 头像 暂时实现点击头像清除User缓存 */
+		iv_left_header.setOnClickListener(v -> {
+			UserCache.clear();
+			showToast("测试通过");
 		});
 	}
 

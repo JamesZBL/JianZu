@@ -264,7 +264,7 @@
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:gravity="center"
-						android:hint="@string/house_please_input"
+						android:hint="@string/house_please_select"
 						android:maxLength="20"
 						android:text=""
 						android:textColorHint="@color/gray3"
