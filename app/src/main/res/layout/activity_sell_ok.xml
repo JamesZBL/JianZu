@@ -37,6 +37,7 @@
 		</com.zhy.autolayout.AutoLinearLayout>
 
 		<TextView
+			android:id="@+id/tv_ok_msg"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_alignParentLeft="true"

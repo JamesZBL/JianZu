@@ -13,16 +13,16 @@
 		/>
 
 	<!-- 表单项目 -->
-
+	<View style="@style/LineGrayDividerNoMargin"/>
 	<!-- 姓名 -->
 	<com.zhy.autolayout.AutoLinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="90px"
+		android:background="@color/white"
 		android:gravity="center_vertical"
 		android:orientation="horizontal"
 		android:paddingLeft="30px"
 		android:paddingRight="30px"
-		android:background="@color/white"
 		>
 
 		<TextView
@@ -38,7 +38,6 @@
 			android:layout_height="wrap_content"
 			android:background="@null"
 			android:hint="@string/regist_your_real_name"
-			android:inputType="phone"
 			android:text=""
 			android:textColorHint="@color/gray3"
 			android:textSize="28px"/>
@@ -49,11 +48,11 @@
 	<com.zhy.autolayout.AutoLinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="90px"
+		android:background="@color/white"
 		android:gravity="center_vertical"
 		android:orientation="horizontal"
 		android:paddingLeft="30px"
 		android:paddingRight="30px"
-		android:background="@color/white"
 		>
 
 		<TextView
@@ -68,7 +67,7 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:background="@null"
-			android:hint=""
+			android:hint="请输入真实有用的手机号"
 			android:inputType="phone"
 			android:text=""
 			android:textColorHint="@color/gray3"
@@ -80,11 +79,11 @@
 	<com.zhy.autolayout.AutoLinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="90px"
+		android:background="@color/white"
 		android:gravity="center_vertical"
 		android:orientation="horizontal"
 		android:paddingLeft="30px"
 		android:paddingRight="30px"
-		android:background="@color/white"
 		>
 
 		<TextView
@@ -100,10 +99,19 @@
 			android:layout_height="wrap_content"
 			android:background="@null"
 			android:hint="@string/regist_real_id_num"
-			android:inputType="phone"
+			android:inputType="number"
+			android:maxLength="18"
 			android:textColorHint="@color/gray3"
 			android:textSize="28px"/>
 
 	</com.zhy.autolayout.AutoLinearLayout>
 
+	<Button
+		android:id="@+id/btn_submit_reg"
+		style="@style/btn2"
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:layout_margin="16dp"
+		android:text="提交信息"
+		/>
 </com.zhy.autolayout.AutoLinearLayout>

@@ -598,7 +598,7 @@
 						style="@style/Line_Vertical"/>
 
 					<Button
-						android:id="@+id/btn_upload_signature"
+						android:id="@+id/btn_online_pay"
 						style="@style/btn_orange"
 						android:layout_width="match_parent"
 						android:layout_height="match_parent"

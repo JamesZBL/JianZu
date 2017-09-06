@@ -1,6 +1,7 @@
 package com.zbl.anju.ui.activity;
 
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.zbl.anju.R;
 import com.zbl.anju.ui.base.BaseActivity;
@@ -17,6 +18,8 @@ public class ResultOkActivity extends BaseActivity {
 
 	@Bind(R.id.btn_done)
 	Button btnDone;
+	@Bind(R.id.tv_ok_msg)
+	TextView tvOkMsg;
 
 	@Override
 	protected BasePresenter createPresenter() {
@@ -31,7 +34,7 @@ public class ResultOkActivity extends BaseActivity {
 	@Override
 	public void initListener() {
 		super.initListener();
-		btnDone.setOnClickListener(v->{
+		btnDone.setOnClickListener(v -> {
 			finish();
 		});
 	}
@@ -40,5 +43,21 @@ public class ResultOkActivity extends BaseActivity {
 	public void initView() {
 		super.initView();
 		setToolbarTitle("发布成功");
+	}
+
+	@Override
+	public void initData() {
+		super.initData();
+		try {
+			String msg = getIntent().getExtras().getString("msg");
+			setMsg(msg);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void setMsg(String msg) {
+		tvOkMsg.setText(msg);
+		setToolbarTitle(msg);
 	}
 }

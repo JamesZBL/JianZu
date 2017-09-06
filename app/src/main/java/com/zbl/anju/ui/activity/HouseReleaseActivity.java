@@ -106,7 +106,7 @@ public class HouseReleaseActivity extends BaseActivity {
 	 * 选取视频
 	 */
 	private void selectVideo() {
-		File saveFolder = new File(Environment.getExternalStorageDirectory(), "AAAJianzu" + System.currentTimeMillis() + "");
+		File saveFolder = new File(Environment.getExternalStorageDirectory(), "AAAJianzu" + File.separator + System.currentTimeMillis() + "");
 		if (!saveFolder.mkdirs())
 			throw new RuntimeException("Unable to create save directory, make sure WRITE_EXTERNAL_STORAGE permission is granted.");
 
