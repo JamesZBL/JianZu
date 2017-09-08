@@ -14,8 +14,8 @@ android {
         applicationId "com.zbl.anju"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 20170831
-        versionName "1.8.31"
+        versionCode 201700907
+        versionName "1.9.7"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         // 控制日志Log 输出打印
