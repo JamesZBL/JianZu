@@ -65,6 +65,10 @@
 	<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
 	<uses-permission android:name="android.permission.GET_TASKS"/>
 
+
+	<uses-permission android:name="android.permission.WRITE_APN_SETTINGS"
+					 tools:ignore="ProtectedPermissions"/>
+
 	<application
 		android:name="com.zbl.anju.app.MyApp"
 		android:allowBackup="true"
@@ -89,6 +93,24 @@
 		<meta-data
 			android:name="com.amap.api.v2.apikey"
 			android:value="dfb06feea86acc231f9d6ed5eb7fc3ef"/>
+
+		<!-- 腾讯登录 -->
+		<activity
+			android:name="com.tencent.tauth.AuthActivity"
+			android:noHistory="true"
+			android:launchMode="singleTask" >
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data android:scheme="tencent你的AppId" />
+			</intent-filter>
+		</activity>
+
+		<activity android:name="com.tencent.connect.common.AssistActivity"
+				  android:theme="@android:style/Theme.Translucent.NoTitleBar"
+				  android:configChanges="orientation|keyboardHidden|screenSize"
+			/>
 
 		<meta-data
 			android:name="UMENG_CHANNEL"

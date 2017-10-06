@@ -45,7 +45,11 @@ public class AppConst {
 
 
 	/* ----------------------URL-----------------------------*/
-	public static final String  URL_AD_IMG="asset://com.zbl.anju/anju/ad.png";
+	public static final String URL_AD_IMG = "asset://com.zbl.anju/anju/ad.png";
+
+
+	/* ---------------------- Tencent -----------------------------*/
+	public static final String MY_TENCENT_APP_ID = "1106407268";
 
 	/**/
 	/**/

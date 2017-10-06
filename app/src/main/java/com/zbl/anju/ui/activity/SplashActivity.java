@@ -26,7 +26,10 @@ public class SplashActivity extends BaseSplashActivity {
 
 	@Override
 	public void initData() {
-		login();
+
+		//// TODO: 17-10-6 临时屏蔽登录activity
+		startMainAct();
+//		login();
 	}
 
 	/**
