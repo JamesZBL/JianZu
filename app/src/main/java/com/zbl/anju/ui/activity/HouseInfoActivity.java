@@ -103,50 +103,6 @@ public class HouseInfoActivity extends BaseActivity<IHouseInfoAtView, HouseInfoA
 	public void initListener() {
 		super.initListener();
 
-		/* 三点菜单按钮 */
-//		mIbToolbarMore.setOnClickListener(v -> {
-//			View menuView = View.inflate(this, R.layout.menu_sig, null);
-//			PopupWindow popupWindow = PopupWindowUtils.getPopupWindowAtLocation(menuView, getWindow().getDecorView(), Gravity.TOP | Gravity.RIGHT, UIUtils.dip2Px(5), mAppBar.getHeight() + UIUtils.getStatusbarheight(this), R.style.popwindow_top_right_anim_style, this);
-//
-//			//菜单操作
-//			//保存到本地
-//			menuView.findViewById(R.id.tvSaveSig).setOnClickListener(v1 -> {
-//				popupWindow.dismiss();
-//
-//			});
-//			//清除
-//			menuView.findViewById(R.id.tvClearSig).setOnClickListener(v1 -> {
-//				popupWindow.dismiss();
-////				mLpvSignature.clear();
-//
-//			});
-//			//上传
-//			menuView.findViewById(R.id.tvUploadSig).setOnClickListener(v1 -> {
-//				popupWindow.dismiss();
-////				mPresenter.uploadSig();
-//
-//			});
-//
-//			/* 滑动监听 */
-//			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//				mScrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
-//					@Override
-//					public void onScrollChange(View view, int x, int y, int oldX, int oldY) {
-//						Rect scrollRect = new Rect();
-//						mScrollView.getHitRect(scrollRect);
-//
-//						if (mHouseInfoVideoPlayer.getLocalVisibleRect(scrollRect)) {
-//
-//						} else {
-//							////子控件完全不在可视范围内
-//							JCVideoPlayer.releaseAllVideos();
-//						}
-//					}
-//				});
-//			}
-//
-//		});
-
 		/* 看电话提示 */
 		allBtmSeePhone.setOnClickListener(v -> {
 			showSeePhoneDialog(true);

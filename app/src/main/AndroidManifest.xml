@@ -181,6 +181,7 @@
 		<!-- 地图界面 -->
 		<activity
 			android:name="com.zbl.anju.ui.activity.MainActivity"
+			android:configChanges="orientation|screenSize|keyboardHidden"
 			android:screenOrientation="portrait"
 			>
 
