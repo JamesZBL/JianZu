@@ -1,2 +1,2 @@
-# 简租
-实现便捷租房的APP
+# JianZu
+A prototype Android application that integrates rental and secondhand transactions.
