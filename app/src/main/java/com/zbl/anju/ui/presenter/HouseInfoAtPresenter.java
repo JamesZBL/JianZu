@@ -34,7 +34,7 @@ public class HouseInfoAtPresenter extends BasePresenter<IHouseInfoAtView> {
 		House house = DBManager.getInstance().getRandomSingleHouse("一室", "1000以下");
 
 		//设置视频播放源
-		getView().getJcVideoPlayer().setUp("http://pgccdn.v.baidu.com/446673505_4133162716_20170806132327.mp4?authorization=bce-auth-v1%2Fc308a72e7b874edd9115e4614e1d62f6%2F2017-08-06T05%3A23%3A33Z%2F-1%2F%2Fe4fa01ec4352ddb38314a70c809264a6fc0e6894dd0638710acbf712a1c0a6f3&responseCacheControl=max-age%3D8640000&responseExpires=Tue%2C+14+Nov+2017+13%3A23%3A33+GMT&xcode=c64b1919385aa116dc50d92e5054a7741d93c9f3c454ab2f&time=1504139813&_=1504054789526"
+		getView().getJcVideoPlayer().setUp("http://ovi01lb03.bkt.clouddn.com/house_ad.mp4"
 				, JCVideoPlayerStandard.SCREEN_LAYOUT_LIST);
 		//设置视频缩略图
 		Glide.with(mContext)
