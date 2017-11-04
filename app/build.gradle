@@ -14,8 +14,8 @@ android {
         applicationId "com.zbl.anju"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 201700907
-        versionName "1.9.7"
+        versionCode 20171104
+        versionName "1.11.4"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         // 控制日志Log 输出打印
@@ -50,8 +50,7 @@ android {
                 variant.outputs.each { output ->
                     def outputFile = output.outputFile
                     if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                        // 输出apk名称为appname-1.0-beta1-xxxx-xx-xx.apk
-                        def fileName = "app-${defaultConfig.versionName}-beta1-${releaseTime()}.apk"
+                        def fileName = "${defaultConfig.applicationId}-${defaultConfig.versionName}-${releaseTime()}.apk"
                         output.outputFile = new File(outputFile.parent, fileName)
                     }
                 }
@@ -182,3 +181,5 @@ dependencies {
     compile files('libs/open_sdk_r5793.jar')
     compile 'javax.inject:javax.inject:1'
 }
+
+
