@@ -44,6 +44,7 @@ import com.zhy.autolayout.AutoRelativeLayout;
 
 import butterknife.Bind;
 import de.hdodenhof.circleimageview.CircleImageView;
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 import kr.co.namee.permissiongen.PermissionGen;
 import me.shaohui.bottomdialog.BottomDialog;
@@ -144,6 +145,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	protected void onPause() {
 		/*地图*/
 		mTenMapView.onPause();
+		JCVideoPlayer.releaseAllVideos();  //暂停播放视频
 		super.onPause();
 	}
 
