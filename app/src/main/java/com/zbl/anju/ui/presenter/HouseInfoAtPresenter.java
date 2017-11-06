@@ -10,10 +10,6 @@ import com.zbl.anju.model.data.House;
 import com.zbl.anju.ui.base.BaseActivity;
 import com.zbl.anju.ui.base.BasePresenter;
 import com.zbl.anju.ui.view.IHouseInfoAtView;
-import com.zbl.anju.util.UIUtils;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import fm.jiecao.jcvideoplayer_lib.JCUserAction;
 import fm.jiecao.jcvideoplayer_lib.JCUserActionStandard;

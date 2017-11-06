@@ -3,19 +3,12 @@ package com.zbl.anju.ui.activity;
 import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.Rect;
 import android.os.Build;
-import android.support.v7.widget.ViewUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.PopupWindow;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
@@ -31,17 +24,13 @@ import com.zbl.anju.ui.base.BaseActivity;
 import com.zbl.anju.ui.presenter.HouseInfoAtPresenter;
 import com.zbl.anju.ui.view.IHouseInfoAtView;
 import com.zbl.anju.util.GlideImageLoader;
-import com.zbl.anju.util.PopupWindowUtils;
-import com.zbl.anju.util.StringUtils;
 import com.zbl.anju.util.UIUtils;
 import com.zhy.autolayout.AutoLinearLayout;
 
 import butterknife.Bind;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
-import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerSimple;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 import kr.co.namee.permissiongen.PermissionGen;
-import me.shaohui.bottomdialog.BottomDialog;
 
 /**
  * 房屋信息界面

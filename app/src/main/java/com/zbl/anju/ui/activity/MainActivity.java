@@ -177,16 +177,15 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	}
 
 	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		//返回键按下
-		if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
-			//如果此时地图处于展开的状态，则先收起地图
-			if (hasFullMap) {
-				cancelMapFullScreen();
-				return true;
-			}
+	public void onBackPressed() {
+		if (hasFullMap) {
+			cancelMapFullScreen();
+			return;
 		}
-		return super.onKeyDown(keyCode, event);
+		if (JCVideoPlayer.backPress()) {
+			return;
+		}
+		super.onBackPressed();
 	}
 
 	@Override
