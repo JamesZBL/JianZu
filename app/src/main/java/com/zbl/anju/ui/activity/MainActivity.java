@@ -14,6 +14,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -566,6 +567,8 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		mJcPlayer.setVisibility(View.GONE);
 //		mBannerAdvertisement.setVisibility(View.GONE);
 		mAppBar.setVisibility(View.GONE);
+		//设置为全屏模式
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		hasFullMap = true;
 	}
 
@@ -577,6 +580,8 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		mJcPlayer.setVisibility(View.VISIBLE);
 //		mBannerAdvertisement.setVisibility(View.VISIBLE);
 		mAppBar.setVisibility(View.VISIBLE);
+		//取消全屏状态
+		getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		hasFullMap = false;
 	}
 
