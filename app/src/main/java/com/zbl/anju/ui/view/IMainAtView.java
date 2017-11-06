@@ -24,6 +24,6 @@ public interface IMainAtView {
 	TencentMap getTenMap();
 
 	NavigationTabStrip getNavigationTabStrip();
-	Banner getBannerAd();
+//	Banner getBannerAd();
 	JCVideoPlayerStandard getJcPlayer();
 }

@@ -82,8 +82,8 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	@Bind(R.id.tv_main_toobar_city_name)
 	TextView mTvToolbarCityName;         //顶部城市名称文字
 
-	@Bind(R.id.main_anju_guanggao_banner)
-	Banner mBannerAdvertisement;        //广告轮播图
+//	@Bind(R.id.main_anju_guanggao_banner)
+//	Banner mBannerAdvertisement;        //广告轮播图
 
 	/* 地图相关 */
 	@Bind(R.id.house_map_view)
@@ -392,10 +392,10 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		return mNavigationTop;
 	}
 
-	@Override
-	public Banner getBannerAd() {
-		return mBannerAdvertisement;
-	}
+//	@Override
+//	public Banner getBannerAd() {
+//		return mBannerAdvertisement;
+//	}
 
 	@Override
 	public JCVideoPlayerStandard getJcPlayer() {
@@ -565,7 +565,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	private void makeMapFullScreen() {
 		mAllMainGrid.setVisibility(View.GONE);
 		mJcPlayer.setVisibility(View.GONE);
-		mBannerAdvertisement.setVisibility(View.GONE);
+//		mBannerAdvertisement.setVisibility(View.GONE);
 		mAppBar.setVisibility(View.GONE);
 		hasFullMap = true;
 	}
@@ -576,7 +576,7 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 	private void cancelMapFullScreen() {
 		mAllMainGrid.setVisibility(View.VISIBLE);
 		mJcPlayer.setVisibility(View.VISIBLE);
-		mBannerAdvertisement.setVisibility(View.VISIBLE);
+//		mBannerAdvertisement.setVisibility(View.VISIBLE);
 		mAppBar.setVisibility(View.VISIBLE);
 		hasFullMap = false;
 	}

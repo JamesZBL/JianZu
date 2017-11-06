@@ -397,11 +397,11 @@
 
 
 		<!-- 广告轮播图 -->
-		<com.youth.banner.Banner
-			android:id="@+id/main_anju_guanggao_banner"
-			android:layout_width="match_parent"
-			android:layout_height="75dp"
-			android:visibility="gone"/>
+		<!--<com.youth.banner.Banner-->
+			<!--android:id="@+id/main_anju_guanggao_banner"-->
+			<!--android:layout_width="match_parent"-->
+			<!--android:layout_height="75dp"-->
+			<!--android:visibility="gone"/>-->
 
 
 		<!-- 地图及其中的按钮 -->

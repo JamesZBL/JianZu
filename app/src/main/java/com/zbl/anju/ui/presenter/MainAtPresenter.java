@@ -57,7 +57,7 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 	 * 视频
 	 */
 	public void initData() {
-		initBanner();
+//		initBanner();
 		initJcPlayer();
 	}
 
@@ -76,54 +76,54 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 	}
 
 
-	/**
-	 * 设置轮播各个属性
-	 */
-	private void initBannerProperty() {
-		//设置banner样式
-//		mBannerAdvertisement.setBannerStyle(BannerConfig.);  //显示指示器，不显示标题
-		Banner mBannerAdvertisement = getView().getBannerAd();
-		//设置图片加载器
-		mBannerAdvertisement.setImageLoader(new GlideImageLoader());
-		//设置图片集合
-//		banner.setImages(images);  //在presenter中设置
-		//设置banner动画效果
-		mBannerAdvertisement.setBannerAnimation(Transformer.Default);
-		//设置标题集合（当banner样式有显示title时）
-//		mBanner.setBannerTitles(titles);
-		//设置自动轮播，默认为true
-		mBannerAdvertisement.isAutoPlay(true);
-		//设置轮播时间
-		mBannerAdvertisement.setDelayTime(AppConst.MAIN_AD_BANNER_INTERVAL);
-		//设置指示器位置（当banner模式中有指示器时）
-		mBannerAdvertisement.setIndicatorGravity(BannerConfig.CENTER);
-		//banner设置方法全部调用完毕时最后调用
-//		mBanner.start();            //在presenter中设置
-	}
+//	/**
+//	 * 设置轮播各个属性
+//	 */
+//	private void initBannerProperty() {
+//		//设置banner样式
+////		mBannerAdvertisement.setBannerStyle(BannerConfig.);  //显示指示器，不显示标题
+//		Banner mBannerAdvertisement = getView().getBannerAd();
+//		//设置图片加载器
+//		mBannerAdvertisement.setImageLoader(new GlideImageLoader());
+//		//设置图片集合
+////		banner.setImages(images);  //在presenter中设置
+//		//设置banner动画效果
+//		mBannerAdvertisement.setBannerAnimation(Transformer.Default);
+//		//设置标题集合（当banner样式有显示title时）
+////		mBanner.setBannerTitles(titles);
+//		//设置自动轮播，默认为true
+//		mBannerAdvertisement.isAutoPlay(true);
+//		//设置轮播时间
+//		mBannerAdvertisement.setDelayTime(AppConst.MAIN_AD_BANNER_INTERVAL);
+//		//设置指示器位置（当banner模式中有指示器时）
+//		mBannerAdvertisement.setIndicatorGravity(BannerConfig.CENTER);
+//		//banner设置方法全部调用完毕时最后调用
+////		mBanner.start();            //在presenter中设置
+//	}
 
-	/**
-	 * 初始化广告轮播图
-	 */
-	private void initBanner() {
-		//设置轮播图的各个属性
-		initBannerProperty();
-		//设置轮播图
-		List<String> imageList = new ArrayList<>();
-		imageList.add("http://pic.58pic.com/58pic/13/80/06/68558PIC7Fn_1024.jpg");
-		imageList.add("http://pic.58pic.com/58pic/14/32/00/83A58PICDH5_1024.jpg");
-		imageList.add("http://pic.58pic.com/58pic/13/23/73/67y58PICzAc_1024.jpg");
-		imageList.add("http://pic.58pic.com/58pic/16/41/62/95I58PICRFd_1024.jpg");
-
-		imageList.add("http://pic56.nipic.com/file/20141213/15265552_175423699768_2.jpg");
-		imageList.add("http://pic.58pic.com/58pic/13/22/62/13V58PICAk2_1024.jpg");
-		imageList.add("http://pic.58pic.com/58pic/17/07/88/98y58PIChDF_1024.jpg");
-		imageList.add("http://pic.58pic.com/58pic/13/60/04/49K58PICjWN_1024.jpg");
-
-		//设置图片来源
-		getView().getBannerAd().setImages(imageList);
-		//开始加载图片
-		getView().getBannerAd().start();
-	}
+//	/**
+//	 * 初始化广告轮播图
+//	 */
+//	private void initBanner() {
+//		//设置轮播图的各个属性
+//		initBannerProperty();
+//		//设置轮播图
+//		List<String> imageList = new ArrayList<>();
+//		imageList.add("http://pic.58pic.com/58pic/13/80/06/68558PIC7Fn_1024.jpg");
+//		imageList.add("http://pic.58pic.com/58pic/14/32/00/83A58PICDH5_1024.jpg");
+//		imageList.add("http://pic.58pic.com/58pic/13/23/73/67y58PICzAc_1024.jpg");
+//		imageList.add("http://pic.58pic.com/58pic/16/41/62/95I58PICRFd_1024.jpg");
+//
+//		imageList.add("http://pic56.nipic.com/file/20141213/15265552_175423699768_2.jpg");
+//		imageList.add("http://pic.58pic.com/58pic/13/22/62/13V58PICAk2_1024.jpg");
+//		imageList.add("http://pic.58pic.com/58pic/17/07/88/98y58PIChDF_1024.jpg");
+//		imageList.add("http://pic.58pic.com/58pic/13/60/04/49K58PICjWN_1024.jpg");
+//
+//		//设置图片来源
+//		getView().getBannerAd().setImages(imageList);
+//		//开始加载图片
+//		getView().getBannerAd().start();
+//	}
 
 
 	/**
