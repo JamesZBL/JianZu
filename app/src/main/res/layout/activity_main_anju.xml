@@ -38,12 +38,20 @@
 			app:nts_type="point"
 			app:nts_weight="3dp"/>
 
+		<!-- 视频 -->
+		<fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
+			android:id="@+id/main_jc_player"
+			android:layout_width="match_parent"
+			android:layout_height="150dp">
+
+		</fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard>
+
 		<!-- 主界面宫格菜单 -->
 		<com.zhy.autolayout.AutoLinearLayout
+			android:id="@+id/all_grids"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="vertical"
-			android:id="@+id/all_grids"
 			>
 			<!-- 第 1 行 -->
 			<com.zhy.autolayout.AutoLinearLayout
@@ -113,6 +121,7 @@
 
 				<!-- 3 -->
 				<com.zhy.autolayout.AutoRelativeLayout
+					android:visibility="gone"
 					android:id="@+id/arl_left_menu_3"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
@@ -142,6 +151,7 @@
 
 				<!-- 4 -->
 				<com.zhy.autolayout.AutoRelativeLayout
+					android:visibility="gone"
 					android:id="@+id/arl_left_menu_4"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
@@ -197,6 +207,35 @@
 
 				</com.zhy.autolayout.AutoRelativeLayout>
 
+				<!-- 6 -->
+				<com.zhy.autolayout.AutoRelativeLayout
+					android:id="@+id/arl_left_menu_6"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:background="@drawable/selector_option_item_trans"
+					>
+
+					<ImageView
+						android:id="@+id/iv_l_grid_6"
+						android:layout_width="40dp"
+						android:layout_height="40dp"
+						android:layout_alignParentTop="true"
+						android:layout_centerHorizontal="true"
+						android:src="@drawable/ic_h_ershou"
+						app:civ_border_color="@color/gray"
+						app:civ_border_width="0.2dp"/>
+
+					<TextView
+						style="@style/main_left_gird_txt_style"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/iv_l_grid_6"
+						android:text="@string/main_left_menu_txt_6"
+						/>
+
+				</com.zhy.autolayout.AutoRelativeLayout>
+
 			</com.zhy.autolayout.AutoLinearLayout>
 
 			<!-- 第 2 行 -->
@@ -205,6 +244,7 @@
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="10dp"
 				android:orientation="horizontal"
+				android:visibility="gone"
 				>
 				<!-- 5 -->
 				<com.zhy.autolayout.AutoRelativeLayout
@@ -235,34 +275,34 @@
 
 				</com.zhy.autolayout.AutoRelativeLayout>
 
-				<!-- 6 -->
-				<com.zhy.autolayout.AutoRelativeLayout
-					android:id="@+id/arl_left_menu_6"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:layout_weight="1"
-					android:background="@drawable/selector_option_item_trans"
-					>
+				<!--&lt;!&ndash; 6 &ndash;&gt;-->
+				<!--<com.zhy.autolayout.AutoRelativeLayout-->
+					<!--android:id="@+id/arl_left_menu_6"-->
+					<!--android:layout_width="match_parent"-->
+					<!--android:layout_height="wrap_content"-->
+					<!--android:layout_weight="1"-->
+					<!--android:background="@drawable/selector_option_item_trans"-->
+					<!--&gt;-->
 
-					<ImageView
-						android:id="@+id/iv_l_grid_6"
-						android:layout_width="40dp"
-						android:layout_height="40dp"
-						android:layout_alignParentTop="true"
-						android:layout_centerHorizontal="true"
-						android:src="@drawable/ic_h_ershou"
-						app:civ_border_color="@color/gray"
-						app:civ_border_width="0.2dp"/>
+					<!--<ImageView-->
+						<!--android:id="@+id/iv_l_grid_6"-->
+						<!--android:layout_width="40dp"-->
+						<!--android:layout_height="40dp"-->
+						<!--android:layout_alignParentTop="true"-->
+						<!--android:layout_centerHorizontal="true"-->
+						<!--android:src="@drawable/ic_h_ershou"-->
+						<!--app:civ_border_color="@color/gray"-->
+						<!--app:civ_border_width="0.2dp"/>-->
 
-					<TextView
-						style="@style/main_left_gird_txt_style"
-						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_below="@id/iv_l_grid_6"
-						android:text="@string/main_left_menu_txt_6"
-						/>
+					<!--<TextView-->
+						<!--style="@style/main_left_gird_txt_style"-->
+						<!--android:layout_width="match_parent"-->
+						<!--android:layout_height="wrap_content"-->
+						<!--android:layout_below="@id/iv_l_grid_6"-->
+						<!--android:text="@string/main_left_menu_txt_6"-->
+						<!--/>-->
 
-				</com.zhy.autolayout.AutoRelativeLayout>
+				<!--</com.zhy.autolayout.AutoRelativeLayout>-->
 
 				<!-- 7 -->
 				<com.zhy.autolayout.AutoRelativeLayout
@@ -354,19 +394,14 @@
 			</com.zhy.autolayout.AutoLinearLayout>
 		</com.zhy.autolayout.AutoLinearLayout>
 
-		<!-- 视频 -->
-		<fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
-			android:id="@+id/main_jc_player"
-			android:layout_width="match_parent"
-			android:layout_height="150dp">
 
-		</fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard>
 
 		<!-- 广告轮播图 -->
 		<com.youth.banner.Banner
 			android:id="@+id/main_anju_guanggao_banner"
 			android:layout_width="match_parent"
-			android:layout_height="75dp"/>
+			android:layout_height="75dp"
+			android:visibility="gone"/>
 
 
 		<!-- 地图及其中的按钮 -->
@@ -389,15 +424,15 @@
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:background="@drawable/shape_jianbian_black"
+				android:layout_toRightOf="@+id/rr_sig_btm"
+				android:layout_toStartOf="@+id/rr_sig_btm"
+				android:background="@color/gray1"
 				android:paddingBottom="3dp"
 				android:paddingLeft="16dp"
 				android:paddingRight="16dp"
 				android:paddingTop="3dp"
 				android:text="@string/main_map_sousuo"
-				android:textColor="@color/gray0"
-				android:layout_toStartOf="@+id/rr_sig_btm"
-				android:layout_toRightOf="@+id/rr_sig_btm"
+				android:textColor="@color/white"
 				/>
 
 			<Button
@@ -411,6 +446,7 @@
 				android:layout_toEndOf="@+id/rr_sig_btm"
 				android:layout_toRightOf="@+id/rr_sig_btm"
 				android:background="@drawable/selector_loc_btn"/>
+
 			<Button
 				android:id="@+id/btn_main_full"
 				android:layout_width="30dp"
@@ -558,8 +594,6 @@
 
 
 	</com.zhy.autolayout.AutoLinearLayout>
-
-
 
 
 	<!-- 侧边栏 new-->
