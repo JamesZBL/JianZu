@@ -62,6 +62,7 @@
 				android:layout_height="wrap_content"
 				android:layout_below="@+id/btnToolbarSend"
 				android:layout_marginTop="15dp"
+				android:padding="3dp"
 				android:layout_toEndOf="@+id/ivToolbarLeftMenu"
 				android:layout_toRightOf="@+id/ivToolbarLeftMenu"
 				android:orientation="horizontal">
