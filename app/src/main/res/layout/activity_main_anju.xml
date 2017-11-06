@@ -42,7 +42,7 @@
 		<fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
 			android:id="@+id/main_jc_player"
 			android:layout_width="match_parent"
-			android:layout_height="150dp">
+			android:layout_height="180dp">
 
 		</fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard>
 
