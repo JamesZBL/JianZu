@@ -7,10 +7,17 @@
 	android:layout_height="match_parent"
 	>
 
+	<!-- 首页使用引导遮罩层 -->
+	<include
+		layout="@layout/mask_activity_main_guide"
+		android:visibility="gone"
+		/>
+
 	<!-- 主布局 -->
 	<com.zhy.autolayout.AutoLinearLayout
 		xmlns:android="http://schemas.android.com/apk/res/android"
 		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:id="@+id/id_all_activity_main_center"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:orientation="vertical"
@@ -121,12 +128,12 @@
 
 				<!-- 3 -->
 				<com.zhy.autolayout.AutoRelativeLayout
-					android:visibility="gone"
 					android:id="@+id/arl_left_menu_3"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_weight="1"
 					android:background="@drawable/selector_option_item_trans"
+					android:visibility="gone"
 					>
 
 					<ImageView
@@ -151,12 +158,12 @@
 
 				<!-- 4 -->
 				<com.zhy.autolayout.AutoRelativeLayout
-					android:visibility="gone"
 					android:id="@+id/arl_left_menu_4"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_weight="1"
 					android:background="@drawable/selector_option_item_trans"
+					android:visibility="gone"
 					>
 
 					<ImageView
@@ -277,30 +284,30 @@
 
 				<!--&lt;!&ndash; 6 &ndash;&gt;-->
 				<!--<com.zhy.autolayout.AutoRelativeLayout-->
-					<!--android:id="@+id/arl_left_menu_6"-->
-					<!--android:layout_width="match_parent"-->
-					<!--android:layout_height="wrap_content"-->
-					<!--android:layout_weight="1"-->
-					<!--android:background="@drawable/selector_option_item_trans"-->
-					<!--&gt;-->
+				<!--android:id="@+id/arl_left_menu_6"-->
+				<!--android:layout_width="match_parent"-->
+				<!--android:layout_height="wrap_content"-->
+				<!--android:layout_weight="1"-->
+				<!--android:background="@drawable/selector_option_item_trans"-->
+				<!--&gt;-->
 
-					<!--<ImageView-->
-						<!--android:id="@+id/iv_l_grid_6"-->
-						<!--android:layout_width="40dp"-->
-						<!--android:layout_height="40dp"-->
-						<!--android:layout_alignParentTop="true"-->
-						<!--android:layout_centerHorizontal="true"-->
-						<!--android:src="@drawable/ic_h_ershou"-->
-						<!--app:civ_border_color="@color/gray"-->
-						<!--app:civ_border_width="0.2dp"/>-->
+				<!--<ImageView-->
+				<!--android:id="@+id/iv_l_grid_6"-->
+				<!--android:layout_width="40dp"-->
+				<!--android:layout_height="40dp"-->
+				<!--android:layout_alignParentTop="true"-->
+				<!--android:layout_centerHorizontal="true"-->
+				<!--android:src="@drawable/ic_h_ershou"-->
+				<!--app:civ_border_color="@color/gray"-->
+				<!--app:civ_border_width="0.2dp"/>-->
 
-					<!--<TextView-->
-						<!--style="@style/main_left_gird_txt_style"-->
-						<!--android:layout_width="match_parent"-->
-						<!--android:layout_height="wrap_content"-->
-						<!--android:layout_below="@id/iv_l_grid_6"-->
-						<!--android:text="@string/main_left_menu_txt_6"-->
-						<!--/>-->
+				<!--<TextView-->
+				<!--style="@style/main_left_gird_txt_style"-->
+				<!--android:layout_width="match_parent"-->
+				<!--android:layout_height="wrap_content"-->
+				<!--android:layout_below="@id/iv_l_grid_6"-->
+				<!--android:text="@string/main_left_menu_txt_6"-->
+				<!--/>-->
 
 				<!--</com.zhy.autolayout.AutoRelativeLayout>-->
 
@@ -395,13 +402,12 @@
 		</com.zhy.autolayout.AutoLinearLayout>
 
 
-
 		<!-- 广告轮播图 -->
 		<!--<com.youth.banner.Banner-->
-			<!--android:id="@+id/main_anju_guanggao_banner"-->
-			<!--android:layout_width="match_parent"-->
-			<!--android:layout_height="75dp"-->
-			<!--android:visibility="gone"/>-->
+		<!--android:id="@+id/main_anju_guanggao_banner"-->
+		<!--android:layout_width="match_parent"-->
+		<!--android:layout_height="75dp"-->
+		<!--android:visibility="gone"/>-->
 
 
 		<!-- 地图及其中的按钮 -->

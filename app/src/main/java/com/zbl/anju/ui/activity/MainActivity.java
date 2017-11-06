@@ -17,6 +17,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -111,6 +112,12 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 
 	@Bind(R.id.main_jc_player)
 	JCVideoPlayerStandard mJcPlayer;
+
+	/* 关于遮罩层 */
+	@Bind(R.id.ll_mask_activity_main)
+	LinearLayout mLlGuideMask;              //引导遮罩层
+	@Bind(R.id.id_all_activity_main_center)
+	AutoLinearLayout mAllActivityMainCenter;//主布局
 
 	TencentMap mTenMap;                 //地图实例
 	DrawerArrowDrawable mDrawerArrow;
@@ -210,7 +217,8 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		initTenMap();   //初始化地图
 		initDrawer();   //初始化侧边菜单
 		initBottomSheet();   //初始化底部滑动菜单
-		initJcVideoPlayer();
+		initJcVideoPlayer(); //初始化视频播放器
+		setGuideMaskVisible(true);//显示遮罩层
 	}
 
 
@@ -296,6 +304,11 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		iv_left_header.setOnClickListener(v -> {
 			UserCache.clear();
 			showToast("测试通过");
+		});
+
+		/* 遮罩层 ，点击则消失 */
+		mLlGuideMask.setOnClickListener(v -> {
+			setGuideMaskVisible(false);
 		});
 	}
 
@@ -588,4 +601,20 @@ public class MainActivity extends BaseActivity<IMainAtView, MainAtPresenter> imp
 		initPermission();
 	}
 
+	/**
+	 * 显示引导遮罩
+	 */
+	public void setGuideMaskVisible(boolean show) {
+		if (show) {
+			//隐藏主布局
+			mAllActivityMainCenter.setVisibility(View.GONE);
+			//显示遮罩层布局
+			mLlGuideMask.setVisibility(View.VISIBLE);
+		} else {
+			//显示主布局
+			mAllActivityMainCenter.setVisibility(View.VISIBLE);
+			//隐藏遮罩层布局
+			mLlGuideMask.setVisibility(View.GONE);
+		}
+	}
 }
