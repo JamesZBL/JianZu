@@ -69,7 +69,7 @@ public class HouseInfoAtPresenter extends BasePresenter<IHouseInfoAtView> {
 	 * 加载室内实拍照片
 	 */
 	public void initIndoorPhotos() {
-		Glide.with(mContext).load("file:///android_assest/anju/pic_houseinfo_indoor.jpg")
+		Glide.with(mContext).load("file:///android_asset/anju/pic_houseinfo_indoor.jpg")
 				.into(getView().getIvIndoorPhotos());
 	}
 
