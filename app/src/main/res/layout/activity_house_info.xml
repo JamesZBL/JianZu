@@ -498,7 +498,6 @@
 					android:id="@+id/id_iv_houseinfo_indoor_photos"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:src="@drawable/pic_houseinfo_indoor"
 					android:adjustViewBounds="true"
 					/>
 			</com.zhy.autolayout.AutoLinearLayout>
