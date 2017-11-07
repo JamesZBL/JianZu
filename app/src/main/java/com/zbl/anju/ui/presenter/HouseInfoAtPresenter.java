@@ -63,7 +63,6 @@ public class HouseInfoAtPresenter extends BasePresenter<IHouseInfoAtView> {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	/**
