@@ -30,7 +30,16 @@
 #################################################################################################
 #################################################################################################
 #################################################################################################
+######		dontwarn		########
 
+-dontwarn demo.**
+-dontwarn android.databinding.**
+-dontwarn cn.bingoogolapple.qrcode.zxing.**
+-dontwarn com.facebook.**
+-dontwarn com.litesuits.**
+-dontwarn ct.**
+-dontwarn okhttp3.**
+-dontwarn org.joda.**
 
 
 #############################################
@@ -452,13 +461,23 @@
 ############ Tencent Map ###############
 
 #Tencent map sdk
--libraryjars libs/TencentLocationSDK_v4.9.12_r247861_161205_1104.jar
+#-libraryjars libs/TencentLocationSDK_v4.9.7.12_r247861_161205_1104.jar
 -keep class com.tencent.**{*;}
 
 #腾讯地图 2D sdk
--libraryjars libs/TencentMapSDK_Raster_v_1.2.8_e45bcd0.jar
+#-libraryjars libs/TencentMapSDK_Raster_v_1.2.8_e45bcd0.jar
 -keep class com.tencent.mapsdk.**{*;}
 -keep class com.tencent.tencentmap.**{*;}
+
+#腾讯定位
+-keepclassmembers class ** {
+    public void on*Event(...);
+}
+-keep class c.t.**{*;}
+-keep class com.tencent.map.geolocation.**{*;}
+-keep class com.tencent.tencentmap.lbssdk.service.**{*;}
+-dontwarn  org.eclipse.jdt.annotation.**
+-dontwarn  c.t.**
 
 #腾讯地图 3D sdk
 #-libraryjars libs/TencentMapSDK_Raster_v_1.2.6_160cf1b.jar
