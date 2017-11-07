@@ -447,6 +447,8 @@
 					android:layout_marginTop="0dp"
 					/>
 
+
+				<!-- 不可见 -->
 				<com.zhy.autolayout.AutoLinearLayout
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
@@ -469,12 +471,36 @@
 						/>
 				</com.zhy.autolayout.AutoLinearLayout>
 
+				<com.zhy.autolayout.AutoLinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:paddingBottom="@dimen/info_detail_padding_vertical"
+					android:paddingTop="@dimen/info_detail_padding_vertical"
+					>
+
+					<View
+						style="@style/SquareColorPrimary"
+						/>
+
+					<TextView
+						style="@style/info_bold_text_style"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/houseinfo_zhaopian"
+
+						/>
+				</com.zhy.autolayout.AutoLinearLayout>
+
 				<View
 					style="@style/Line"/>
-
-
-
-
+				<ImageView
+					android:id="@+id/id_iv_houseinfo_indoor_photos"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:src="@drawable/pic_houseinfo_indoor"
+					android:adjustViewBounds="true"
+					/>
 			</com.zhy.autolayout.AutoLinearLayout>
 
 

@@ -1,5 +1,7 @@
 package com.zbl.anju.ui.view;
 
+import android.widget.ImageView;
+
 import com.youth.banner.Banner;
 
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerSimple;
@@ -14,4 +16,5 @@ public interface IHouseInfoAtView {
 //	JCVideoPlayerStandard getJcVideoPlayer();
 	JCVideoPlayerStandard getJcVideoPlayer();
 	Banner getBanner();
+	ImageView getIvIndoorPhotos();
 }

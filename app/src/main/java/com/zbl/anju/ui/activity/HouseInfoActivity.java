@@ -52,6 +52,8 @@ public class HouseInfoActivity extends BaseActivity<IHouseInfoAtView, HouseInfoA
 	AutoLinearLayout allBtmSeePhone;
 	@Bind(R.id.btn_online_pay)
 	Button mBtnOnlinePay;
+	@Bind(R.id.id_iv_houseinfo_indoor_photos)
+	ImageView mIvIndoorPhotos;              //室内实拍照片
 
 	@Override
 	protected HouseInfoAtPresenter createPresenter() {
@@ -86,6 +88,7 @@ public class HouseInfoActivity extends BaseActivity<IHouseInfoAtView, HouseInfoA
 		//加载数据
 		mPresenter.initData();
 		mPresenter.initBundle(getIntent().getExtras());
+		mPresenter.initIndoorPhotos();
 	}
 
 	@Override
@@ -97,7 +100,7 @@ public class HouseInfoActivity extends BaseActivity<IHouseInfoAtView, HouseInfoA
 			showSeePhoneDialog(true);
 		});
 
-		mBtnOnlinePay.setOnClickListener(v->{
+		mBtnOnlinePay.setOnClickListener(v -> {
 			jumpToActivity(RegActivity.class);
 		});
 	}
@@ -271,5 +274,10 @@ public class HouseInfoActivity extends BaseActivity<IHouseInfoAtView, HouseInfoA
 	@Override
 	public Banner getBanner() {
 		return mBanner;
+	}
+
+	@Override
+	public ImageView getIvIndoorPhotos() {
+		return mIvIndoorPhotos;
 	}
 }

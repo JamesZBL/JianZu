@@ -40,6 +40,7 @@
 
 	<string name="houseinfo_gaikuang">房源概况</string>
 	<string name="houseinfo_peizhi">房间配置</string>
+	<string name="houseinfo_zhaopian">室内实拍</string>
 	<string name="houseinfo_video">实拍视频</string>
 
 	<string name="houseinfo_pay_online">在线支付</string>
