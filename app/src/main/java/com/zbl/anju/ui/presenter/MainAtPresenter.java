@@ -66,7 +66,7 @@ public class MainAtPresenter extends BasePresenter<IMainAtView> {
 	 */
 	private void initJcPlayer() {
 		//设置视频播放源
-		getView().getJcPlayer().setUp("http://ovi01lb03.bkt.clouddn.com/house_ad.mp4"
+		getView().getJcPlayer().setUp("http://ovi01lb03.bkt.clouddn.com/VID_20171107_104051.mp4"
 				, JCVideoPlayerStandard.SCREEN_LAYOUT_LIST);
 		//设置视频缩略图
 		Glide.with(mContext)
